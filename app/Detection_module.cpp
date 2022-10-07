@@ -10,40 +10,24 @@
  *
  */
 
-#include "../include/pid.hpp"
+#include "../include/Detection_module.hpp"
 
-#include <cmath>
 #include <iostream>
+#include <vector>
 
-void pid::PID::setKp(double val) { _Kp = val; }
+void Detection_module::set_img_width(int val)
+{ _img_width = val; }
 
-double pid::PID::getKp() { return _Kp; }
+void Detection_module::set_img_height(int val)
+{ _img_height = val; }
 
-void pid::PID::setKd(double val) { _Kd = val; }
+void Detection_module::set_conf_threshold(float val)
+{ _conf_threshold = val; }
 
-double pid::PID::getKd() { return _Kd; }
+void Detection_module::set_nms_threshold(float val)
+{ _nms_threshold = val; }
 
-void pid::PID::setKi(double val) { _Ki = val; }
-
-double pid::PID::getKi() { return _Ki; }
-
-void pid::PID::setTstep(float val) {
-  if (val > 0) {
-    _tstep = val;
-  } else {
-    _tstep = 0.1;
-  }
-}
-
-float pid::PID::getTstep() { return _tstep; }
-
-double pid::PID::computeCommand(double V_target, double V_current,
-                                double total_error) {
-  double error = V_target - V_current;
-
-  double p = _Kp * error;
-  double i = _Ki * total_error * _tstep;
-  double d = _Kd * (error - _prev_error) / _tstep;
-
-  return p + i + d;
+std::vector<cv::rect> Detection_module::bbox_detector(cv::Mat image)
+{ std::vector<cv::rect>bboxes;
+  return bboxes;
 }

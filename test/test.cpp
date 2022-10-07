@@ -1,6 +1,6 @@
 /**
  * @file test.cpp
- * @authors Rishabh Singh, Vishaal Kanna Sivakumar
+ * @authors Sahruday, Vishaal Kanna Sivakumar
  * @brief Test class for the PID controller
  * @version 0.1
  * @date 2022-10-02

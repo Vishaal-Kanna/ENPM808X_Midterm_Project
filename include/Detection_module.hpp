@@ -11,10 +11,9 @@
 
 #pragma once
 #include <iostream>
-#include <opencv>
+#include <opencv2/core.hpp>
 /**
- * @brief Class to store PID constants and the function to return current
- * velocity
+ * @brief Class to localize the locations of humans in a given image
  * @param class_data
  *
  */
@@ -32,52 +31,28 @@ class Detection_module {
   }
 
   /**
-   * @brief Set the value of Kp constant
+   * @brief Set the value of img_width constant
    *
    * @param val
    * @return void
    */
-  void setKp(double val);
+  void set_img_width(int val);
 
   /**
-   * @brief Get the value of Kp constant
-   *
-   * @param None
-   * @return double
-   */
-  double getKp();
-
-  /**
-   * @brief Set the value of Ki constant
+   * @brief Set the value of img_height constant
    *
    * @param val
    * @return void
    */
-  void setKi(double val);
+  void set_img_height(int val);
 
   /**
-   * @brief Get the value of Ki constant
-   *
-   * @param None
-   * @return double
-   */
-  double getKi();
-
-  /**
-   * @brief Set the value of Kd constant
+   * @brief Set the value of confidence threshold of detections constant
    *
    * @param val
    * @return void
    */
-  void setKd(double val);
-
-  /**
-   * @brief Get the value of Kd constant
-   *
-   * @param None
-   * @return double
-   */
-  double getKd();
+  void set_conf_threshold(float val);
 
   /**
    * @brief Set the value of Time step
@@ -85,15 +60,7 @@ class Detection_module {
    * @param val
    * @return void
    */
-  void setTstep(float val);
-
-  /**
-   * @brief Get the value of Time step
-   *
-   * @param None
-   * @return float
-   */
-  float getTstep();
+  void set_nms_threshold(float val);
 
   /**
    * @brief Method to compute the new acceleration
@@ -102,12 +69,11 @@ class Detection_module {
    * @param V_current
    * @return double
    */
-  vector<cv::rect> bbox_detector(double V_target, double V_current, double total_error);
+  vector<cv::rect> bbox_detector(cv::Mat image);
 
  private:
-  double _Kp;          ///< Proportional constant
-  double _Ki;          ///< Derivative constant
-  double _Kd;          ///< Integral constant
-  float _tstep;        ///< Time step
-  double _prev_error;  ///< Integral constant
+  int _img_width; ///< Proportional constant
+  int _img_height; ///< Derivative constant
+  float _conf_threshold; ///< Integral constant
+  float _nms_threshold; ///< Time step
 };
