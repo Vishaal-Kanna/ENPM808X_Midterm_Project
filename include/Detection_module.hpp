@@ -86,7 +86,7 @@ class Detection_module {
    * @brief Method to perform non-maximum supression and remove overlapping boxes
    *
    * @param std::vector<cv::rect>
-    * @return std::vector<cv::rect>
+   * @return std::vector<cv::rect>
    */
   std::vector<cv::rect> nms(std::vector<cv::rect> bboxes);
 

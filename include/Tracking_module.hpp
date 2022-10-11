@@ -10,7 +10,6 @@
  */
 
 #pragma once
-#include "Detection_module.hpp"
 #include <iostream>
 #include <opencv2/core.hpp>
 /**
@@ -45,16 +44,7 @@ class Tracking_module {
    * @param cv::Mat image
    * @return std::vector<cv::rect>
    */
-  std::vector<cv::rect> track_human(cv::Mat image1, cv::Mat image2);
-  
-
-  /**
-   * @brief Method to calculate IOU
-   *
-   * @param std::vector<cv::rect>
-   * @return std::vector<cv::rect>
-   */
-  std::vector<cv::rect> nms(std::vector<cv::rect>);
+  void track_human(cv::Mat image1, cv::Mat image2);
 
  private:
   unordered_map<int, cv::rect> track_ids; ///< Tracking Ids
