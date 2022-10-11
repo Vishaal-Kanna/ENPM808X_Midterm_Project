@@ -27,8 +27,6 @@ class Transformation_module {
    * @return None
    */
   Transformation_module() {
-   _intrinsics = 0;
-   _cam_to_rob = 0;
   }
 
   /**
@@ -37,7 +35,7 @@ class Transformation_module {
    * @param intrinsic
    * @return void
    */
-  void set_intrinsics(float (*intrinsic)[3][3]);
+  void set_intrinsics(float intrinsics[3][3]);
 
   /**
    * @brief Set the value of camera to robot coordinate transformation matrix
@@ -45,7 +43,7 @@ class Transformation_module {
    * @param cam_to_rob
    * @return void
    */
-  void set_cam_to_rob(float (*cam_to_rob)[3][4]);
+  void set_cam_to_rob(float cam_to_rob[3][4]);
 
   /**
    * @brief Get the 3D coordinates of the bounding box from 2D detections using average height of human
@@ -53,9 +51,9 @@ class Transformation_module {
    * @param val
    * @return void
    */
-  std::vector<std::array<float, 4>> 2dto3D_transform(std::vector<cv::rect> rect);
+  std::vector<std::array<float, 4>> transform_2dto3D(std::vector<cv::Rect> rect);
 
  private:
-  float _intrinsics[3][3]; ///< Camera's intrinsic parameters
-  float _cam_to_rob[3][4]; ///< Tranformation from camera's coordinates to robot coordinates_
+  float _intrinsics[3][3] = {{0,0,0}, {0,0,0}, {0,0,0}}; ///< Camera's intrinsic parameters
+  float _cam_to_rob[3][4] = {{0,0,0,0}, {0,0,0,0}, {0,0,0,0}}; ///< Tranformation from camera's coordinates to robot coordinates_
 };

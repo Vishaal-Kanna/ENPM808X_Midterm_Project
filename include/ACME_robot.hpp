@@ -30,10 +30,6 @@ class ACME_robot {
    * @return None
    */
   ACME_robot() {
-   _img_width = 256;
-   _img_height = 256;
-   _conf_threshold =0.6;
-   _nms_threshold = 0.4;
   }
 
   /**
@@ -50,7 +46,7 @@ class ACME_robot {
    * @param val
    * @return void
    */
-  void set_tracker_parameters(int val);
+  void set_tracker_parameters(std::unordered_map<int, cv::Rect>tracks);
 
   /**
    * @brief Set the parameters of the Transformation module
@@ -58,7 +54,7 @@ class ACME_robot {
    * @param val
    * @return void
    */
-  void set_transformation_parameters(int val);
+  void set_transformation_parameters(float intrinsic[3][3], float cam_to_rob[3][4]);
 
   /**
    * @brief Set the parameters of the Transformation module
@@ -66,13 +62,9 @@ class ACME_robot {
    * @param val
    * @return void
    */
-  void perception_stack();
+  void perception_stack(int img_folder_path);
 
  private:
-  int _img_width; ///< Image width
-  int _img_height; ///< Image height
-  float _conf_threshold; ///< Confidence threshold
-  float _nms_threshold; ///< Non maximum suppression threshold
   Detection_module detector;
   Tracking_module tracker;
   Transformation_module transforms;

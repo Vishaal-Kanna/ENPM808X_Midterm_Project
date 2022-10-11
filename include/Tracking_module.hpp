@@ -31,12 +31,20 @@ class Tracking_module {
   }
 
   /**
+   * @brief Set the value of track_ids
+   *
+   * @param val
+   * @return void
+   */
+  void set_track_ids(std::unordered_map<int, cv::Rect> tracks);
+
+  /**
    * @brief Method to associate Ids based on IOU
    *
    * @param cv::Mat image
    * @return std::vector<cv::rect>
    */
-  std::vector<cv::rect> hungarian_algorithm(std::vector<cv::rect> bboxes_frame1, std::vector<cv::rect> bboxes_frame2);
+  std::vector<cv::Rect> hungarian_algorithm(std::vector<cv::Rect> bboxes_frame1, std::vector<cv::Rect> bboxes_frame2);
 
     /**
    * @brief Method to associate Ids based on IOU
@@ -47,5 +55,5 @@ class Tracking_module {
   void track_human(cv::Mat image1, cv::Mat image2);
 
  private:
-  unordered_map<int, cv::rect> track_ids; ///< Tracking Ids
+  std::unordered_map<int, cv::Rect> _track_ids; ///< Tracking Ids
 };

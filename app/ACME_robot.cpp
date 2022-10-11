@@ -21,14 +21,13 @@ void ACME_robot::set_detector_parameters(int img_width, int img_height, float co
   detector.set_conf_threshold(conf_threshold);
   detector.set_nms_threshold(nms_threshold); }
 
-void ACME_robot::set_tracker_parameters(int img_width, int img_height, float conf_threshold, float nms_threshold)
-{  }
+void ACME_robot::set_tracker_parameters(std::unordered_map<int, cv::Rect>tracks)
+{ tracker.set_track_ids(tracks); }
 
-void ACME_robot::set_transformation_parameters(float (*intrinsic)[3][3], float (*cam_to_rob)[3][4])
-{ transforms.set_intrinsics(intrinsic[3][3]);
-  transforms.set_cam_to_rob(cam_to_rob[3][4]); }
+void ACME_robot::set_transformation_parameters(float intrinsic[3][3], float cam_to_rob[3][4])
+{ transforms.set_intrinsics(intrinsic);
+  transforms.set_cam_to_rob(cam_to_rob); }
 
-void ACME_robot::perception_stack(std::string img_folder_path)
-{ image1 = cv::imread(img_folder_path[0]);
-  
+void ACME_robot::perception_stack(int img_folder_path)
+{   
 }

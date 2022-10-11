@@ -7,7 +7,8 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
 # We probably don't want this to run on every build.
 option(COVERAGE "Generate Coverage Data" OFF)
 
-find_package(OpenCV REQUIRED)
+find_package(OpenCV REQUIRED) 
+include_directories(${OpenCV_INCLUDE_DIRS}) 
 find_package(Eigen3)
 INCLUDE_DIRECTORIES(${EIGEN3_INCLUDE_DIR})
 

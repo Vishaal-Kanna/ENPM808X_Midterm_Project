@@ -15,25 +15,20 @@
 #include <iostream>
 #include <vector>
 
-std::vector<cv::rect> Tracking_module::hungarian_algorithm(std::vector<cv::rect> bboxes_frame1, std::vector<cv::rect> bboxes_frame2);
-{ _img_width = val; }
-
-void Detection_module::set_img_height(int val)
-{ _img_height = val; }
-
-void Detection_module::set_conf_threshold(float val)
-{ _conf_threshold = val; }
-
-void Detection_module::set_nms_threshold(float val)
-{ _nms_threshold = val; }
-
-std::vector<cv::rect> Detection_module::bbox_detector(cv::Mat image)
-{ std::vector<cv::rect>bboxes;
-  return bboxes;
+void Tracking_module::set_track_ids(std::unordered_map<int, cv::Rect> tracks){
+  _track_ids = tracks;
 }
 
-std::vector<cv::rect> Detection_module::nms(std::vector<cv::rect>)
-{ 
-  std::vector<cv::rect>bboxes_after_nms;
-  return bboxes_after_nms;
+std::vector<cv::Rect> Tracking_module::hungarian_algorithm(std::vector<cv::Rect> bboxes_frame1, std::vector<cv::Rect> bboxes_frame2)
+{ cv::Rect bbox (0,0,256,256);
+  std::vector<cv::Rect> bboxes;
+  bboxes.push_back(bbox);
+  bboxes.push_back(bbox);
+  return bboxes; }
+
+void Tracking_module::track_human(cv::Mat image1, cv::Mat image2){
+
 }
+
+
+

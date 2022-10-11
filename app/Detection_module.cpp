@@ -23,13 +23,13 @@ void Detection_module::set_conf_threshold(float val)
 void Detection_module::set_nms_threshold(float val)
 { _nms_threshold = val; }
 
-std::vector<cv::rect> Detection_module::bbox_detector(cv::Mat image)
-{ std::vector<cv::rect>bboxes;
+std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat image)
+{ std::vector<cv::Rect>bboxes;
   return bboxes;
 }
 
-std::vector<cv::rect> Detection_module::nms(std::vector<cv::rect>)
+std::vector<cv::Rect> Detection_module::nms(std::vector<cv::Rect>)
 { 
-  std::vector<cv::rect>bboxes_after_nms;
+  std::vector<cv::Rect>bboxes_after_nms;
   return bboxes_after_nms;
 }

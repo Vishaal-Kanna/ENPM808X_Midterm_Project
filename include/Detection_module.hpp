@@ -71,7 +71,7 @@ class Detection_module {
    * @param cv::Mat image
    * @return std::vector<cv::rect>
    */
-  std::vector<cv::rect> bbox_detector(cv::Mat image);
+  std::vector<cv::Rect> bbox_detector(cv::Mat image);
 
   /**
    * @brief Method to calculate Intersection over Union for two bounding boxes
@@ -80,7 +80,7 @@ class Detection_module {
    * @param std::vector<cv::rect> bbox2
    * @return std::vector<cv::rect>
    */
-  float calc_IOU(cv::rect bbox1, cv::rect bbox2);
+  float calc_IOU(cv::Rect bbox1, cv::Rect bbox2);
 
   /**
    * @brief Method to perform non-maximum supression and remove overlapping boxes
@@ -88,7 +88,7 @@ class Detection_module {
    * @param std::vector<cv::rect>
    * @return std::vector<cv::rect>
    */
-  std::vector<cv::rect> nms(std::vector<cv::rect> bboxes);
+  std::vector<cv::Rect> nms(std::vector<cv::Rect> bboxes);
 
  private:
   int _img_width; ///< Image width
