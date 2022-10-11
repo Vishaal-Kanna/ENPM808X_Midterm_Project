@@ -1,8 +1,7 @@
-# ENPM808X Midterm Project
+# Human Detection and Tracking
 
 ## Overview
 
-Human Detection and Tracking
 
 ## Standard install via command-line
 ```
