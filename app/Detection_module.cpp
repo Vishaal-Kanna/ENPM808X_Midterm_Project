@@ -11,9 +11,6 @@
 
 #include "../include/Detection_module.hpp"
 
-#include <iostream>
-#include <vector>
-
 void Detection_module::set_img_width(int val)
 { _img_width = val; }
 

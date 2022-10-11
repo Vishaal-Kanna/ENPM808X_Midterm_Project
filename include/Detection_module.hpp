@@ -11,7 +11,7 @@
 
 #pragma once
 #include <iostream>
-#include <opencv2/core.hpp>
+#include <opencv2/opencv.hpp>
 /**
  * @brief Class to localize the locations of humans in a given image
  * @param class_data

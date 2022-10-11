@@ -13,36 +13,32 @@
 
 #include <iostream>
 
-#include "../include/pid.hpp"
+#include "../include/Detection_module.hpp"
+#include <opencv2/opencv.hpp>
+#include <opencv2/core.hpp>
 
 /**
- * @brief Test to check the values of the PID constants
+ * @brief Test to check the validity of Bounding box detector
  */
 
-TEST(test1, checking_PID_constants) {
-  pid::PID controller;
-  controller.setKp(0.4);
-  controller.setKd(0.3);
-  controller.setKi(0.1);
-  controller.setTstep(0.1);
-  ASSERT_DOUBLE_EQ(controller.getKp(), 0.4);
-  ASSERT_DOUBLE_EQ(controller.getKd(), 0.3);
-  ASSERT_DOUBLE_EQ(controller.getKi(), 0.1);
-  ASSERT_FLOAT_EQ(controller.getTstep(), 0.1);
+TEST(test1, checking_bbox_detector) {
+  Detection_module detector;
+  cv::Mat image = cv::imread("../test_img.png");
+  EXPECT_NO_FATAL_FAILURE(detector.bbox_detector(image));
 }
 
 /**
- * @brief Test to check the controller command computed by the PID class method
- * computeCommand should return the controller command and not the final velocity.
+ * @brief Test to check the validity of Non Maximum Supression
  */
 
-TEST(test2, checking_compute_Controller_Command_method) {
-  pid::PID controller;
-  controller.setKp(0.4);
-  controller.setKd(0.3);
-  controller.setKi(0.1);
-  controller.setTstep(0.1);
-  EXPECT_NEAR(controller.computeCommand(50, 0, 50), 170.5, 0.01);
+TEST(test2, checking_nms) {
+  cv::rect bbox (0,0,256,256);
+  std::vector bboxes;
+  bboxes.pushback(bbox);
+  bboxes.pushback(bbox);
+
+  Detection_module detector;
+  ASSERT_FLOAT_EQ(detector.nms(bboxes), bbox);
 }
 
 /**

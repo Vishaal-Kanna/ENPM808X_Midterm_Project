@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wall -Wextra -Wpedantic -g -rdynamic CMakeFiles/ACME.dir/main.cpp.o CMakeFiles/ACME.dir/ACME_robot.cpp.o CMakeFiles/ACME.dir/Detection_module.cpp.o CMakeFiles/ACME.dir/Tracking_module.cpp.o CMakeFiles/ACME.dir/Transformation_module.cpp.o -o ACME 

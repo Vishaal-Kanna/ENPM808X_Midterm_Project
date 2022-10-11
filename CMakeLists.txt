@@ -15,7 +15,7 @@ if (COVERAGE)
     include(CodeCoverage)
     set(LCOV_REMOVE_EXTRA "'*vendor/*'")
     setup_target_for_coverage(code_coverage test/cpp-test coverage)
-    set(COVERAGE_SRCS app/main.cpp app/Detection_module.cpp app/Transformation_module.cpp include/Detection_module.hpp include/Transformation_module.hpp)
+    set(COVERAGE_SRCS app/main.cpp app/ACME_robot.cpp app/Detection_module.cpp app/Tracking_module.cpp app/Transformation_module.cpp include/ACME_robot.hpp include/Detection_module.hpp include/Tracking_module.cpp include/Transformation_module.hpp)
 
     SET(CMAKE_CXX_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
     SET(CMAKE_C_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")

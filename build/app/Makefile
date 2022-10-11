@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vishaal/cpp-boilerplate
+CMAKE_SOURCE_DIR = /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vishaal/cpp-boilerplate/build
+CMAKE_BINARY_DIR = /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/vishaal/cpp-boilerplate/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/vishaal/cpp-boilerplate/build/CMakeFiles /home/vishaal/cpp-boilerplate/build/app//CMakeFiles/progress.marks
-	cd /home/vishaal/cpp-boilerplate/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vishaal/cpp-boilerplate/build/CMakeFiles 0
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/CMakeFiles /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/app//CMakeFiles/progress.marks
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/vishaal/cpp-boilerplate/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/clean
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,39 +148,135 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/vishaal/cpp-boilerplate/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/preinstall
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/vishaal/cpp-boilerplate/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/preinstall
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/vishaal/cpp-boilerplate/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-app/CMakeFiles/pid_control.dir/rule:
-	cd /home/vishaal/cpp-boilerplate/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/pid_control.dir/rule
-.PHONY : app/CMakeFiles/pid_control.dir/rule
+app/CMakeFiles/ACME.dir/rule:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/ACME.dir/rule
+.PHONY : app/CMakeFiles/ACME.dir/rule
 
 # Convenience name for target.
-pid_control: app/CMakeFiles/pid_control.dir/rule
-.PHONY : pid_control
+ACME: app/CMakeFiles/ACME.dir/rule
+.PHONY : ACME
 
 # fast build rule for target.
-pid_control/fast:
-	cd /home/vishaal/cpp-boilerplate/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/pid_control.dir/build.make app/CMakeFiles/pid_control.dir/build
-.PHONY : pid_control/fast
+ACME/fast:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/build
+.PHONY : ACME/fast
+
+ACME_robot.o: ACME_robot.cpp.o
+.PHONY : ACME_robot.o
+
+# target to build an object file
+ACME_robot.cpp.o:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/ACME_robot.cpp.o
+.PHONY : ACME_robot.cpp.o
+
+ACME_robot.i: ACME_robot.cpp.i
+.PHONY : ACME_robot.i
+
+# target to preprocess a source file
+ACME_robot.cpp.i:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/ACME_robot.cpp.i
+.PHONY : ACME_robot.cpp.i
+
+ACME_robot.s: ACME_robot.cpp.s
+.PHONY : ACME_robot.s
+
+# target to generate assembly for a file
+ACME_robot.cpp.s:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/ACME_robot.cpp.s
+.PHONY : ACME_robot.cpp.s
+
+Detection_module.o: Detection_module.cpp.o
+.PHONY : Detection_module.o
+
+# target to build an object file
+Detection_module.cpp.o:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/Detection_module.cpp.o
+.PHONY : Detection_module.cpp.o
+
+Detection_module.i: Detection_module.cpp.i
+.PHONY : Detection_module.i
+
+# target to preprocess a source file
+Detection_module.cpp.i:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/Detection_module.cpp.i
+.PHONY : Detection_module.cpp.i
+
+Detection_module.s: Detection_module.cpp.s
+.PHONY : Detection_module.s
+
+# target to generate assembly for a file
+Detection_module.cpp.s:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/Detection_module.cpp.s
+.PHONY : Detection_module.cpp.s
+
+Tracking_module.o: Tracking_module.cpp.o
+.PHONY : Tracking_module.o
+
+# target to build an object file
+Tracking_module.cpp.o:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/Tracking_module.cpp.o
+.PHONY : Tracking_module.cpp.o
+
+Tracking_module.i: Tracking_module.cpp.i
+.PHONY : Tracking_module.i
+
+# target to preprocess a source file
+Tracking_module.cpp.i:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/Tracking_module.cpp.i
+.PHONY : Tracking_module.cpp.i
+
+Tracking_module.s: Tracking_module.cpp.s
+.PHONY : Tracking_module.s
+
+# target to generate assembly for a file
+Tracking_module.cpp.s:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/Tracking_module.cpp.s
+.PHONY : Tracking_module.cpp.s
+
+Transformation_module.o: Transformation_module.cpp.o
+.PHONY : Transformation_module.o
+
+# target to build an object file
+Transformation_module.cpp.o:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/Transformation_module.cpp.o
+.PHONY : Transformation_module.cpp.o
+
+Transformation_module.i: Transformation_module.cpp.i
+.PHONY : Transformation_module.i
+
+# target to preprocess a source file
+Transformation_module.cpp.i:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/Transformation_module.cpp.i
+.PHONY : Transformation_module.cpp.i
+
+Transformation_module.s: Transformation_module.cpp.s
+.PHONY : Transformation_module.s
+
+# target to generate assembly for a file
+Transformation_module.cpp.s:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/Transformation_module.cpp.s
+.PHONY : Transformation_module.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/vishaal/cpp-boilerplate/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/pid_control.dir/build.make app/CMakeFiles/pid_control.dir/main.cpp.o
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -188,7 +284,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/vishaal/cpp-boilerplate/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/pid_control.dir/build.make app/CMakeFiles/pid_control.dir/main.cpp.i
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -196,32 +292,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/vishaal/cpp-boilerplate/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/pid_control.dir/build.make app/CMakeFiles/pid_control.dir/main.cpp.s
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/ACME.dir/build.make app/CMakeFiles/ACME.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-pid.o: pid.cpp.o
-.PHONY : pid.o
-
-# target to build an object file
-pid.cpp.o:
-	cd /home/vishaal/cpp-boilerplate/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/pid_control.dir/build.make app/CMakeFiles/pid_control.dir/pid.cpp.o
-.PHONY : pid.cpp.o
-
-pid.i: pid.cpp.i
-.PHONY : pid.i
-
-# target to preprocess a source file
-pid.cpp.i:
-	cd /home/vishaal/cpp-boilerplate/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/pid_control.dir/build.make app/CMakeFiles/pid_control.dir/pid.cpp.i
-.PHONY : pid.cpp.i
-
-pid.s: pid.cpp.s
-.PHONY : pid.s
-
-# target to generate assembly for a file
-pid.cpp.s:
-	cd /home/vishaal/cpp-boilerplate/build && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/pid_control.dir/build.make app/CMakeFiles/pid_control.dir/pid.cpp.s
-.PHONY : pid.cpp.s
 
 # Help Target
 help:
@@ -235,13 +307,22 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... pid_control"
+	@echo "... ACME"
+	@echo "... ACME_robot.o"
+	@echo "... ACME_robot.i"
+	@echo "... ACME_robot.s"
+	@echo "... Detection_module.o"
+	@echo "... Detection_module.i"
+	@echo "... Detection_module.s"
+	@echo "... Tracking_module.o"
+	@echo "... Tracking_module.i"
+	@echo "... Tracking_module.s"
+	@echo "... Transformation_module.o"
+	@echo "... Transformation_module.i"
+	@echo "... Transformation_module.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... pid.o"
-	@echo "... pid.i"
-	@echo "... pid.s"
 .PHONY : help
 
 
@@ -253,6 +334,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/vishaal/cpp-boilerplate/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

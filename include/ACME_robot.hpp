@@ -14,7 +14,7 @@
 #include "Tracking_module.hpp"
 #include "Transformation_module.hpp"
 #include <iostream>
-#include <opencv2/core.hpp>
+#include <opencv2/opencv.hpp>
 /**
  * @brief Class for the robot's human detection and tracking functions
  * @param class_data
