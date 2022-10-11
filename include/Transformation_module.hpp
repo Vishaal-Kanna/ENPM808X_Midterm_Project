@@ -27,7 +27,8 @@ class Transformation_module {
    * @return None
    */
   Transformation_module() {
-
+   _intrinsics = 0;
+   _cam_to_rob = 0;
   }
 
   /**
@@ -52,15 +53,7 @@ class Transformation_module {
    * @param val
    * @return void
    */
-  std::vector<std::array<float, 4>> 2dto3D_transform(std::vector<cv::rect>);
-
-  /**
-   * @brief Set the value of Time step
-   *
-   * @param val
-   * @return void
-   */
- std::vector<std::array<float, 4>> 2dto3D_transform(std::vector<cv::rect>);
+  std::vector<std::array<float, 4>> 2dto3D_transform(std::vector<cv::rect> rect);
 
  private:
   float _intrinsics[3][3]; ///< Camera's intrinsic parameters

@@ -10,6 +10,7 @@
  */
 
 #pragma once
+#include "Detection_module.hpp"
 #include <iostream>
 #include <opencv2/core.hpp>
 /**
@@ -27,63 +28,34 @@ class Tracking_module {
    * @return None
    */
   Tracking_module() {
-   _img_width = 256;
-   _img_height = 256;
-   _conf_threshold =0.6;
-   _nms_threshold = 0.4;
+  
   }
 
   /**
-   * @brief Set the value of img_width constant
-   *
-   * @param val
-   * @return void
-   */
-  void set_img_width(int val);
-
-  /**
-   * @brief Set the value of img_height constant
-   *
-   * @param val
-   * @return void
-   */
-  void set_img_height(int val);
-
-  /**
-   * @brief Set the value of confidence threshold of detections constant
-   *
-   * @param val
-   * @return void
-   */
-  void set_conf_threshold(float val);
-
-  /**
-   * @brief Set the value of Time step
-   *
-   * @param val
-   * @return void
-   */
-  void set_nms_threshold(float val);
-
-  /**
-   * @brief Method to predict locations of humans in the image
+   * @brief Method to associate Ids based on IOU
    *
    * @param cv::Mat image
    * @return std::vector<cv::rect>
    */
-  std::vector<cv::rect> bbox_detector(cv::Mat image);
+  std::vector<cv::rect> hungarian_algorithm(std::vector<cv::rect> bboxes_frame1, std::vector<cv::rect> bboxes_frame2);
+
+    /**
+   * @brief Method to associate Ids based on IOU
+   *
+   * @param cv::Mat image
+   * @return std::vector<cv::rect>
+   */
+  std::vector<cv::rect> track_human(cv::Mat image1, cv::Mat image2);
+  
 
   /**
-   * @brief Method to perform non-maximum supression and remove overlapping boxes
+   * @brief Method to calculate IOU
    *
    * @param std::vector<cv::rect>
-    * @return std::vector<cv::rect>
+   * @return std::vector<cv::rect>
    */
   std::vector<cv::rect> nms(std::vector<cv::rect>);
 
  private:
-  int _img_width; ///< Image width
-  int _img_height; ///< Image height
-  float _conf_threshold; ///< Confidence threshold
-  float _nms_threshold; ///< Non maximum suppression threshold
+  unordered_map<int, cv::rect> track_ids; ///< Tracking Ids
 };
