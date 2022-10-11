@@ -1,49 +1,89 @@
 /**
- * @file pid.cpp
- * @authors Rishabh Singh, Vishaal Kanna Sivakumar
- * @authors Part 2: Sanchit Kedia, Adarsh Malapaka
- * @brief Stub class for the PID controller
- * @version 0.1
- * @date 2022-10-02
+ * @file Detection_module.hpp
+ * @authors Sahruday, Vishaal Kanna Sivakumar
+ * @brief This file contains a stub class to represent the Tracking module
+ * @version 1.0
+ * @date 10/07/2022
  *
  * @copyright Copyright (c) 2022
  *
  */
 
-#include "../include/pid.hpp"
-
-#include <cmath>
+#pragma once
 #include <iostream>
+#include <opencv2/core.hpp>
+/**
+ * @brief Class to localize the locations of humans in a given image
+ * @param class_data
+ *
+ */
 
-void pid::PID::setKp(double val) { _Kp = val; }
-
-double pid::PID::getKp() { return _Kp; }
-
-void pid::PID::setKd(double val) { _Kd = val; }
-
-double pid::PID::getKd() { return _Kd; }
-
-void pid::PID::setKi(double val) { _Ki = val; }
-
-double pid::PID::getKi() { return _Ki; }
-
-void pid::PID::setTstep(float val) {
-  if (val > 0) {
-    _tstep = val;
-  } else {
-    _tstep = 0.1;
+class Tracking_module {
+ public:
+  /**
+   * @brief Default constructor for class Detection_module
+   *
+   * @param None
+   * @return None
+   */
+  Tracking_module() {
+   _img_width = 256;
+   _img_height = 256;
+   _conf_threshold =0.6;
+   _nms_threshold = 0.4;
   }
-}
 
-float pid::PID::getTstep() { return _tstep; }
+  /**
+   * @brief Set the value of img_width constant
+   *
+   * @param val
+   * @return void
+   */
+  void set_img_width(int val);
 
-double pid::PID::computeCommand(double V_target, double V_current,
-                                double total_error) {
-  double error = V_target - V_current;
+  /**
+   * @brief Set the value of img_height constant
+   *
+   * @param val
+   * @return void
+   */
+  void set_img_height(int val);
 
-  double p = _Kp * error;
-  double i = _Ki * total_error * _tstep;
-  double d = _Kd * (error - _prev_error) / _tstep;
+  /**
+   * @brief Set the value of confidence threshold of detections constant
+   *
+   * @param val
+   * @return void
+   */
+  void set_conf_threshold(float val);
 
-  return p + i + d;
-}
+  /**
+   * @brief Set the value of Time step
+   *
+   * @param val
+   * @return void
+   */
+  void set_nms_threshold(float val);
+
+  /**
+   * @brief Method to predict locations of humans in the image
+   *
+   * @param cv::Mat image
+   * @return std::vector<cv::rect>
+   */
+  std::vector<cv::rect> bbox_detector(cv::Mat image);
+
+  /**
+   * @brief Method to perform non-maximum supression and remove overlapping boxes
+   *
+   * @param std::vector<cv::rect>
+    * @return std::vector<cv::rect>
+   */
+  std::vector<cv::rect> nms(std::vector<cv::rect>);
+
+ private:
+  int _img_width; ///< Image width
+  int _img_height; ///< Image height
+  float _conf_threshold; ///< Confidence threshold
+  float _nms_threshold; ///< Non maximum suppression threshold
+};

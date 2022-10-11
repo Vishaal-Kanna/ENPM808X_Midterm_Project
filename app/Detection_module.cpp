@@ -1,10 +1,9 @@
 /**
  * @file pid.cpp
- * @authors Rishabh Singh, Vishaal Kanna Sivakumar
- * @authors Part 2: Sanchit Kedia, Adarsh Malapaka
- * @brief Stub class for the PID controller
+ * @authors Sahruday, Vishaal Kanna Sivakumar
+ * @brief Stub class for the Detection module
  * @version 0.1
- * @date 2022-10-02
+ * @date 10/07/2022
  *
  * @copyright Copyright (c) 2022
  *
@@ -30,4 +29,10 @@ void Detection_module::set_nms_threshold(float val)
 std::vector<cv::rect> Detection_module::bbox_detector(cv::Mat image)
 { std::vector<cv::rect>bboxes;
   return bboxes;
+}
+
+std::vector<cv::rect> Detection_module::nms(std::vector<cv::rect>)
+{ 
+  std::vector<cv::rect>bboxes_after_nms;
+  return bboxes_after_nms;
 }

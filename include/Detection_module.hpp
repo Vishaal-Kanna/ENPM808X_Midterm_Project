@@ -1,7 +1,7 @@
 /**
  * @file Detection_module.hpp
  * @authors Sahruday, Vishaal Kanna Sivakumar
- * @brief This file contains a stub class to represent a PID controller
+ * @brief This file contains a stub class to represent the Detection module
  * @version 1.0
  * @date 10/07/2022
  *
@@ -21,13 +21,16 @@
 class Detection_module {
  public:
   /**
-   * @brief Default constructor for class PID
+   * @brief Default constructor for class Detection_module
    *
    * @param None
    * @return None
    */
   Detection_module() {
-
+   _img_width = 256;
+   _img_height = 256;
+   _conf_threshold =0.6;
+   _nms_threshold = 0.4;
   }
 
   /**
@@ -63,17 +66,24 @@ class Detection_module {
   void set_nms_threshold(float val);
 
   /**
-   * @brief Method to compute the new acceleration
+   * @brief Method to predict locations of humans in the image
    *
-   * @param V_target
-   * @param V_current
-   * @return double
+   * @param cv::Mat image
+   * @return std::vector<cv::rect>
    */
-  vector<cv::rect> bbox_detector(cv::Mat image);
+  std::vector<cv::rect> bbox_detector(cv::Mat image);
+
+  /**
+   * @brief Method to perform non-maximum supression and remove overlapping boxes
+   *
+   * @param std::vector<cv::rect>
+    * @return std::vector<cv::rect>
+   */
+  std::vector<cv::rect> nms(std::vector<cv::rect>);
 
  private:
-  int _img_width; ///< Proportional constant
-  int _img_height; ///< Derivative constant
-  float _conf_threshold; ///< Integral constant
-  float _nms_threshold; ///< Time step
+  int _img_width; ///< Image width
+  int _img_height; ///< Image height
+  float _conf_threshold; ///< Confidence threshold
+  float _nms_threshold; ///< Non maximum suppression threshold
 };

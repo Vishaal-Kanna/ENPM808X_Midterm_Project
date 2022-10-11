@@ -1,49 +1,68 @@
 /**
- * @file pid.cpp
- * @authors Rishabh Singh, Vishaal Kanna Sivakumar
- * @authors Part 2: Sanchit Kedia, Adarsh Malapaka
- * @brief Stub class for the PID controller
- * @version 0.1
- * @date 2022-10-02
+ * @file Detection_module.hpp
+ * @authors Sahruday, Vishaal Kanna Sivakumar
+ * @brief This file contains a stub class to represent the Transformation module
+ * @version 1.0
+ * @date 10/07/2022
  *
  * @copyright Copyright (c) 2022
  *
  */
 
-#include "../include/pid.hpp"
-
-#include <cmath>
+#pragma once
 #include <iostream>
+#include <opencv2/core.hpp>
+/**
+ * @brief Class to transform the 2D image detections to 3D locations with respect to the robot frame
+ * @param class_data
+ *
+ */
 
-void pid::PID::setKp(double val) { _Kp = val; }
+class Transformation_module {
+ public:
+  /**
+   * @brief Default constructor for class Transformation_module
+   *
+   * @param None
+   * @return None
+   */
+  Transformation_module() {
 
-double pid::PID::getKp() { return _Kp; }
-
-void pid::PID::setKd(double val) { _Kd = val; }
-
-double pid::PID::getKd() { return _Kd; }
-
-void pid::PID::setKi(double val) { _Ki = val; }
-
-double pid::PID::getKi() { return _Ki; }
-
-void pid::PID::setTstep(float val) {
-  if (val > 0) {
-    _tstep = val;
-  } else {
-    _tstep = 0.1;
   }
-}
 
-float pid::PID::getTstep() { return _tstep; }
+  /**
+   * @brief Set the value of intrinsic parameters
+   *
+   * @param intrinsic
+   * @return void
+   */
+  void set_intrinsics(float (*intrinsic)[3][3]);
 
-double pid::PID::computeCommand(double V_target, double V_current,
-                                double total_error) {
-  double error = V_target - V_current;
+  /**
+   * @brief Set the value of camera to robot coordinate transformation matrix
+   *
+   * @param cam_to_rob
+   * @return void
+   */
+  void set_cam_to_rob(float (*cam_to_rob)[3][4]);
 
-  double p = _Kp * error;
-  double i = _Ki * total_error * _tstep;
-  double d = _Kd * (error - _prev_error) / _tstep;
+  /**
+   * @brief Get the 3D coordinates of the bounding box from 2D detections using average height of human
+   *
+   * @param val
+   * @return void
+   */
+  std::vector<std::array<float, 4>> 2dto3D_transform(std::vector<cv::rect>);
 
-  return p + i + d;
-}
+  /**
+   * @brief Set the value of Time step
+   *
+   * @param val
+   * @return void
+   */
+ std::vector<std::array<float, 4>> 2dto3D_transform(std::vector<cv::rect>);
+
+ private:
+  float _intrinsics[3][3]; ///< Camera's intrinsic parameters
+  float _cam_to_rob[3][4]; ///< Tranformation from camera's coordinates to robot coordinates_
+};
