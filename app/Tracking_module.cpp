@@ -1,10 +1,9 @@
 /**
- * @file pid.cpp
- * @authors Rishabh Singh, Vishaal Kanna Sivakumar
- * @authors Part 2: Sanchit Kedia, Adarsh Malapaka
- * @brief Stub class for the PID controller
+ * @file Tracking_module.cpp
+ * @authors Sahruday Patti, Vishaal Kanna Sivakumar
+ * @brief Stub class for the Tracking module class
  * @version 0.1
- * @date 2022-10-02
+ * @date 2022-10-10
  *
  * @copyright Copyright (c) 2022
  *
