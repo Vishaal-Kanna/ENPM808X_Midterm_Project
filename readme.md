@@ -1,5 +1,7 @@
 # Human Detection and Tracking
 
+Perception is an integral part of any autonomous system. Knowing the surrounding environment enables the system to take suitable actions and navigate to the desired goal location and also augments the control system of the robot to perform a variety of tasks. This project aims to solve the human detection and tracking problem for the ACME robot.
+
 ## Overview
 
 
@@ -24,4 +26,4 @@ make code_coverage
 ```
 This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser.
 
-
+Phase 0 presentation link: https://drive.google.com/file/d/1ub64094s9hPrDXhbEKSXYC8esveSZAHf/view?usp=sharing 
