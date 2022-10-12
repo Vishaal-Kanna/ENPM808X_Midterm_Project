@@ -12,7 +12,10 @@
 #include <gtest/gtest.h>
 
 #include <iostream>
-#include <opencv2/opencv.hpp>
+// #include <opencv2/opencv.hpp>
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/objdetect/objdetect.hpp"
 #include "../include/Detection_module.hpp"
 #include "../include/Tracking_module.hpp"
 #include "../include/Transformation_module.hpp"

@@ -9,10 +9,9 @@
  *
  */
 
-#include <cmath>
 #include <iostream>
 
-#include "../include/Detection_module.hpp"
+#include <opencv2/opencv.hpp>
 
 int main() {
   return 0;

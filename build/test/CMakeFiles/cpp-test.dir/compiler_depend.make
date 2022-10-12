@@ -2151,8 +2151,8 @@ test/CMakeFiles/cpp-test.dir/test.cpp.o: ../test/test.cpp \
   ../vendor/googletest/googletest/include/gtest/gtest-test-part.h \
   ../vendor/googletest/googletest/include/gtest/gtest-typed-test.h \
   ../vendor/googletest/googletest/include/gtest/gtest_pred_impl.h \
-  /usr/local/include/opencv4/opencv2/opencv.hpp \
-  /usr/local/include/opencv4/opencv2/opencv_modules.hpp \
+  /usr/local/include/opencv4/opencv2/highgui/highgui.hpp \
+  /usr/local/include/opencv4/opencv2/highgui.hpp \
   /usr/local/include/opencv4/opencv2/core.hpp \
   /usr/local/include/opencv4/opencv2/core/cvdef.h \
   /usr/local/include/opencv4/opencv2/core/hal/interface.h \
@@ -2164,6 +2164,7 @@ test/CMakeFiles/cpp-test.dir/test.cpp.o: ../test/test.cpp \
   /usr/lib/gcc/x86_64-linux-gnu/10/include/mm_malloc.h \
   /usr/local/include/opencv4/opencv2/core/version.hpp \
   /usr/local/include/opencv4/opencv2/core/base.hpp \
+  /usr/local/include/opencv4/opencv2/opencv_modules.hpp \
   /usr/include/c++/10/climits \
   /usr/lib/gcc/x86_64-linux-gnu/10/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/10/include/syslimits.h \
@@ -2228,6 +2229,15 @@ test/CMakeFiles/cpp-test.dir/test.cpp.o: ../test/test.cpp \
   /usr/local/include/opencv4/opencv2/core/optim.hpp \
   /usr/local/include/opencv4/opencv2/core/ovx.hpp \
   /usr/local/include/opencv4/opencv2/core/cvdef.h \
+  /usr/local/include/opencv4/opencv2/imgcodecs.hpp \
+  /usr/local/include/opencv4/opencv2/videoio.hpp \
+  /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp \
+  /usr/local/include/opencv4/opencv2/imgproc.hpp \
+  /usr/local/include/opencv4/opencv2/objdetect/objdetect.hpp \
+  /usr/local/include/opencv4/opencv2/objdetect.hpp \
+  /usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
+  ../include/Detection_module.hpp \
+  /usr/local/include/opencv4/opencv2/opencv.hpp \
   /usr/local/include/opencv4/opencv2/calib3d.hpp \
   /usr/local/include/opencv4/opencv2/features2d.hpp \
   /usr/local/include/opencv4/opencv2/flann/miniflann.hpp \
@@ -2278,14 +2288,8 @@ test/CMakeFiles/cpp-test.dir/test.cpp.o: ../test/test.cpp \
   /usr/local/include/opencv4/opencv2/flann/index_testing.h \
   /usr/local/include/opencv4/opencv2/flann/timer.h \
   /usr/local/include/opencv4/opencv2/flann/sampling.h \
-  /usr/local/include/opencv4/opencv2/highgui.hpp \
-  /usr/local/include/opencv4/opencv2/imgcodecs.hpp \
-  /usr/local/include/opencv4/opencv2/videoio.hpp \
-  /usr/local/include/opencv4/opencv2/imgproc.hpp \
   /usr/local/include/opencv4/opencv2/ml.hpp \
   /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
   /usr/local/include/opencv4/opencv2/photo.hpp \
   /usr/local/include/opencv4/opencv2/stitching.hpp \
   /usr/local/include/opencv4/opencv2/stitching/warpers.hpp \
@@ -2316,10 +2320,11 @@ test/CMakeFiles/cpp-test.dir/test.cpp.o: ../test/test.cpp \
   /usr/local/include/opencv4/opencv2/video.hpp \
   /usr/local/include/opencv4/opencv2/video/tracking.hpp \
   /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
-  ../include/Detection_module.hpp \
   ../include/Tracking_module.hpp \
   ../include/Transformation_module.hpp
 
+
+/usr/local/include/opencv4/opencv2/objdetect/objdetect.hpp:
 
 ../vendor/googletest/googletest/include/gtest/gtest-test-part.h:
 
@@ -2714,6 +2719,8 @@ test/CMakeFiles/cpp-test.dir/test.cpp.o: ../test/test.cpp \
 /usr/include/c++/10/bits/stl_tempbuf.h:
 
 /usr/include/x86_64-linux-gnu/c++/10/bits/gthr.h:
+
+/usr/local/include/opencv4/opencv2/highgui/highgui.hpp:
 
 ../app/Tracking_module.cpp:
 
@@ -3236,6 +3243,8 @@ test/CMakeFiles/cpp-test.dir/test.cpp.o: ../test/test.cpp \
 /usr/include/c++/10/bits/atomic_lockfree_defines.h:
 
 /usr/include/assert.h:
+
+/usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp:
 
 /usr/local/include/opencv4/opencv2/core/traits.hpp:
 
