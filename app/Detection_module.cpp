@@ -24,8 +24,13 @@ void Detection_module::set_nms_threshold(float val)
 { _nms_threshold = val; }
 
 std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat image)
-{ std::vector<cv::Rect>bboxes;
+{ image = image*0;
+  std::vector<cv::Rect>bboxes;
   return bboxes;
+}
+
+float Detection_module::calc_IOU(cv::Rect bbox1, cv::Rect bbox2){
+  return 3.6;
 }
 
 std::vector<cv::Rect> Detection_module::nms(std::vector<cv::Rect>)

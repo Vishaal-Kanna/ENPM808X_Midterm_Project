@@ -39,7 +39,7 @@
 				"vendor/googletest/googletest/libgtest.a"
 			],
 			"targetId" : "gtest::@7686eca10ca0980a481c",
-			"targetIndex" : 2,
+			"targetIndex" : 3,
 			"type" : "target"
 		},
 		{
@@ -51,7 +51,7 @@
 				"vendor/googletest/googletest/libgtest_main.a"
 			],
 			"targetId" : "gtest_main::@7686eca10ca0980a481c",
-			"targetIndex" : 3,
+			"targetIndex" : 4,
 			"type" : "target"
 		},
 		{

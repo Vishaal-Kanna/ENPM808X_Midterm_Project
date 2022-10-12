@@ -44,3 +44,11 @@ TEST(test2, checking_nms) {
   ASSERT_FLOAT_EQ(detector.nms(bboxes)==bboxes, 0);
 }
 
+TEST(test3, chacking_Calc_IOU) {
+  Detection_module detect_object;
+  cv::Rect r1 = cv::Rect(0, 0, 10, 10);
+  cv::Rect r2 = cv::Rect(5, 5, 10, 10);
+  auto output = detect_object.calc_IOU(r1, r2);
+  ASSERT_NEAR(output, 0.166, 1);
+  } 
+

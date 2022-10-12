@@ -63,7 +63,7 @@ class ACME_robot {
    * @param val
    * @return void
    */
-  void perception_stack(int img_folder_path);
+  void perception_stack(std::string img_folder_path);
 
  private:
   Detection_module detector;

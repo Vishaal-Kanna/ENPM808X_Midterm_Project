@@ -160,6 +160,9 @@
 			"path" : "/usr/local/share/eigen3/cmake/Eigen3Targets.cmake"
 		},
 		{
+			"path" : "cmake/CodeCoverage.cmake"
+		},
+		{
 			"path" : "app/CMakeLists.txt"
 		},
 		{

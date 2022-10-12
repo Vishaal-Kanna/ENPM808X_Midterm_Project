@@ -28,6 +28,6 @@ void ACME_robot::set_transformation_parameters(float intrinsic[3][3], float cam_
 { transforms.set_intrinsics(intrinsic);
   transforms.set_cam_to_rob(cam_to_rob); }
 
-void ACME_robot::perception_stack(int img_folder_path)
-{   
+void ACME_robot::perception_stack(std::string img_folder_path)
+{   cv::Mat img = cv::imread(img_folder_path);
 }

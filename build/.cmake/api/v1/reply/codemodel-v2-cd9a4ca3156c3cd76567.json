@@ -13,17 +13,21 @@
 						3
 					],
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.2.1"
 					},
 					"projectIndex" : 0,
-					"source" : "."
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
 				},
 				{
 					"build" : "app",
-					"jsonFile" : "directory-app-94c5f210ca04b1028ae5.json",
+					"jsonFile" : "directory-app-Debug-94c5f210ca04b1028ae5.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.2.1"
@@ -38,7 +42,7 @@
 				},
 				{
 					"build" : "test",
-					"jsonFile" : "directory-test-451c0598f41488bb20b9.json",
+					"jsonFile" : "directory-test-Debug-451c0598f41488bb20b9.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.2.1"
@@ -48,13 +52,13 @@
 					"source" : "test",
 					"targetIndexes" : 
 					[
-						1
+						2
 					]
 				},
 				{
 					"build" : "vendor/googletest/googletest",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-vendor.googletest.googletest-bf19541d4676c4f7315c.json",
+					"jsonFile" : "directory-vendor.googletest.googletest-Debug-b3941721936b85980f20.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "2.6.2"
@@ -64,12 +68,12 @@
 					"source" : "vendor/googletest/googletest",
 					"targetIndexes" : 
 					[
-						2,
-						3
+						3,
+						4
 					]
 				}
 			],
-			"name" : "",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -87,7 +91,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				},
 				{
@@ -99,8 +104,8 @@
 					"parentIndex" : 0,
 					"targetIndexes" : 
 					[
-						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -109,28 +114,35 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "ACME::@5f5a17c01335469806cb",
-					"jsonFile" : "target-ACME-2e8e6902b1735ff58b9f.json",
+					"jsonFile" : "target-ACME-Debug-3a10201e6bb7aebe5794.json",
 					"name" : "ACME",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "code_coverage::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-code_coverage-Debug-af9ebccfd25e92048b54.json",
+					"name" : "code_coverage",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "cpp-test::@36f028580bb02cc8272a",
-					"jsonFile" : "target-cpp-test-545e430cb5f067e392fd.json",
+					"jsonFile" : "target-cpp-test-Debug-96c2b763844b8cfe57db.json",
 					"name" : "cpp-test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "gtest::@7686eca10ca0980a481c",
-					"jsonFile" : "target-gtest-bcdfb673f63a9ddc560a.json",
+					"jsonFile" : "target-gtest-Debug-e0b409f65f70a755c82c.json",
 					"name" : "gtest",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "gtest_main::@7686eca10ca0980a481c",
-					"jsonFile" : "target-gtest_main-91803ab9bf8abae6173c.json",
+					"jsonFile" : "target-gtest_main-Debug-cb10e24ef5068f5a7d28.json",
 					"name" : "gtest_main",
 					"projectIndex" : 1
 				}

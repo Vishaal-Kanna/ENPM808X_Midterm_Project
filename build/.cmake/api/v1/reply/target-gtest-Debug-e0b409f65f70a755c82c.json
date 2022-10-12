@@ -75,10 +75,10 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-Wall -Wextra -Wpedantic -g"
+					"fragment" : "-g -O0 -fprofile-arcs -ftest-coverage -g"
 				},
 				{
-					"fragment" : "-Wall -Wextra -Wpedantic -g -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers"
+					"fragment" : "-g -O0 -fprofile-arcs -ftest-coverage -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers"
 				}
 			],
 			"includes" : 

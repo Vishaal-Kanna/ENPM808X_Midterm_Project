@@ -162,6 +162,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named code_coverage
+
+# Build rule for target.
+code_coverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 code_coverage
+.PHONY : code_coverage
+
+# fast build rule for target.
+code_coverage/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/code_coverage.dir/build.make CMakeFiles/code_coverage.dir/build
+.PHONY : code_coverage/fast
+
+#=============================================================================
 # Target rules for targets named ACME
 
 # Build rule for target.
@@ -225,6 +238,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... code_coverage"
 	@echo "... ACME"
 	@echo "... cpp-test"
 	@echo "... gtest"
