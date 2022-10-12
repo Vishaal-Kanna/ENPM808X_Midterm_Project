@@ -16,8 +16,6 @@ mkdir build
 cd build
 cmake ..
 make
-Run tests: ./test/cpp-test
-Run program: ./app/shell-app
 ```
 
 ## Building for code coverage (for assignments beginning in Week 4)
