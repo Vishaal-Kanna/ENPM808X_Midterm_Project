@@ -199,6 +199,78 @@ __/app/ACME_robot.cpp.s:
 	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/ACME_robot.cpp.s
 .PHONY : __/app/ACME_robot.cpp.s
 
+__/app/Detection_module.o: __/app/Detection_module.cpp.o
+.PHONY : __/app/Detection_module.o
+
+# target to build an object file
+__/app/Detection_module.cpp.o:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.o
+.PHONY : __/app/Detection_module.cpp.o
+
+__/app/Detection_module.i: __/app/Detection_module.cpp.i
+.PHONY : __/app/Detection_module.i
+
+# target to preprocess a source file
+__/app/Detection_module.cpp.i:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.i
+.PHONY : __/app/Detection_module.cpp.i
+
+__/app/Detection_module.s: __/app/Detection_module.cpp.s
+.PHONY : __/app/Detection_module.s
+
+# target to generate assembly for a file
+__/app/Detection_module.cpp.s:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.s
+.PHONY : __/app/Detection_module.cpp.s
+
+__/app/Tracking_module.o: __/app/Tracking_module.cpp.o
+.PHONY : __/app/Tracking_module.o
+
+# target to build an object file
+__/app/Tracking_module.cpp.o:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.o
+.PHONY : __/app/Tracking_module.cpp.o
+
+__/app/Tracking_module.i: __/app/Tracking_module.cpp.i
+.PHONY : __/app/Tracking_module.i
+
+# target to preprocess a source file
+__/app/Tracking_module.cpp.i:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.i
+.PHONY : __/app/Tracking_module.cpp.i
+
+__/app/Tracking_module.s: __/app/Tracking_module.cpp.s
+.PHONY : __/app/Tracking_module.s
+
+# target to generate assembly for a file
+__/app/Tracking_module.cpp.s:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.s
+.PHONY : __/app/Tracking_module.cpp.s
+
+__/app/Transformation_module.o: __/app/Transformation_module.cpp.o
+.PHONY : __/app/Transformation_module.o
+
+# target to build an object file
+__/app/Transformation_module.cpp.o:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.o
+.PHONY : __/app/Transformation_module.cpp.o
+
+__/app/Transformation_module.i: __/app/Transformation_module.cpp.i
+.PHONY : __/app/Transformation_module.i
+
+# target to preprocess a source file
+__/app/Transformation_module.cpp.i:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.i
+.PHONY : __/app/Transformation_module.cpp.i
+
+__/app/Transformation_module.s: __/app/Transformation_module.cpp.s
+.PHONY : __/app/Transformation_module.s
+
+# target to generate assembly for a file
+__/app/Transformation_module.cpp.s:
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.s
+.PHONY : __/app/Transformation_module.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -263,6 +335,15 @@ help:
 	@echo "... __/app/ACME_robot.o"
 	@echo "... __/app/ACME_robot.i"
 	@echo "... __/app/ACME_robot.s"
+	@echo "... __/app/Detection_module.o"
+	@echo "... __/app/Detection_module.i"
+	@echo "... __/app/Detection_module.s"
+	@echo "... __/app/Tracking_module.o"
+	@echo "... __/app/Tracking_module.i"
+	@echo "... __/app/Tracking_module.s"
+	@echo "... __/app/Transformation_module.o"
+	@echo "... __/app/Transformation_module.i"
+	@echo "... __/app/Transformation_module.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

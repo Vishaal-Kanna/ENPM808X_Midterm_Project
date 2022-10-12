@@ -40,6 +40,21 @@
   "file": "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/ACME_robot.cpp"
 },
 {
+  "directory": "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test",
+  "command": "/usr/bin/c++  -I/usr/local/include/opencv4 -I/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/test/../vendor/googletest/googletest/include -I/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/include -I/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/vendor/googletest/googletest/include -Wall -Wextra -Wpedantic -g -o CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.o -c /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Detection_module.cpp",
+  "file": "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Detection_module.cpp"
+},
+{
+  "directory": "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test",
+  "command": "/usr/bin/c++  -I/usr/local/include/opencv4 -I/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/test/../vendor/googletest/googletest/include -I/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/include -I/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/vendor/googletest/googletest/include -Wall -Wextra -Wpedantic -g -o CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.o -c /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Tracking_module.cpp",
+  "file": "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Tracking_module.cpp"
+},
+{
+  "directory": "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test",
+  "command": "/usr/bin/c++  -I/usr/local/include/opencv4 -I/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/test/../vendor/googletest/googletest/include -I/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/include -I/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/vendor/googletest/googletest/include -Wall -Wextra -Wpedantic -g -o CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.o -c /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Transformation_module.cpp",
+  "file": "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Transformation_module.cpp"
+},
+{
   "directory": "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/vendor/googletest/googletest",
   "command": "/usr/bin/c++  -I/usr/local/include/opencv4 -I/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/vendor/googletest/googletest/include -I/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/vendor/googletest/googletest -Wall -Wextra -Wpedantic -g -Wall -Wextra -Wpedantic -g -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/vendor/googletest/googletest/src/gtest-all.cc",
   "file": "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/vendor/googletest/googletest/src/gtest-all.cc"

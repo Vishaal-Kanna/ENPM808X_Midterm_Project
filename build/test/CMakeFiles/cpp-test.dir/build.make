@@ -111,11 +111,56 @@ test/CMakeFiles/cpp-test.dir/__/app/ACME_robot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp-test.dir/__/app/ACME_robot.cpp.s"
 	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/ACME_robot.cpp -o CMakeFiles/cpp-test.dir/__/app/ACME_robot.cpp.s
 
+test/CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.o: test/CMakeFiles/cpp-test.dir/flags.make
+test/CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.o: ../app/Detection_module.cpp
+test/CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.o: test/CMakeFiles/cpp-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object test/CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.o"
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.o -MF CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.o.d -o CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.o -c /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Detection_module.cpp
+
+test/CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.i"
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Detection_module.cpp > CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.i
+
+test/CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.s"
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Detection_module.cpp -o CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.s
+
+test/CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.o: test/CMakeFiles/cpp-test.dir/flags.make
+test/CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.o: ../app/Tracking_module.cpp
+test/CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.o: test/CMakeFiles/cpp-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object test/CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.o"
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.o -MF CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.o.d -o CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.o -c /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Tracking_module.cpp
+
+test/CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.i"
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Tracking_module.cpp > CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.i
+
+test/CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.s"
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Tracking_module.cpp -o CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.s
+
+test/CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.o: test/CMakeFiles/cpp-test.dir/flags.make
+test/CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.o: ../app/Transformation_module.cpp
+test/CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.o: test/CMakeFiles/cpp-test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object test/CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.o"
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.o -MF CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.o.d -o CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.o -c /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Transformation_module.cpp
+
+test/CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.i"
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Transformation_module.cpp > CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.i
+
+test/CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.s"
+	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Transformation_module.cpp -o CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.s
+
 # Object files for target cpp-test
 cpp__test_OBJECTS = \
 "CMakeFiles/cpp-test.dir/main.cpp.o" \
 "CMakeFiles/cpp-test.dir/test.cpp.o" \
-"CMakeFiles/cpp-test.dir/__/app/ACME_robot.cpp.o"
+"CMakeFiles/cpp-test.dir/__/app/ACME_robot.cpp.o" \
+"CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.o" \
+"CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.o" \
+"CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.o"
 
 # External object files for target cpp-test
 cpp__test_EXTERNAL_OBJECTS =
@@ -123,10 +168,13 @@ cpp__test_EXTERNAL_OBJECTS =
 test/cpp-test: test/CMakeFiles/cpp-test.dir/main.cpp.o
 test/cpp-test: test/CMakeFiles/cpp-test.dir/test.cpp.o
 test/cpp-test: test/CMakeFiles/cpp-test.dir/__/app/ACME_robot.cpp.o
+test/cpp-test: test/CMakeFiles/cpp-test.dir/__/app/Detection_module.cpp.o
+test/cpp-test: test/CMakeFiles/cpp-test.dir/__/app/Tracking_module.cpp.o
+test/cpp-test: test/CMakeFiles/cpp-test.dir/__/app/Transformation_module.cpp.o
 test/cpp-test: test/CMakeFiles/cpp-test.dir/build.make
 test/cpp-test: vendor/googletest/googletest/libgtest.a
 test/cpp-test: test/CMakeFiles/cpp-test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable cpp-test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable cpp-test"
 	cd /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp-test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

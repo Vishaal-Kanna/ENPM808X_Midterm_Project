@@ -11,6 +11,7 @@
 
 #pragma once
 #include <iostream>
+#include <unordered_map>
 #include <opencv2/opencv.hpp>
 /**
  * @brief Class to localize the locations of humans in a given image

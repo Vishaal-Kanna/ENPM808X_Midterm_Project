@@ -4,7 +4,7 @@ add_executable(
     cpp-test
     main.cpp
     test.cpp
-    ../app/ACME_robot.cpp
+    ../app/ACME_robot.cpp ../app/Detection_module.cpp ../app/Tracking_module.cpp ../app/Transformation_module.cpp
 )
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 

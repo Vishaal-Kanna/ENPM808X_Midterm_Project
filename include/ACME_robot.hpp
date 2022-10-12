@@ -15,6 +15,7 @@
 #include "Transformation_module.hpp"
 #include <iostream>
 #include <opencv2/opencv.hpp>
+#include <unordered_map>
 /**
  * @brief Class for the robot's human detection and tracking functions
  * @param class_data
