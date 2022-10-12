@@ -1,9 +1,9 @@
 /**
- * @file pid.cpp
- * @authors Sahruday, Vishaal Kanna Sivakumar
- * @brief Stub class for the Detection module
+ * @file Detection_module.cpp
+ * @authors Sahruday Patti, Vishaal Kanna Sivakumar
+ * @brief Stub class for the Detection module class
  * @version 0.1
- * @date 10/07/2022
+ * @date 2022-10-10
  *
  * @copyright Copyright (c) 2022
  *
