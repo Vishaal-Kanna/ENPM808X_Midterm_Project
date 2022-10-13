@@ -1,3 +1,5 @@
+[![Build Status](https://app.travis-ci.com/Vishaal-Kanna/ENPM808X_Midterm_Project.svg?branch=main)](https://app.travis-ci.com/Vishaal-Kanna/ENPM808X_Midterm_Project) [![Coverage Status](https://coveralls.io/repos/github/Vishaal-Kanna/ENPM808X_Midterm_Project/badge.png?branch=main)](https://coveralls.io/github/Vishaal-Kanna/ENPM808X_Midterm_Project?branch=main)
+
 # Human Detection and Tracking
 
 Perception is an integral part of any autonomous system. Knowing the surrounding environment enables the system to take suitable actions and navigate to the desired goal location and also augments the control system of the robot to perform a variety of tasks. We want to design one important part of the control system, within the perception stack of acme robotics which is Human detection, and tracking and providing coordinates of humans present in the scene with respect to the Robot’s Reference frame. This Repository is used for development of this module.
