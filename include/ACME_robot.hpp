@@ -65,6 +65,18 @@ class ACME_robot {
    */
   void perception_stack(std::string img_folder_path);
 
+  /**
+   * @brief read
+   * @param 
+   *
+   */
+
+  void read_video (std::string filename);
+
+
+
+
+
  private:
   Detection_module detector;
   Tracking_module tracker;
