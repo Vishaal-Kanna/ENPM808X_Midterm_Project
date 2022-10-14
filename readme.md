@@ -10,7 +10,8 @@ Perception is an integral part of any autonomous system. Knowing the surrounding
 
 [Phase0 Presentation](https://drive.google.com/file/d/1ub64094s9hPrDXhbEKSXYC8esveSZAHf/view?usp=sharing) 
 
-[AIP sheet Link](https://docs.google.com/spreadsheets/d/1pYYn6fuLaZafYxjfUbE6aWcIrWNkj-Lk/edit?usp=sharing&ouid=117244734534887324936&rtpof=true&sd=true)
+[AIP sheet](https://docs.google.com/spreadsheets/d/1pYYn6fuLaZafYxjfUbE6aWcIrWNkj-Lk/edit?usp=sharing&ouid=117244734534887324936&rtpof=true&sd=true)
+[Sprint Meeting](https://docs.google.com/document/d/1XypCPp2geL_ffwExqyoCF2SI7ATvjYEgtfYST-q0xqE/edit?usp=sharing)
 
 ## Standard install via command-line
 ```
