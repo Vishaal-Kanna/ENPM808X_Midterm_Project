@@ -10,6 +10,8 @@ Perception is an integral part of any autonomous system. Knowing the surrounding
 
 [Phase0 Presentation](https://drive.google.com/file/d/1ub64094s9hPrDXhbEKSXYC8esveSZAHf/view?usp=sharing) 
 
+[AIP sheet Link](https://docs.google.com/spreadsheets/d/1pYYn6fuLaZafYxjfUbE6aWcIrWNkj-Lk/edit?usp=sharing&ouid=117244734534887324936&rtpof=true&sd=true)
+
 ## Standard install via command-line
 ```
 git clone --recursive https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project
