@@ -14,6 +14,12 @@
 #include <iostream>
 #include <vector>
 
+using namespace cv;
+using std::string;
+
+
+
+
 void ACME_robot::set_detector_parameters(int img_width, int img_height, float conf_threshold, float nms_threshold)
 { detector.set_img_width(img_width);
   detector.set_img_height(img_height);
@@ -29,4 +35,28 @@ void ACME_robot::set_transformation_parameters(float intrinsic[3][3], float cam_
 
 void ACME_robot::perception_stack(std::string img_folder_path)
 {   cv::Mat img = cv::imread(img_folder_path);
+}
+
+
+void ACME_robot::read_video (std::string filename) {
+
+  cv::VideoCapture capture(filename);
+  cv::Mat frame;
+
+  if( !capture.isOpened() )
+      throw "Error when reading steam_avi";
+
+  cv::namedWindow( "w", 1);
+  for( ; ; ) {
+
+    capture >> frame;
+    if(frame.empty())
+
+      break;
+    imshow("w", frame);
+    cv::waitKey(20); // waits to display frame
+
+    }
+    cv::waitKey(0);
+  
 }
