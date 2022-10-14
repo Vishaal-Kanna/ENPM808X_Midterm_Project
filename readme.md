@@ -6,11 +6,13 @@ Perception is an integral part of any autonomous system. Knowing the surrounding
 
 # Team
 [Vishaal Sivakumar](vishaal@umd.edu) UID: 117764314
+
 [Sahruday Patti](sahruday@umd.edu) UID: 118218366
 
 [Phase0 Presentation](https://drive.google.com/file/d/1ub64094s9hPrDXhbEKSXYC8esveSZAHf/view?usp=sharing) 
 
 [AIP sheet](https://docs.google.com/spreadsheets/d/1pYYn6fuLaZafYxjfUbE6aWcIrWNkj-Lk/edit?usp=sharing&ouid=117244734534887324936&rtpof=true&sd=true)
+
 [Sprint Meeting](https://docs.google.com/document/d/1XypCPp2geL_ffwExqyoCF2SI7ATvjYEgtfYST-q0xqE/edit?usp=sharing)
 
 ## Standard install via command-line
