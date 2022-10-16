@@ -17,11 +17,11 @@
 
 
 void Transformation_module::set_intrinsics(float intrinsics[3][3]) {
-    std::copy(_intrinsics,intrinsics);
+    _intrinsics[3][3] = intrinsics[3][3];
   }
 
 void Transformation_module::set_cam_to_rob(float cam_to_rob[3][4]) {
-    _cam_to_rob = cam_to_rob;
+    _cam_to_rob[3][4] = cam_to_rob[3][4];
   }
 
 std::vector<std::array<float, 4>> Transformation_module::transform_2dto3D(std::vector<cv::Rect> rect)
