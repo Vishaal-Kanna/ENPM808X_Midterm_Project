@@ -58,5 +58,11 @@ TEST(extrinsicssettertest, settingextrinsics) {
 }
 
 
-
+TEST(threedtorobotframe, transform_2dto3D) {
+  Transformation_module Transform;
+  cv::Rect bboxes;
+  std::vector<cv::Rect> rect;
+  rect.push_back(bboxes);
+  ASSERT_NO_THROW(Transform.transform_2dto3D(rect));
+}
 
