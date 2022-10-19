@@ -11,9 +11,12 @@
 
 #pragma once
 #include <iostream>
+#include <vector>
 #include <opencv2/opencv.hpp>
+
 /**
- * @brief Class to transform the 2D image detections to 3D locations with respect to the robot frame
+ * @brief Class to transform the 2D image detections to 3D locations with
+ * respect to the robot frame
  * @param class_data
  *
  */
@@ -26,8 +29,7 @@ class Transformation_module {
    * @param None
    * @return None
    */
-  Transformation_module() {
-  }
+  Transformation_module() {}
 
   /**
    * @brief Set the value of intrinsic parameters
@@ -46,14 +48,22 @@ class Transformation_module {
   void set_cam_to_rob(float cam_to_rob[3][4]);
 
   /**
-   * @brief Get the 3D coordinates of the bounding box from 2D detections using average height of human
+   * @brief Get the 3D coordinates of the bounding box from 2D detections using
+   * average height of human
    *
    * @param val
    * @return void
    */
-  std::vector<std::array<float, 4>> transform_2dto3D(std::vector<cv::Rect> rect);
+  std::vector<std::array<float, 4>> transform_2dto3D(
+      std::vector<cv::Rect> rect);
 
  private:
-  float _intrinsics[3][3] = {{0,0,0}, {0,0,0}, {0,0,0}}; ///< Camera's intrinsic parameters
-  float _cam_to_rob[3][4] = {{0,0,0,0}, {0,0,0,0}, {0,0,0,0}}; ///< Tranformation from camera's coordinates to robot coordinates_
+  float _intrinsics[3][3] = {
+      {0, 1, 2}, {3, 4, 5}, {6, 7, 8}};  ///< Camera's intrinsic parameters
+  float _cam_to_rob[3][4] = {
+      {0, 1, 2, 3},
+      {4, 5, 6, 7},
+      {8, 9, 10,
+      11}};  ///< Tranformation from camera's coordinates to robot coordinates_
+  double _avg_human_height;
 };
