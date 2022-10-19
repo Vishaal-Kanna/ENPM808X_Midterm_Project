@@ -26,7 +26,7 @@
 
 TEST(test1, checking_bbox_detector) {
   Detection_module detector;
-  cv::Mat image(cv::Size(256,256),CV_8UC3,cv::Scalar(0,0,255));;
+  cv::Mat image(cv::Size(256, 256), CV_8UC3, cv::Scalar(0, 0, 255));
   EXPECT_NO_FATAL_FAILURE(detector.bbox_detector(image));
 }
 
@@ -35,20 +35,34 @@ TEST(test1, checking_bbox_detector) {
  */
 
 TEST(test2, checking_nms) {
-  cv::Rect bbox (0,0,256,256);
+  cv::Rect bbox(0, 0, 256, 256);
   std::vector<cv::Rect> bboxes;
   bboxes.push_back(bbox);
   bboxes.push_back(bbox);
 
   Detection_module detector;
-  ASSERT_FLOAT_EQ(detector.nms(bboxes)==bboxes, 0);
+  ASSERT_FLOAT_EQ(detector.nms(bboxes) == bboxes, 0);
 }
 
-TEST(test3, chacking_Calc_IOU) {
-  Detection_module detect_object;
-  cv::Rect r1 = cv::Rect(0, 0, 10, 10);
-  cv::Rect r2 = cv::Rect(5, 5, 10, 10);
-  auto output = detect_object.calc_IOU(r1, r2);
-  ASSERT_NEAR(output, 0.166, 1);
-  } 
+
+TEST(intriniscsettertest, settingintrinsics) {
+  Transformation_module Transform;
+  float intrinsics[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+  ASSERT_NO_THROW(Transform.set_intrinsics(intrinsics));
+}
+
+TEST(extrinsicssettertest, settingextrinsics) {
+  Transformation_module Transform;
+  float cam_to_rob[3][4] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+  ASSERT_NO_THROW(Transform.set_cam_to_rob(cam_to_rob));
+}
+
+
+TEST(threedtorobotframe, transform_2dto3D) {
+  Transformation_module Transform;
+  cv::Rect bboxes;
+  std::vector<cv::Rect> rect;
+  rect.push_back(bboxes);
+  ASSERT_NO_THROW(Transform.transform_2dto3D(rect));
+}
 
