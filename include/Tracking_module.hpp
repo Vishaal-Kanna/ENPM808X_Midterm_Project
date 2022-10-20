@@ -21,6 +21,7 @@
  */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /** MIT License
  * Copyright (c) 2022 Vishaal Kanna Sivakumar, Sahruday Patti
@@ -45,6 +46,8 @@
  */
 
 >>>>>>> 15c6b16 (Vishaal (#6))
+=======
+>>>>>>> fcfdbe8 (Documentation added using doxygen)
 /**
  * @file Detection_module.hpp
  * @authors Sahruday, Vishaal Kanna Sivakumar
