@@ -1,4 +1,3 @@
-/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/CMakeFiles/code_coverage.dir
 /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/CMakeFiles/edit_cache.dir
 /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/CMakeFiles/rebuild_cache.dir
 /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/build/CMakeFiles/list_install_components.dir
