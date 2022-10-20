@@ -33,6 +33,7 @@
 
 #include <iostream>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 #include <opencv2/dnn.hpp>
@@ -42,6 +43,11 @@
 #include <opencv2/dnn.hpp>
 #include <opencv2/highgui/highgui.hpp>
 <<<<<<< HEAD
+=======
+#include <opencv2/core/core.hpp>
+#include <opencv2/dnn.hpp>
+#include <opencv2/highgui/highgui.hpp>
+>>>>>>> 5728a8b (Updated cppcheck and cpplint results)
 #include <opencv2/opencv.hpp>
 
 #include "../include/Detection_module.hpp"
@@ -80,8 +86,12 @@ int main() {
 
 =======
   detector.bbox_detector(frame1);
+<<<<<<< HEAD
   
 >>>>>>> 15c6b16 (Vishaal (#6))
+=======
+
+>>>>>>> 5728a8b (Updated cppcheck and cpplint results)
   // std::string filename = "/home/sahu27/Downloads/video.mpg";
   // std::cout<<"Hi";
   // cv::VideoCapture capture(filename);
@@ -103,6 +113,7 @@ int main() {
   //   }
   //   cv::waitKey(0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   
 
@@ -110,6 +121,10 @@ int main() {
 >>>>>>> 15c6b16 (Vishaal (#6))
 
   return 0;
+=======
+
+  return 0;
+>>>>>>> 5728a8b (Updated cppcheck and cpplint results)
 }
 
 

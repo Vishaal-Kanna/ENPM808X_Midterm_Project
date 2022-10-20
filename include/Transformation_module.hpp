@@ -86,5 +86,9 @@ class Transformation_module {
       {4, 5, 6, 7},
       {8, 9, 10,
        11}};  ///< Tranformation from camera's coordinates to robot coordinates_
+<<<<<<< HEAD
   double _avg_human_height = 1.5;
+=======
+  double _avg_human_height;
+>>>>>>> 5728a8b (Updated cppcheck and cpplint results)
 };

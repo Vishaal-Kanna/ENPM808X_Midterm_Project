@@ -1,9 +1,13 @@
 Checking app/ACME_robot.cpp ...
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5728a8b (Updated cppcheck and cpplint results)
 include/Transformation_module.hpp:54:3: warning: Member variable 'Transformation_module::_avg_human_height' is not initialized in the constructor. [uninitMemberVar]
   Transformation_module() {}
   ^
 app/ACME_robot.cpp:65:15: style: Variable 'img' is assigned a value that is never used. [unreadVariable]
+<<<<<<< HEAD
   cv::Mat img = cv::imread(img_folder_path);
               ^
 1/7 files checked 15% done
@@ -52,51 +56,60 @@ app/ACME_robot.cpp:58:0: style: The function 'set_transformation_parameters' is 
 app/Tracking_module.cpp:52:0: style: The function 'track_human' is never used. [unusedFunction]
 =======
 app/ACME_robot.cpp:38:15: style: Variable 'img' is assigned a value that is never used. [unreadVariable]
+=======
+>>>>>>> 5728a8b (Updated cppcheck and cpplint results)
   cv::Mat img = cv::imread(img_folder_path);
               ^
-1/7 files checked 16% done
+1/7 files checked 15% done
 Checking app/Detection_module.cpp ...
-2/7 files checked 37% done
+2/7 files checked 30% done
 Checking app/Tracking_module.cpp ...
-app/Tracking_module.cpp:17:71: performance: Function parameter 'tracks' should be passed by const reference. [passedByValue]
+app/Tracking_module.cpp:39:71: performance: Function parameter 'tracks' should be passed by const reference. [passedByValue]
 void Tracking_module::set_track_ids(std::unordered_map<int, cv::Rect> tracks) {
                                                                       ^
-app/Tracking_module.cpp:22:27: performance: Function parameter 'bboxes_frame1' should be passed by const reference. [passedByValue]
+app/Tracking_module.cpp:44:27: performance: Function parameter 'bboxes_frame1' should be passed by const reference. [passedByValue]
     std::vector<cv::Rect> bboxes_frame1, std::vector<cv::Rect> bboxes_frame2) {
                           ^
-app/Tracking_module.cpp:22:64: performance: Function parameter 'bboxes_frame2' should be passed by const reference. [passedByValue]
+app/Tracking_module.cpp:44:64: performance: Function parameter 'bboxes_frame2' should be passed by const reference. [passedByValue]
     std::vector<cv::Rect> bboxes_frame1, std::vector<cv::Rect> bboxes_frame2) {
                                                                ^
-3/7 files checked 49% done
+3/7 files checked 41% done
 Checking app/Transformation_module.cpp ...
-app/Transformation_module.cpp:22:27: performance: Function parameter 'rect' should be passed by const reference. [passedByValue]
-    std::vector<cv::Rect> rect) {
-                          ^
-4/7 files checked 59% done
+app/Transformation_module.cpp:58:10: style: The scope of the variable '_calib_factor' can be reduced. [variableScope]
+  double _calib_factor = 0.0;
+         ^
+app/Transformation_module.cpp:58:24: style: Variable '_calib_factor' is assigned a value that is never used. [unreadVariable]
+  double _calib_factor = 0.0;
+                       ^
+4/7 files checked 57% done
 Checking app/main.cpp ...
-5/7 files checked 68% done
+5/7 files checked 71% done
 Checking test/main.cpp ...
-6/7 files checked 73% done
+6/7 files checked 79% done
 Checking test/test.cpp ...
 7/7 files checked 100% done
-app/Tracking_module.cpp:21:0: style: The function 'hungarian_algorithm' is never used. [unusedFunction]
+app/Tracking_module.cpp:43:0: style: The function 'hungarian_algorithm' is never used. [unusedFunction]
 
 ^
-app/ACME_robot.cpp:37:0: style: The function 'perception_stack' is never used. [unusedFunction]
+app/ACME_robot.cpp:64:0: style: The function 'perception_stack' is never used. [unusedFunction]
 
 ^
-app/ACME_robot.cpp:17:0: style: The function 'set_detector_parameters' is never used. [unusedFunction]
+app/ACME_robot.cpp:68:0: style: The function 'read_video' is never used. [unusedFunction]
 
 ^
-app/ACME_robot.cpp:26:0: style: The function 'set_tracker_parameters' is never used. [unusedFunction]
+app/ACME_robot.cpp:44:0: style: The function 'set_detector_parameters' is never used. [unusedFunction]
 
 ^
-app/ACME_robot.cpp:31:0: style: The function 'set_transformation_parameters' is never used. [unusedFunction]
+app/ACME_robot.cpp:58:0: style: The function 'set_transformation_parameters' is never used. [unusedFunction]
 
 ^
+<<<<<<< HEAD
 app/Tracking_module.cpp:30:0: style: The function 'track_human' is never used. [unusedFunction]
 
 ^
 app/Transformation_module.cpp:21:0: style: The function 'transform_2dto3D' is never used. [unusedFunction]
 
 >>>>>>> 15c6b16 (Vishaal (#6))
+=======
+app/Tracking_module.cpp:52:0: style: The function 'track_human' is never used. [unusedFunction]
+>>>>>>> 5728a8b (Updated cppcheck and cpplint results)
