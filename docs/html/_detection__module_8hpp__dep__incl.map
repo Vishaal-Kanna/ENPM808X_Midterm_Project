@@ -1,0 +1,8 @@
+<map id="include/Detection_module.hpp" name="include/Detection_module.hpp">
+<area shape="rect" id="node1" title="This file contains a stub class to represent the ACME robot module." alt="" coords="285,5,505,32"/>
+<area shape="rect" id="node2" href="$_a_c_m_e__robot_8hpp_source.html" title=" " alt="" coords="5,80,185,107"/>
+<area shape="rect" id="node4" href="$_detection__module_8cpp.html" title="Stub class for the Detection module class." alt="" coords="209,80,405,107"/>
+<area shape="rect" id="node5" href="$app_2main_8cpp.html" title="main function for Human Tracking" alt="" coords="429,80,540,107"/>
+<area shape="rect" id="node6" href="$test_8cpp.html" title="Test class for the all the modules." alt="" coords="564,80,667,107"/>
+<area shape="rect" id="node3" href="$_a_c_m_e__robot_8cpp.html" title="Stub class for the ACME Robot." alt="" coords="17,155,173,181"/>
+</map>
