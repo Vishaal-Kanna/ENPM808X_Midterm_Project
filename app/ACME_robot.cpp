@@ -35,6 +35,11 @@
 
 #include "../include/ACME_robot.hpp"
 
+#include "../include/ACME_robot.hpp"
+
+#include <iostream>
+#include <vector>
+
 using namespace cv;
 using std::string;
 
