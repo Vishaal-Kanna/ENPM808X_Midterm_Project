@@ -31,4 +31,21 @@ make code_coverage
 ```
 This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser.
 
+## Modules
+
+### Detection Module
+Code stubs for different class methods have been written and a rough code has been made for bounding box detection.
+
+### Tracking Module
+Code stubs for class methods have been written. The methods should be updated in the coming week.
+
+### Tranformation Module
+The class for transformation is complete. Changes will be done if required in th coming week.
+
+### ACME Robot
+Code stubs for class methods have been written. The code will be completed based on rest of the module outputs.
+
+## Known Issues/Bugs
+Since the development is in progress and most of the class methods have not yet been completed, we do not have any known issues or bugs.
+
 
