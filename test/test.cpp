@@ -35,12 +35,12 @@
 
 #include <iostream>
 // #include <opencv2/opencv.hpp>
-#include "../include/Detection_module.hpp"
-#include "../include/Tracking_module.hpp"
-#include "../include/Transformation_module.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/objdetect/objdetect.hpp"
+#include "../include/Detection_module.hpp"
+#include "../include/Tracking_module.hpp"
+#include "../include/Transformation_module.hpp"
 
 /**
  * @brief Test to check the validity of Bounding box detector
@@ -88,4 +88,25 @@ TEST(test4, checking_set_functions) {
   EXPECT_NO_FATAL_FAILURE(detector.set_img_height(5));
   EXPECT_NO_FATAL_FAILURE(detector.set_conf_threshold(0.2));
   EXPECT_NO_FATAL_FAILURE(detector.set_nms_threshold(0.5));
+}
+
+TEST(intriniscsettertest, settingintrinsics) {
+  Transformation_module Transform;
+  float intrinsics[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+  ASSERT_NO_THROW(Transform.set_intrinsics(intrinsics));
+}
+
+TEST(extrinsicssettertest, settingextrinsics) {
+  Transformation_module Transform;
+  float cam_to_rob[3][4] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+  ASSERT_NO_THROW(Transform.set_cam_to_rob(cam_to_rob));
+}
+
+
+TEST(threedtorobotframe, transform_2dto3D) {
+  Transformation_module Transform;
+  cv::Rect bboxes;
+  std::vector<cv::Rect> rect;
+  rect.push_back(bboxes);
+  ASSERT_NO_THROW(Transform.transform_2dto3D(rect));
 }

@@ -33,6 +33,7 @@
 
 #pragma once
 #include <iostream>
+#include <vector>
 #include <opencv2/opencv.hpp>
 
 /**
@@ -80,10 +81,11 @@ class Transformation_module {
 
  private:
   float _intrinsics[3][3] = {
-      {0, 0, 0}, {0, 0, 0}, {0, 0, 0}};  ///< Camera's intrinsic parameters
+      {0, 1, 2}, {3, 4, 5}, {6, 7, 8}};  ///< Camera's intrinsic parameters
   float _cam_to_rob[3][4] = {
-      {0, 0, 0, 0},
-      {0, 0, 0, 0},
-      {0, 0, 0,
-       0}};  ///< Tranformation from camera's coordinates to robot coordinates_
+      {0, 1, 2, 3},
+      {4, 5, 6, 7},
+      {8, 9, 10,
+      11}};  ///< Tranformation from camera's coordinates to robot coordinates_
+  double _avg_human_height;
 };
