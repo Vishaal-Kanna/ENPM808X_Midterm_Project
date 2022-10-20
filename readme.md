@@ -1,5 +1,6 @@
 [![Build Status](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/actions/workflows/build_and_coveralls.yml/badge.svg)](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/actions/workflows/build_and_coveralls.yml)
-[![Coverage Status](https://coveralls.io/repos/github/Vishaal-Kanna/ENPM808X_Midterm_Project/badge.svg?branch=master)](https://coveralls.io/github/Vishaal-Kanna/ENPM808X_Midterm_Project?branch=master
+
+[![Coverage Status](https://coveralls.io/repos/github/Vishaal-Kanna/ENPM808X_Midterm_Project/badge.svg?branch=master)](https://coveralls.io/github/Vishaal-Kanna/ENPM808X_Midterm_Project?branch=master)
 
 # Human Detection and Tracking
 
