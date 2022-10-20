@@ -11,6 +11,10 @@
 
 #include "../include/Detection_module.hpp"
 
+using namespace std;
+using namespace cv;
+using namespace dnn;
+
 void Detection_module::set_img_width(int val)
 { _img_width = val; }
 
@@ -23,10 +27,28 @@ void Detection_module::set_conf_threshold(float val)
 void Detection_module::set_nms_threshold(float val)
 { _nms_threshold = val; }
 
-std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat image)
-{ image = image*0;
+std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat frame)
+{ 
   std::vector<cv::Rect>bboxes;
-  return bboxes;
+  Net net = readNetFromDarknet("/home/vishaal/Downloads/yolov3.cfg", "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/yolov3.weights");
+  Mat blob = blobFromImage(frame, 1/255, Size(_img_width,_img_height), Scalar(0,0,0), true, false);
+  net.setInput(blob);
+
+  vector<Mat> outs;
+
+  std::vector<std::string> out_names = net.getUnconnectedOutLayersNames();
+  net.forward(outs, out_names);
+
+  for(int i=0;out_names.size();i++)
+  {
+    std::cout<<net[out_names[i]]<<std::endl;
+  }
+  
+
+  //remove_box(frame, outs);
+  imshow("Frame", frame);
+  waitKey(0);
+
 }
 
 float Detection_module::calc_IOU(cv::Rect bbox1, cv::Rect bbox2){

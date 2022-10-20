@@ -12,6 +12,7 @@
 #pragma once
 #include <iostream>
 #include <opencv2/opencv.hpp>
+#include <opencv2/dnn.hpp>
 /**
  * @brief Class to localize the locations of humans in a given image
  * @param class_data
@@ -71,7 +72,7 @@ class Detection_module {
    * @param cv::Mat image
    * @return std::vector<cv::rect>
    */
-  std::vector<cv::Rect> bbox_detector(cv::Mat image);
+  std::vector<cv::Rect> bbox_detector(cv::Mat frame);
 
   /**
    * @brief Method to calculate Intersection over Union for two bounding boxes

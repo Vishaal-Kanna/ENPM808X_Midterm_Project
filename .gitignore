@@ -1,0 +1,5 @@
+# VS Code files
+*.VC.db*
+
+# Build artifacts
+build/
