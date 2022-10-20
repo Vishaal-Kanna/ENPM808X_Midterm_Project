@@ -32,13 +32,24 @@
  */
 
 #include <iostream>
+<<<<<<< HEAD
+=======
+
+#include <opencv2/dnn.hpp>
+#include <opencv2/opencv.hpp>
+>>>>>>> 15c6b16 (Vishaal (#6))
 #include <opencv2/core/core.hpp>
 #include <opencv2/dnn.hpp>
 #include <opencv2/highgui/highgui.hpp>
+<<<<<<< HEAD
 #include <opencv2/opencv.hpp>
 
 #include "../include/Detection_module.hpp"
 #include "../include/ACME_robot.hpp"
+=======
+
+#include "../include/Detection_module.hpp"
+>>>>>>> 15c6b16 (Vishaal (#6))
 
 using namespace std;
 using namespace cv;
@@ -46,16 +57,20 @@ using namespace dnn;
 
 int main() {
   Detection_module detector;
+<<<<<<< HEAD
   ACME_robot Robot;
 
   float intrinsic[3][3] = {{0.2, 0, 0},{0, 0.2, 0},{0, 0, 1}};
   float cam_to_rob[3][4] = {{1, 0, 0, 0},{0, 1, 0, 0},{0, 0, 1, 5}};
 
   Robot.set_transformation_parameters(intrinsic, cam_to_rob);
+=======
+>>>>>>> 15c6b16 (Vishaal (#6))
   Mat frame1 = imread(
       "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/"
       "test_img.jpg");
 
+<<<<<<< HEAD
   Robot.read_video("/home/vishaal/Downloads/Aya Nakamura - Copines - Minny Park Choreography.mp4");
 //   vector<cv::Rect> bboxes;
 
@@ -63,6 +78,10 @@ int main() {
 //   Robot.draw_bboxes(frame1, bboxes, 0);
 
 
+=======
+  detector.bbox_detector(frame1);
+  
+>>>>>>> 15c6b16 (Vishaal (#6))
   // std::string filename = "/home/sahu27/Downloads/video.mpg";
   // std::cout<<"Hi";
   // cv::VideoCapture capture(filename);
@@ -83,6 +102,12 @@ int main() {
 
   //   }
   //   cv::waitKey(0);
+<<<<<<< HEAD
+=======
+  
+
+  return 0;
+>>>>>>> 15c6b16 (Vishaal (#6))
 
   return 0;
 }

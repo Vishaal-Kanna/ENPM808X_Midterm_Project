@@ -35,8 +35,11 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include <unordered_map>
+<<<<<<< HEAD
 #include <string> 
 #include <vector>
+=======
+>>>>>>> 15c6b16 (Vishaal (#6))
 
 #include "Detection_module.hpp"
 #include "Tracking_module.hpp"
@@ -65,6 +68,17 @@ class ACME_robot {
    */
   void set_detector_parameters(int img_width, int img_height,
                                float conf_threshold, float nms_threshold);
+<<<<<<< HEAD
+=======
+
+  /**
+   * @brief Set the parameters of the Tracking module
+   *
+   * @param val
+   * @return void
+   */
+  void set_tracker_parameters(std::unordered_map<int, cv::Rect> tracks);
+>>>>>>> 15c6b16 (Vishaal (#6))
 
   /**
    * @brief Set the parameters of the Transformation module

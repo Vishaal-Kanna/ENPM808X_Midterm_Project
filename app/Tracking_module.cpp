@@ -37,6 +37,7 @@
 #include <iostream>
 #include <vector>
 
+<<<<<<< HEAD
 std::unordered_map<int, cv::Rect> Tracking_module::set_track_ids(std::vector<cv::Rect> bboxes) {
   for(int i=0; i<bboxes.size(); i++) {
   _track_ids[i] = bboxes[i];}
@@ -81,3 +82,19 @@ std::unordered_map<int, cv::Rect> Tracking_module::euclidean_tracker(std::vector
 
 
 }
+=======
+void Tracking_module::set_track_ids(std::unordered_map<int, cv::Rect> tracks) {
+  _track_ids = tracks;
+}
+
+std::vector<cv::Rect> Tracking_module::hungarian_algorithm(
+    std::vector<cv::Rect> bboxes_frame1, std::vector<cv::Rect> bboxes_frame2) {
+  cv::Rect bbox(0, 0, 256, 256);
+  std::vector<cv::Rect> bboxes;
+  bboxes.push_back(bbox);
+  bboxes.push_back(bbox);
+  return bboxes;
+}
+
+void Tracking_module::track_human(cv::Mat image1, cv::Mat image2) {}
+>>>>>>> 15c6b16 (Vishaal (#6))

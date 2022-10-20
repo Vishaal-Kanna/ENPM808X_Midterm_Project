@@ -19,7 +19,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 15c6b16 (Vishaal (#6))
 /**
  * @file ACME_robot.cpp
  * @authors Sahruday Patti, Vishaal Kanna Sivakumar
@@ -36,6 +40,11 @@
 #include "../include/ACME_robot.hpp"
 
 #include "../include/ACME_robot.hpp"
+
+#include "../include/ACME_robot.hpp"
+
+#include <iostream>
+#include <vector>
 
 using namespace cv;
 using std::string;
@@ -109,8 +118,20 @@ void ACME_robot::read_video(std::string filename) {
 
   for (;;) {
     capture >> frame;
+<<<<<<< HEAD
     if (frame.empty()) break;
     frame_no = perception_stack(frame, frame_no);
   // waits to display frame
   }
+=======
+    if(frame.empty())
+
+      break;
+    imshow("w", frame);
+    cv::waitKey(20); // waits to display frame
+
+    }
+    cv::waitKey(0);
+  
+>>>>>>> 15c6b16 (Vishaal (#6))
 }

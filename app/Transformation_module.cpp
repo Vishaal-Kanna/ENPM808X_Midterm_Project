@@ -72,6 +72,7 @@ std::array<float, 4> Transformation_module::transform_2dto3D(
   float camera_x_center = x_center * calib_distance/_focalLength;
   float camera_y_center = y_center * calib_distance/_focalLength;
 
+<<<<<<< HEAD
     std::array<float, 4> cam_coord = {camera_x_center, camera_y_center,
                                       calib_distance + _cam_to_rob[3][2], 1};
     // for (int i = 0; i < 3; i++) {
@@ -83,4 +84,17 @@ std::array<float, 4> Transformation_module::transform_2dto3D(
 
 
   return cam_coord;
+=======
+    std::array<float, 4> cam_coord = {camera_x_center,
+    camera_y_center, calib_distance, 1};
+    for (int i =0; i < 3; i++) {
+      for (int j = 2 ; j < 3; j++) {
+        coord[i] = _cam_to_rob[i][j+1] * cam_coord[i];
+      }
+    }
+    coords.push_back(coord);
+  }
+
+  return coords;
+>>>>>>> 15c6b16 (Vishaal (#6))
 }

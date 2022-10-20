@@ -33,7 +33,10 @@
 
 #pragma once
 #include <iostream>
+<<<<<<< HEAD
 #include <vector>
+=======
+>>>>>>> 15c6b16 (Vishaal (#6))
 #include <opencv2/dnn.hpp>
 #include <opencv2/opencv.hpp>
 
@@ -55,9 +58,15 @@ class Detection_module {
    * @return None
    */
   Detection_module() {
+<<<<<<< HEAD
     _img_width = 416;
     _img_height = 416;
     _conf_threshold = 0.4;
+=======
+    _img_width = 256;
+    _img_height = 256;
+    _conf_threshold = 0.6;
+>>>>>>> 15c6b16 (Vishaal (#6))
     _nms_threshold = 0.4;
   }
 
@@ -132,7 +141,10 @@ class Detection_module {
    * @return std::vector<cv::rect>
    */
   std::vector<cv::Rect> bbox_detector(cv::Mat frame);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 15c6b16 (Vishaal (#6))
 
   /**
    * @brief Method to remove low confidence and overlapping boxes from the model
@@ -140,7 +152,20 @@ class Detection_module {
    * @param Mat& frame, const vector<Mat>& outs
    * @return std::vector<cv::rect>
    */
+<<<<<<< HEAD
   vector<Rect> process_bboxes(Mat& frame, const vector<Mat>& outs);
+=======
+  float calc_IOU(cv::Rect bbox1, cv::Rect bbox2);
+
+  /**
+   * @brief Method to perform non-maximum supression and remove overlapping
+   * boxes
+   *
+   * @param std::vector<cv::rect>
+   * @return std::vector<cv::rect>
+   */
+  std::vector<cv::Rect> nms(std::vector<cv::Rect> bboxes);
+>>>>>>> 15c6b16 (Vishaal (#6))
 
  private:
   int _img_width;         ///< Image width
