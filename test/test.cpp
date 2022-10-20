@@ -35,12 +35,12 @@
 
 #include <iostream>
 // #include <opencv2/opencv.hpp>
-#include "opencv2/highgui/highgui.hpp"
-#include "opencv2/imgproc/imgproc.hpp"
-#include "opencv2/objdetect/objdetect.hpp"
 #include "../include/Detection_module.hpp"
 #include "../include/Tracking_module.hpp"
 #include "../include/Transformation_module.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/objdetect/objdetect.hpp"
 
 /**
  * @brief Test to check the validity of Bounding box detector
@@ -101,7 +101,6 @@ TEST(extrinsicssettertest, settingextrinsics) {
   float cam_to_rob[3][4] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
   ASSERT_NO_THROW(Transform.set_cam_to_rob(cam_to_rob));
 }
-
 
 TEST(threedtorobotframe, transform_2dto3D) {
   Transformation_module Transform;

@@ -91,15 +91,11 @@ class ACME_robot {
 
   /**
    * @brief read
-   * @param 
+   * @param
    *
    */
 
-  void read_video (std::string filename);
-
-
-
-
+  void read_video(std::string filename);
 
  private:
   Detection_module detector;

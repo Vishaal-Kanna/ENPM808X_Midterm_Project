@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
- 
+
 /**
  * @file ACME_robot.cpp
  * @authors Sahruday Patti, Vishaal Kanna Sivakumar
@@ -38,52 +38,45 @@
 
 #include "../include/ACME_robot.hpp"
 
-#include <iostream>
-#include <vector>
-
 using namespace cv;
 using std::string;
 
-
-
-
-void ACME_robot::set_detector_parameters(int img_width, int img_height, float conf_threshold, float nms_threshold)
-{ detector.set_img_width(img_width);
+void ACME_robot::set_detector_parameters(int img_width, int img_height,
+                                         float conf_threshold,
+                                         float nms_threshold) {
+  detector.set_img_width(img_width);
   detector.set_img_height(img_height);
   detector.set_conf_threshold(conf_threshold);
-  detector.set_nms_threshold(nms_threshold); }
-
-void ACME_robot::set_tracker_parameters(std::unordered_map<int, cv::Rect>tracks)
-{ tracker.set_track_ids(tracks); }
-
-void ACME_robot::set_transformation_parameters(float intrinsic[3][3], float cam_to_rob[3][4])
-{ transforms.set_intrinsics(intrinsic);
-  transforms.set_cam_to_rob(cam_to_rob); }
-
-void ACME_robot::perception_stack(std::string img_folder_path)
-{   cv::Mat img = cv::imread(img_folder_path);
+  detector.set_nms_threshold(nms_threshold);
 }
 
+void ACME_robot::set_tracker_parameters(
+    std::unordered_map<int, cv::Rect> tracks) {
+  tracker.set_track_ids(tracks);
+}
 
-void ACME_robot::read_video (std::string filename) {
+void ACME_robot::set_transformation_parameters(float intrinsic[3][3],
+                                               float cam_to_rob[3][4]) {
+  transforms.set_intrinsics(intrinsic);
+  transforms.set_cam_to_rob(cam_to_rob);
+}
 
+void ACME_robot::perception_stack(std::string img_folder_path) {
+  cv::Mat img = cv::imread(img_folder_path);
+}
+
+void ACME_robot::read_video(std::string filename) {
   cv::VideoCapture capture(filename);
   cv::Mat frame;
 
-  if( !capture.isOpened() )
-      throw "Error when reading steam_avi";
+  if (!capture.isOpened()) throw "Error when reading steam_avi";
 
-  cv::namedWindow( "w", 1);
-  for( ; ; ) {
-
+  cv::namedWindow("w", 1);
+  for (;;) {
     capture >> frame;
-    if(frame.empty())
-
-      break;
+    if (frame.empty()) break;
     imshow("w", frame);
-    cv::waitKey(20); // waits to display frame
-
-    }
-    cv::waitKey(0);
-  
+    cv::waitKey(20);  // waits to display frame
+  }
+  cv::waitKey(0);
 }
