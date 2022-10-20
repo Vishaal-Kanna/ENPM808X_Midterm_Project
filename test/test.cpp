@@ -1,7 +1,29 @@
+/** MIT License
+ * Copyright (c) 2022 Vishaal Kanna Sivakumar, Sahruday Patti
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 /**
  * @file test.cpp
- * @authors Sahruday, Vishaal Kanna Sivakumar
- * @brief Test class for the PID controller
+ * @authors Sahruday Patti, Vishaal Kanna Sivakumar
+ * @brief Test class for the all the modules
  * @version 0.1
  * @date 2022-10-02
  *
@@ -26,7 +48,7 @@
 
 TEST(test1, checking_bbox_detector) {
   Detection_module detector;
-  cv::Mat image(cv::Size(256, 256), CV_8UC3, cv::Scalar(0, 0, 255));
+  cv::Mat image(cv::Size(416, 416), CV_8UC3, cv::Scalar(0, 0, 255));
   EXPECT_NO_FATAL_FAILURE(detector.bbox_detector(image));
 }
 
@@ -41,9 +63,32 @@ TEST(test2, checking_nms) {
   bboxes.push_back(bbox);
 
   Detection_module detector;
-  ASSERT_FLOAT_EQ(detector.nms(bboxes) == bboxes, 0);
+  EXPECT_NO_FATAL_FAILURE(detector.nms(bboxes));
 }
 
+/**
+ * @brief Test to check the output of IOU
+ */
+
+TEST(test3, chacking_Calc_IOU) {
+  Detection_module detect_object;
+  cv::Rect r1 = cv::Rect(0, 0, 10, 10);
+  cv::Rect r2 = cv::Rect(5, 5, 10, 10);
+  auto output = detect_object.calc_IOU(r1, r2);
+  ASSERT_NEAR(output, 0.166, 1);
+}
+
+/**
+ * @brief Test to check the validity setter functions
+ */
+
+TEST(test4, checking_set_functions) {
+  Detection_module detector;
+  EXPECT_NO_FATAL_FAILURE(detector.set_img_width(5));
+  EXPECT_NO_FATAL_FAILURE(detector.set_img_height(5));
+  EXPECT_NO_FATAL_FAILURE(detector.set_conf_threshold(0.2));
+  EXPECT_NO_FATAL_FAILURE(detector.set_nms_threshold(0.5));
+}
 
 TEST(intriniscsettertest, settingintrinsics) {
   Transformation_module Transform;
@@ -65,4 +110,3 @@ TEST(threedtorobotframe, transform_2dto3D) {
   rect.push_back(bboxes);
   ASSERT_NO_THROW(Transform.transform_2dto3D(rect));
 }
-
