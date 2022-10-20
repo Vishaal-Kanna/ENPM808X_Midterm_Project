@@ -26,7 +26,7 @@
 
 TEST(test1, checking_bbox_detector) {
   Detection_module detector;
-  cv::Mat image(cv::Size(256,256),CV_8UC3,cv::Scalar(0,0,255));;
+  cv::Mat image(cv::Size(416,416),CV_8UC3,cv::Scalar(0,0,255));
   EXPECT_NO_FATAL_FAILURE(detector.bbox_detector(image));
 }
 
@@ -41,7 +41,7 @@ TEST(test2, checking_nms) {
   bboxes.push_back(bbox);
 
   Detection_module detector;
-  ASSERT_FLOAT_EQ(detector.nms(bboxes)==bboxes, 0);
+  EXPECT_NO_FATAL_FAILURE(detector.nms(bboxes));
 }
 
 TEST(test3, chacking_Calc_IOU) {
@@ -50,5 +50,15 @@ TEST(test3, chacking_Calc_IOU) {
   cv::Rect r2 = cv::Rect(5, 5, 10, 10);
   auto output = detect_object.calc_IOU(r1, r2);
   ASSERT_NEAR(output, 0.166, 1);
-  } 
+  }
+
+TEST(test4, checking_set_functions) {
+  Detection_module detector;
+  EXPECT_NO_FATAL_FAILURE(detector.set_img_width(5));
+  EXPECT_NO_FATAL_FAILURE(detector.set_img_height(5));
+  EXPECT_NO_FATAL_FAILURE(detector.set_conf_threshold(0.2));
+  EXPECT_NO_FATAL_FAILURE(detector.set_nms_threshold(0.5));
+}
+
+
 
