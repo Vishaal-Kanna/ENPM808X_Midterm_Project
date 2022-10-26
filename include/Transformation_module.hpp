@@ -33,8 +33,8 @@
 
 #pragma once
 #include <iostream>
-#include <vector>
 #include <opencv2/opencv.hpp>
+#include <vector>
 
 /**
  * @brief Class to transform the 2D image detections to 3D locations with
@@ -86,6 +86,6 @@ class Transformation_module {
       {0, 1, 2, 3},
       {4, 5, 6, 7},
       {8, 9, 10,
-      11}};  ///< Tranformation from camera's coordinates to robot coordinates_
+       11}};  ///< Tranformation from camera's coordinates to robot coordinates_
   double _avg_human_height;
 };

@@ -32,11 +32,10 @@
  */
 
 #include <iostream>
-
-#include <opencv2/dnn.hpp>
-#include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
+#include <opencv2/dnn.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/opencv.hpp>
 
 #include "../include/Detection_module.hpp"
 
@@ -51,7 +50,7 @@ int main() {
       "test_img.jpg");
 
   detector.bbox_detector(frame1);
-  
+
   // std::string filename = "/home/sahu27/Downloads/video.mpg";
   // std::cout<<"Hi";
   // cv::VideoCapture capture(filename);
@@ -72,8 +71,6 @@ int main() {
 
   //   }
   //   cv::waitKey(0);
-  
 
   return 0;
-
 }
