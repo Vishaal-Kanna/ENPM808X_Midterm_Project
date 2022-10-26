@@ -59,6 +59,26 @@ std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat frame) {
   std::vector<std::string> out_names = net.getUnconnectedOutLayersNames();
   net.forward(outs, out_names);
 
+  vector<int> classIds;
+    vector<float> confidences;
+    vector<Rect> boxes;
+    
+    for (size_t i = 0; i < outs.size(); ++i)
+    {
+        // std::cout<< outs[i] << std::endl;
+        float* data = (float*)outs[i].data;
+        std::cout<< outs[i].row(j).colRange(5, outs[i].cols) << std::endl;
+        for (size_t j = 0; j<outs[i].rows; j++)
+            {//std::cout<< outs[i].row(j).colRange(5, outs[i].cols) << std::endl;
+            Mat scores = outs[i].row(j).colRange(5, outs[i].cols);
+            Point classIdPoint;
+            double confidence;
+
+            minMaxLoc(scores, 0, &confidence, 0, &classIdPoint);
+            std::cout<<confidence<< std::endl;
+            }
+    }
+
   return bboxes;
 }
 
