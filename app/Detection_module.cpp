@@ -46,7 +46,7 @@ void Detection_module::set_conf_threshold(float val) { _conf_threshold = val; }
 void Detection_module::set_nms_threshold(float val) { _nms_threshold = val; }
 
 std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat frame) {
-  std::vector<cv::Rect> bboxes;
+
   Net net = readNetFromDarknet(
       "/home/vishaal/Downloads/yolov3.cfg",
       "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/yolov3.weights");
@@ -56,37 +56,51 @@ std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat frame) {
 
   vector<Mat> outs;
 
-  std::vector<std::string> out_names = net.getUnconnectedOutLayersNames();
+  vector<std::string> out_names = net.getUnconnectedOutLayersNames();
   net.forward(outs, out_names);
 
-  vector<int> classIds;
-    vector<float> confidences;
-    vector<Rect> boxes;
+    vector<int> classIds;
+    vector<float> confs;
+    vector<cv::Rect> bboxes;
     
-    for (size_t i = 0; i < outs.size(); ++i)
+    for (int i = 0; i < outs.size(); ++i)
     {
-        // std::cout<< outs[i] << std::endl;
         float* data = (float*)outs[i].data;
         std::cout<< outs[i].row(j).colRange(5, outs[i].cols) << std::endl;
-        for (size_t j = 0; j<outs[i].rows; j++)
-            {//std::cout<< outs[i].row(j).colRange(5, outs[i].cols) << std::endl;
-            Mat scores = outs[i].row(j).colRange(5, outs[i].cols);
-            Point classIdPoint;
-            double confidence;
-
-            minMaxLoc(scores, 0, &confidence, 0, &classIdPoint);
+        for (int j = 0; j<outs[i].rows; j++)
+            { Mat scores = outs[i].row(j).colRange(5, outs[i].cols);
+            Point classId;
+            double conf;
+            /// perform minMaxLoc to get global min n max in scores
+            minMaxLoc(scores, 0, &conf, 0, &classId);
             std::cout<<confidence<< std::endl;
+            if (confidence > conf_threshold && classId == 0)
+            {
+              int centerX = (int)(data[0] * _img_width);
+              int centerY = (int)(data[1] * _img_height);
+              int width = (int)(data[2] * _img_width);
+              int height = (int)(data[3] * _img_height);
+              int left = centerX - width / 2;
+              int top = centerY - height / 2;
+              
+              classIds.push_back(classId.x);
+              confs.push_back((float)conf);
+              bboxes.push_back(cv::Rect(left, top, width, height));
+            }
             }
     }
 
-  return bboxes;
+    vector<int> indices;
+    NMSBoxes(bboxes, confidences, conf_threshold, nms, indices); 
+
+  return indices, bboxes;
 }
 
 float Detection_module::calc_IOU(cv::Rect bbox1, cv::Rect bbox2) {
   return 0.166;
 }
 
-std::vector<cv::Rect> Detection_module::nms(std::vector<cv::Rect>) {
+std::vector<cv::Rect> Detection_module::nms(std::vector<cv::Rect>, vector<float> confs, float _conf_threshold, float _nms_threshold, vector<int> indices) {
   std::vector<cv::Rect> bboxes_after_nms;
   return bboxes_after_nms;
 }

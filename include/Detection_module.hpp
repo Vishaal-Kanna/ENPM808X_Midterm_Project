@@ -33,6 +33,7 @@
 
 #pragma once
 #include <iostream>
+#include <vector>
 #include <opencv2/dnn.hpp>
 #include <opencv2/opencv.hpp>
 /**
