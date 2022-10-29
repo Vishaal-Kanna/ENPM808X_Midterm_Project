@@ -1,0 +1,12 @@
+<map id="app/ACME_robot.cpp" name="app/ACME_robot.cpp">
+<area shape="rect" id="node1" title="Stub class for the ACME Robot." alt="" coords="256,5,412,32"/>
+<area shape="rect" id="node2" href="$_a_c_m_e__robot_8hpp_source.html" title=" " alt="" coords="238,80,430,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="182,229,262,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="696,229,759,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="443,229,598,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,229,129,256"/>
+<area shape="rect" id="node6" href="$_detection__module_8hpp.html" title="This file contains a stub class to represent the ACME robot module." alt="" coords="311,155,480,181"/>
+<area shape="rect" id="node8" href="$_tracking__module_8hpp_source.html" title=" " alt="" coords="73,155,235,181"/>
+<area shape="rect" id="node9" href="$_transformation__module_8hpp_source.html" title=" " alt="" coords="555,155,761,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="286,229,419,256"/>
+</map>
