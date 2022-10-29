@@ -45,13 +45,21 @@ void Detection_module::set_conf_threshold(float val) { _conf_threshold = val; }
 
 void Detection_module::set_nms_threshold(float val) { _nms_threshold = val; }
 
+int Detection_module::get_img_width() { return _img_width; }
+
+int Detection_module::get_img_height() { return _img_height; }
+
+float Detection_module::get_conf_threshold() { return _conf_threshold; }
+
+float Detection_module::get_nms_threshold() { return _nms_threshold; }
+
 std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat frame) {
-  std::vector<cv::Rect> bboxes;
+  vector<Rect> bboxes_after_nms;
   Net net = readNetFromDarknet(
-      "/home/vishaal/Downloads/yolov3.cfg",
+      "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/yolov3.cfg",
       "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/yolov3.weights");
-  Mat blob = blobFromImage(frame, 1 / 255, Size(_img_width, _img_height),
-                           Scalar(0, 0, 0), true, false);
+  Mat blob;
+  blobFromImage(frame, blob, 1.0 / 255, Size(_img_width, _img_height), Scalar(0,0,0), true, false);
   net.setInput(blob);
 
   vector<Mat> outs;

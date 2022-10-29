@@ -33,6 +33,7 @@
 
 #pragma once
 #include <iostream>
+#include <vector>
 #include <opencv2/dnn.hpp>
 #include <opencv2/opencv.hpp>
 
@@ -131,6 +132,7 @@ class Detection_module {
    * @return std::vector<cv::rect>
    */
   std::vector<cv::Rect> bbox_detector(cv::Mat frame);
+
 
   /**
    * @brief Method to remove low confidence and overlapping boxes from the model

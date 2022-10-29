@@ -35,10 +35,6 @@
 
 #include "../include/ACME_robot.hpp"
 
-#include "../include/ACME_robot.hpp"
-
-#include "../include/ACME_robot.hpp"
-
 using namespace cv;
 using std::string;
 
@@ -105,7 +101,6 @@ void ACME_robot::read_video(std::string filename) {
   cv::VideoCapture capture(filename);
   cv::Mat frame;
 
-
   int frame_no=1;
 
   if (!capture.isOpened()) throw "Error when reading steam_avi";
@@ -116,5 +111,4 @@ void ACME_robot::read_video(std::string filename) {
     frame_no = perception_stack(frame, frame_no);
   // waits to display frame
   }
-
 }
