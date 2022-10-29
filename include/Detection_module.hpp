@@ -33,10 +33,6 @@
 
 #pragma once
 #include <iostream>
-<<<<<<< HEAD
-#include <vector>
-=======
->>>>>>> 15c6b16 (Vishaal (#6))
 #include <opencv2/dnn.hpp>
 #include <opencv2/opencv.hpp>
 
