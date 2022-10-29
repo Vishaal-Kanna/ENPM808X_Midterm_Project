@@ -33,20 +33,51 @@
 
 #include "../include/Tracking_module.hpp"
 
+#include <cstddef>
 #include <iostream>
 #include <vector>
 
-void Tracking_module::set_track_ids(std::unordered_map<int, cv::Rect> tracks) {
-  _track_ids = tracks;
+std::unordered_map<int, cv::Rect> Tracking_module::set_track_ids(std::vector<cv::Rect> bboxes) {
+  for(int i=0; i<bboxes.size(); i++) {
+  _track_ids[i] = bboxes[i];}
+  return _track_ids;
 }
 
-std::vector<cv::Rect> Tracking_module::hungarian_algorithm(
-    std::vector<cv::Rect> bboxes_frame1, std::vector<cv::Rect> bboxes_frame2) {
-  cv::Rect bbox(0, 0, 256, 256);
-  std::vector<cv::Rect> bboxes;
-  bboxes.push_back(bbox);
-  bboxes.push_back(bbox);
-  return bboxes;
-}
+std::unordered_map<int, cv::Rect> Tracking_module::euclidean_tracker(std::vector<cv::Rect> bboxes) {
+  std::unordered_map<int, cv::Rect> temp_ids;
+  for (auto track_id:_track_ids) {
+    double value = 0.0;
+    double value_prev = 0.0;
+    double distance_prev = 0.0;
+    double distance = 0.0;
+    float dist_min = 1000000;
+    
+    cv::Point center_of_rect_prev = (track_id.second.br() + track_id.second.tl())*0.5;
+    for(int i=0; i<bboxes.size(); i++)
+    { cv::Point center_of_rect_current = (bboxes[i].br() + bboxes[i].tl())*0.5;
+      float dist = norm(center_of_rect_prev-center_of_rect_current);
+      if(dist<dist_min)
+      {dist_min = dist;
+       temp_ids[track_id.first] = bboxes[i];}}}
+      
 
-void Tracking_module::track_human(cv::Mat image1, cv::Mat image2) {}
+  //   cv::Point center_of_rect = (r.br() + r.tl())*0.5;
+  //   for (cv::Rect r_prev : bboxes_frame1) {
+  //     cv::Point center_of_rect_prev = (r_prev.br() + r_prev.tl())*0.5;
+  //     value_prev = norm(center_of_rect_prev);
+  //     value = norm(center_of_rect);
+  //     distance_prev = abs(value_prev - value);
+  //     if(i == 0) {
+  //       distance = distance_prev;
+  //     }
+  //     if (distance_prev < distance){
+  //       cv::Rect tracked_rect = r
+  //     }
+  //   }
+  // }
+    _track_ids = temp_ids;
+
+  return _track_ids;
+
+
+}

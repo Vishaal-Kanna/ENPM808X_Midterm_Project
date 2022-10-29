@@ -47,11 +47,16 @@ using namespace dnn;
 int main() {
   Detection_module detector;
   ACME_robot Robot;
+
+  float intrinsic[3][3] = {{0.2, 0, 0},{0, 0.2, 0},{0, 0, 1}};
+  float cam_to_rob[3][4] = {{1, 0, 0, 0},{0, 1, 0, 0},{0, 0, 1, 5}};
+
+  Robot.set_transformation_parameters(intrinsic, cam_to_rob);
   Mat frame1 = imread(
       "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/"
       "test_img.jpg");
 
-  Robot.perception_stack(frame1);
+  Robot.read_video("/home/vishaal/Downloads/Aya Nakamura - Copines - Minny Park Choreography.mp4");
 //   vector<cv::Rect> bboxes;
 
 //   bboxes = detector.bbox_detector(frame1);

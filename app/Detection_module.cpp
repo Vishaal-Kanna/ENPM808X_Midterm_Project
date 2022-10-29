@@ -65,11 +65,10 @@ std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat frame) {
   vector<Mat> outs;
 
   net.forward(outs, net.getUnconnectedOutLayersNames());
-
+  
   bboxes_after_nms = process_bboxes(frame, outs);
 
   return bboxes_after_nms;
-
 
 }
 
