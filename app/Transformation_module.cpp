@@ -59,23 +59,14 @@ std::array<float, 4> Transformation_module::transform_2dto3D(
   float _focalLength = _intrinsics[1][1];
   double _calib_factor = 0.0;
   std::array<float, 4> coord = {0, 0, 0, 1};
-<<<<<<< HEAD
- 
-  double factor = _avg_human_height / r.height;
-=======
   std::vector<std::array<float, 4>> coords;
   for (cv::Rect r : rect) {
     bbox_id++;
     double factor = _avg_human_height / r.height;
->>>>>>> 5728a8b (Updated cppcheck and cpplint results)
 
   _calib_factor = _focalLength * _avg_human_height;
 
-<<<<<<< HEAD
-  float calib_distance = _calib_factor / r.height;
-=======
     float calib_distance = _calib_factor / r.height;
->>>>>>> 5728a8b (Updated cppcheck and cpplint results)
 
   float x_center = (r.width / 2.0) + r.x;
   float y_center = (r.height / 2.0) + r.y;
@@ -83,8 +74,6 @@ std::array<float, 4> Transformation_module::transform_2dto3D(
   float camera_x_center = x_center * calib_distance/_focalLength;
   float camera_y_center = y_center * calib_distance/_focalLength;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     std::array<float, 4> cam_coord = {camera_x_center, camera_y_center,
                                       calib_distance + _cam_to_rob[3][2], 1};
     // for (int i = 0; i < 3; i++) {
@@ -96,24 +85,5 @@ std::array<float, 4> Transformation_module::transform_2dto3D(
 
 
   return cam_coord;
-=======
-    std::array<float, 4> cam_coord = {camera_x_center,
-    camera_y_center, calib_distance, 1};
-    for (int i =0; i < 3; i++) {
-      for (int j = 2 ; j < 3; j++) {
-        coord[i] = _cam_to_rob[i][j+1] * cam_coord[i];
-=======
-    std::array<float, 4> cam_coord = {camera_x_center, camera_y_center,
-                                      calib_distance, 1};
-    for (int i = 0; i < 3; i++) {
-      for (int j = 2; j < 3; j++) {
-        coord[i] = _cam_to_rob[i][j + 1] * cam_coord[i];
->>>>>>> 5728a8b (Updated cppcheck and cpplint results)
-      }
-    }
-    coords.push_back(coord);
-  }
 
-  return coords;
->>>>>>> 15c6b16 (Vishaal (#6))
 }

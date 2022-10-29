@@ -45,31 +45,6 @@ void Detection_module::set_conf_threshold(float val) { _conf_threshold = val; }
 
 void Detection_module::set_nms_threshold(float val) { _nms_threshold = val; }
 
-<<<<<<< HEAD
-void Detection_module::set_img_width(int val) { _img_width = val; }
-
-void Detection_module::set_img_height(int val) { _img_height = val; }
-
-void Detection_module::set_conf_threshold(float val) { _conf_threshold = val; }
-
-void Detection_module::set_nms_threshold(float val) { _nms_threshold = val; }
-
-int Detection_module::get_img_width() { return _img_width; }
-
-int Detection_module::get_img_height() { return _img_height; }
-
-float Detection_module::get_conf_threshold() { return _conf_threshold; }
-
-float Detection_module::get_nms_threshold() { return _nms_threshold; }
-
-std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat frame) {
-  vector<Rect> bboxes_after_nms;
-  Net net = readNetFromDarknet(
-      "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/yolov3.cfg",
-      "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/yolov3.weights");
-  Mat blob;
-  blobFromImage(frame, blob, 1.0 / 255, Size(_img_width, _img_height), Scalar(0,0,0), true, false);
-=======
 std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat frame) {
   std::vector<cv::Rect> bboxes;
   Net net = readNetFromDarknet(
@@ -77,12 +52,10 @@ std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat frame) {
       "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/yolov3.weights");
   Mat blob = blobFromImage(frame, 1 / 255, Size(_img_width, _img_height),
                            Scalar(0, 0, 0), true, false);
->>>>>>> 15c6b16 (Vishaal (#6))
   net.setInput(blob);
 
   vector<Mat> outs;
 
-<<<<<<< HEAD
   net.forward(outs, net.getUnconnectedOutLayersNames());
   
   bboxes_after_nms = process_bboxes(frame, outs);
@@ -140,20 +113,6 @@ vector<Rect> Detection_module::process_bboxes(Mat& frame, const vector<Mat>& out
     for(int i=0; i< indices.size();i++)
       {bboxes_after_nms.push_back(boxes[indices[i]]);}
 
-=======
-  std::vector<std::string> out_names = net.getUnconnectedOutLayersNames();
-  net.forward(outs, out_names);
-
-  return bboxes;
-}
-
-float Detection_module::calc_IOU(cv::Rect bbox1, cv::Rect bbox2) {
-  return 0.166;
-}
-
-std::vector<cv::Rect> Detection_module::nms(std::vector<cv::Rect>) {
-  std::vector<cv::Rect> bboxes_after_nms;
->>>>>>> 15c6b16 (Vishaal (#6))
   return bboxes_after_nms;
 }
 

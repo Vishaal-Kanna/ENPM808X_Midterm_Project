@@ -19,15 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> 15c6b16 (Vishaal (#6))
-=======
-
->>>>>>> 5728a8b (Updated cppcheck and cpplint results)
 /**
  * @file ACME_robot.cpp
  * @authors Sahruday Patti, Vishaal Kanna Sivakumar
@@ -59,7 +51,6 @@ void ACME_robot::set_detector_parameters(int img_width, int img_height,
   detector.set_nms_threshold(nms_threshold);
 }
 
-<<<<<<< HEAD
 void ACME_robot::set_transformation_parameters(float intrinsic[3][3],
                                                float cam_to_rob[3][4]) {
   transforms.set_intrinsics(intrinsic);
@@ -108,60 +99,22 @@ void ACME_robot::draw_bboxes(cv::Mat frame, std::unordered_map<int, cv::Rect> bb
     }
   imshow("Frame", frame);
   waitKey(1);
-=======
-void ACME_robot::set_tracker_parameters(
-    std::unordered_map<int, cv::Rect> tracks) {
-  tracker.set_track_ids(tracks);
-}
-
-void ACME_robot::set_transformation_parameters(float intrinsic[3][3],
-                                               float cam_to_rob[3][4]) {
-  transforms.set_intrinsics(intrinsic);
-  transforms.set_cam_to_rob(cam_to_rob);
-}
-
-void ACME_robot::perception_stack(std::string img_folder_path) {
-  cv::Mat img = cv::imread(img_folder_path);
->>>>>>> 5728a8b (Updated cppcheck and cpplint results)
 }
 
 void ACME_robot::read_video(std::string filename) {
   cv::VideoCapture capture(filename);
   cv::Mat frame;
 
-<<<<<<< HEAD
+
   int frame_no=1;
 
   if (!capture.isOpened()) throw "Error when reading steam_avi";
 
   for (;;) {
     capture >> frame;
-<<<<<<< HEAD
     if (frame.empty()) break;
     frame_no = perception_stack(frame, frame_no);
   // waits to display frame
   }
-=======
-    if(frame.empty())
 
-      break;
-    imshow("w", frame);
-    cv::waitKey(20); // waits to display frame
-
-    }
-    cv::waitKey(0);
-  
->>>>>>> 15c6b16 (Vishaal (#6))
-=======
-  if (!capture.isOpened()) throw "Error when reading steam_avi";
-
-  cv::namedWindow("w", 1);
-  for (;;) {
-    capture >> frame;
-    if (frame.empty()) break;
-    imshow("w", frame);
-    cv::waitKey(20);  // waits to display frame
-  }
-  cv::waitKey(0);
->>>>>>> 5728a8b (Updated cppcheck and cpplint results)
 }
