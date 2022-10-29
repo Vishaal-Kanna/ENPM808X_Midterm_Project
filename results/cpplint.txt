@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 ./app/ACME_robot.cpp:39:  "../include/ACME_robot.hpp" already included at ./app/ACME_robot.cpp:34  [build/include] [4]
 ./app/ACME_robot.cpp:41:  Do not use namespace using-directives.  Use using-declarations instead.  [build/namespaces] [5]
 ./app/ACME_robot.cpp:82:  Could not find a newline character at the end of the file.  [whitespace/ending_newline] [5]
@@ -29,3 +31,43 @@ Done processing ./include/Transformation_module.hpp
 Done processing ./test/main.cpp
 Done processing ./test/test.cpp
 Total errors found: 19
+=======
+=======
+./app/ACME_robot.cpp:39:  "../include/ACME_robot.hpp" already included at ./app/ACME_robot.cpp:34  [build/include] [4]
+./app/ACME_robot.cpp:41:  Do not use namespace using-directives.  Use using-declarations instead.  [build/namespaces] [5]
+./app/ACME_robot.cpp:82:  Could not find a newline character at the end of the file.  [whitespace/ending_newline] [5]
+>>>>>>> 5728a8b (Updated cppcheck and cpplint results)
+Done processing ./app/ACME_robot.cpp
+./app/Detection_module.cpp:36:  Do not use namespace using-directives.  Use using-declarations instead.  [build/namespaces] [5]
+./app/Detection_module.cpp:37:  Do not use namespace using-directives.  Use using-declarations instead.  [build/namespaces] [5]
+./app/Detection_module.cpp:38:  Do not use namespace using-directives.  Use using-declarations instead.  [build/namespaces] [5]
+Done processing ./app/Detection_module.cpp
+Done processing ./app/Tracking_module.cpp
+Done processing ./app/Transformation_module.cpp
+./app/main.cpp:42:  Do not use namespace using-directives.  Use using-declarations instead.  [build/namespaces] [5]
+./app/main.cpp:43:  Do not use namespace using-directives.  Use using-declarations instead.  [build/namespaces] [5]
+./app/main.cpp:44:  Do not use namespace using-directives.  Use using-declarations instead.  [build/namespaces] [5]
+Done processing ./app/main.cpp
+./include/ACME_robot.hpp:37:  Found C++ system header after other header. Should be: ACME_robot.h, c system, c++ system, other.  [build/include_order] [4]
+./include/ACME_robot.hpp:39:  Include the directory when naming header files  [build/include_subdir] [4]
+./include/ACME_robot.hpp:40:  Include the directory when naming header files  [build/include_subdir] [4]
+./include/ACME_robot.hpp:41:  Include the directory when naming header files  [build/include_subdir] [4]
+./include/ACME_robot.hpp:98:  Add #include <string> for string  [build/include_what_you_use] [4]
+Done processing ./include/ACME_robot.hpp
+./include/Detection_module.hpp:115:  Add #include <vector> for vector<>  [build/include_what_you_use] [4]
+Done processing ./include/Detection_module.hpp
+./include/Tracking_module.hpp:59:  Found C++ system header after other header. Should be: Tracking_module.h, c system, c++ system, other.  [build/include_order] [4]
+./include/Tracking_module.hpp:91:  Add #include <vector> for vector<>  [build/include_what_you_use] [4]
+Done processing ./include/Tracking_module.hpp
+./include/Transformation_module.hpp:37:  Found C++ system header after other header. Should be: Transformation_module.h, c system, c++ system, other.  [build/include_order] [4]
+Done processing ./include/Transformation_module.hpp
+./test/main.cpp:39:  Could not find a newline character at the end of the file.  [whitespace/ending_newline] [5]
+Done processing ./test/main.cpp
+Done processing ./test/test.cpp
+<<<<<<< HEAD
+Total errors found: 16
+
+>>>>>>> 15c6b16 (Vishaal (#6))
+=======
+Total errors found: 19
+>>>>>>> 5728a8b (Updated cppcheck and cpplint results)

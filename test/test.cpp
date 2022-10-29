@@ -56,13 +56,20 @@ TEST(test1, checking_bbox_detector) {
  * @brief Test to check the validity of Non Maximum Supression
  */
 
-TEST(test2, checking_nms) {
-  cv::Rect bbox(0, 0, 256, 256);
-  std::vector<cv::Rect> bboxes;
-  bboxes.push_back(bbox);
-  bboxes.push_back(bbox);
+/**
+ * @brief Test to check the validity setter functions
+ */
 
+TEST(test4, checking_set_functions) {
   Detection_module detector;
+<<<<<<< HEAD
+  EXPECT_NO_FATAL_FAILURE(detector.set_img_width(5));
+  EXPECT_NO_FATAL_FAILURE(detector.set_img_height(5));
+  EXPECT_NO_FATAL_FAILURE(detector.set_conf_threshold(0.2));
+  EXPECT_NO_FATAL_FAILURE(detector.set_nms_threshold(0.5));
+}
+
+=======
   EXPECT_NO_FATAL_FAILURE(detector.nms(bboxes));
 }
 
@@ -90,6 +97,7 @@ TEST(test4, checking_set_functions) {
   EXPECT_NO_FATAL_FAILURE(detector.set_nms_threshold(0.5));
 }
 
+>>>>>>> 15c6b16 (Vishaal (#6))
 TEST(intriniscsettertest, settingintrinsics) {
   Transformation_module Transform;
   float intrinsics[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
@@ -104,8 +112,6 @@ TEST(extrinsicssettertest, settingextrinsics) {
 
 TEST(threedtorobotframe, transform_2dto3D) {
   Transformation_module Transform;
-  cv::Rect bboxes;
-  std::vector<cv::Rect> rect;
-  rect.push_back(bboxes);
+  cv::Rect rect;
   ASSERT_NO_THROW(Transform.transform_2dto3D(rect));
 }

@@ -65,14 +65,6 @@ class ACME_robot {
                                float conf_threshold, float nms_threshold);
 
   /**
-   * @brief Set the parameters of the Tracking module
-   *
-   * @param val
-   * @return void
-   */
-  void set_tracker_parameters(std::unordered_map<int, cv::Rect> tracks);
-
-  /**
    * @brief Set the parameters of the Transformation module
    *
    * @param val
@@ -84,10 +76,18 @@ class ACME_robot {
   /**
    * @brief Set the parameters of the Transformation module
    *
-   * @param val
+   * @param frame, frame_no
    * @return void
    */
-  void perception_stack(std::string img_folder_path);
+  int perception_stack(cv::Mat frame, int frame_no);
+
+    /**
+   * @brief Draw box function
+   *
+   * @param frame, bboxes, track_ids
+   * @return void
+   */
+  void draw_bboxes(cv::Mat frame, std::unordered_map<int, cv::Rect> bboxes_with_ids, int width, int height);
 
   /**
    * @brief read
@@ -98,6 +98,7 @@ class ACME_robot {
   void read_video(std::string filename);
 
  private:
+  int _no_of_bboxes;
   Detection_module detector;
   Tracking_module tracker;
   Transformation_module transforms;
