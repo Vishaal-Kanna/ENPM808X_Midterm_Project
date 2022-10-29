@@ -53,6 +53,7 @@ git -C opencv checkout 4.x
 mkdir -p build && cd build
 cmake ../opencv
 make -j4
+sudo make install
 ```
 
 ## Modules
