@@ -61,8 +61,26 @@ void ACME_robot::set_transformation_parameters(float intrinsic[3][3],
   transforms.set_cam_to_rob(cam_to_rob);
 }
 
-void ACME_robot::perception_stack(std::string img_folder_path) {
-  cv::Mat img = cv::imread(img_folder_path);
+void ACME_robot::perception_stack(cv::Mat frame) {
+  
+  int down_width = detector.get_img_width();
+  int down_height = detector.get_img_height();
+  Mat resized_down;
+  vector<Rect> bboxes_after_nms;
+  //resize down
+  resize(frame, frame, Size(down_width, down_height), INTER_LINEAR);
+  bboxes_after_nms = detector.bbox_detector(frame);
+  draw_bboxes(frame, bboxes_after_nms, 0);
+}
+
+void ACME_robot::draw_bboxes(cv::Mat frame, std::vector<cv::Rect> bboxes, int track_ids) {
+
+  for (int i = 0; i < bboxes.size(); i++)
+    { 
+      rectangle(frame, Point(bboxes[i].x, bboxes[i].y), Point(bboxes[i].x + bboxes[i].width, bboxes[i].y + bboxes[i].height), Scalar(255, 178, 50), 3);
+    }
+  imshow("Frame", frame);
+  waitKey(0);
 }
 
 void ACME_robot::read_video(std::string filename) {

@@ -87,7 +87,15 @@ class ACME_robot {
    * @param val
    * @return void
    */
-  void perception_stack(std::string img_folder_path);
+  void perception_stack(cv::Mat frame);
+
+    /**
+   * @brief Draw box function
+   *
+   * @param frame, bboxes, track_ids
+   * @return void
+   */
+  void draw_bboxes(cv::Mat frame, std::vector<cv::Rect> bboxes, int track_ids);
 
   /**
    * @brief read

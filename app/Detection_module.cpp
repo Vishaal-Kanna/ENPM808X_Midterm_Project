@@ -45,62 +45,83 @@ void Detection_module::set_conf_threshold(float val) { _conf_threshold = val; }
 
 void Detection_module::set_nms_threshold(float val) { _nms_threshold = val; }
 
-std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat frame) {
+int Detection_module::get_img_width() { return _img_width; }
 
+int Detection_module::get_img_height() { return _img_height; }
+
+float Detection_module::get_conf_threshold() { return _conf_threshold; }
+
+float Detection_module::get_nms_threshold() { return _nms_threshold; }
+
+std::vector<cv::Rect> Detection_module::bbox_detector(cv::Mat frame) {
+  vector<Rect> bboxes_after_nms;
   Net net = readNetFromDarknet(
-      "/home/vishaal/Downloads/yolov3.cfg",
+      "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/yolov3.cfg",
       "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/yolov3.weights");
-  Mat blob = blobFromImage(frame, 1 / 255, Size(_img_width, _img_height),
-                           Scalar(0, 0, 0), true, false);
+  Mat blob;
+  blobFromImage(frame, blob, 1.0 / 255, Size(_img_width, _img_height), Scalar(0,0,0), true, false);
   net.setInput(blob);
 
   vector<Mat> outs;
 
-  vector<std::string> out_names = net.getUnconnectedOutLayersNames();
-  net.forward(outs, out_names);
+  net.forward(outs, net.getUnconnectedOutLayersNames());
 
+  bboxes_after_nms = process_bboxes(frame, outs);
+
+  return bboxes_after_nms;
+
+
+}
+
+vector<Rect> Detection_module::process_bboxes(Mat& frame, const vector<Mat>& outs)
+{
     vector<int> classIds;
-    vector<float> confs;
-    vector<cv::Rect> bboxes;
-    
-    for (int i = 0; i < outs.size(); ++i)
+    vector<float> confidences;
+    vector<Rect> boxes;
+     
+    for (size_t i = 0; i < outs.size(); ++i)
     {
+        // Scan through all the bounding boxes output from the network and keep only the
+        // ones with high confidence scores. Assign the box's class label as the class
+        // with the highest score for the box.
         float* data = (float*)outs[i].data;
-        std::cout<< outs[i].row(j).colRange(5, outs[i].cols) << std::endl;
-        for (int j = 0; j<outs[i].rows; j++)
-            { Mat scores = outs[i].row(j).colRange(5, outs[i].cols);
-            Point classId;
-            double conf;
-            /// perform minMaxLoc to get global min n max in scores
-            minMaxLoc(scores, 0, &conf, 0, &classId);
-            std::cout<<confidence<< std::endl;
-            if (confidence > conf_threshold && classId == 0)
-            {
-              int centerX = (int)(data[0] * _img_width);
-              int centerY = (int)(data[1] * _img_height);
-              int width = (int)(data[2] * _img_width);
-              int height = (int)(data[3] * _img_height);
-              int left = centerX - width / 2;
-              int top = centerY - height / 2;
-              
-              classIds.push_back(classId.x);
-              confs.push_back((float)conf);
-              bboxes.push_back(cv::Rect(left, top, width, height));
+        // std::cout<<data[0]<<std::endl;
+
+        for (int j = 0; j < outs[i].rows; ++j, data += outs[i].cols)
+        {
+            Mat scores = outs[i].row(j).colRange(5, outs[i].cols);
+            Mat vals = outs[i].row(j).colRange(0, 4);
+           
+            Point classIdPoint;
+            double confidence;
+            // Get the value and location of the maximum score
+            minMaxLoc(scores, 0, &confidence, 0, &classIdPoint);
+            if (confidence > 0.5 && classIdPoint.x==0)
+            {   
+                int centerX = (int)(data[0] * _img_width);
+                int centerY = (int)(data[1] * _img_height);
+                int width = (int)(data[2] * _img_width);
+                int height = (int)(data[3] * _img_height);
+                int left = centerX - width / 2;
+                int top = centerY - height / 2;
+                 
+                classIds.push_back(classIdPoint.x);
+                confidences.push_back((float)confidence);
+                boxes.push_back(Rect(left, top, width, height));
             }
-            }
+        }
     }
-
+     
+    // Perform non maximum suppression to eliminate redundant overlapping boxes with
+    // lower confidences
     vector<int> indices;
-    NMSBoxes(bboxes, confidences, conf_threshold, nms, indices); 
+    NMSBoxes(boxes, confidences, _conf_threshold, _nms_threshold, indices);
+    vector<Rect> bboxes_after_nms;
+    
+           
+    for(int i=0; i< indices.size();i++)
+      {bboxes_after_nms.push_back(boxes[indices[i]]);}
 
-  return indices, bboxes;
-}
-
-float Detection_module::calc_IOU(cv::Rect bbox1, cv::Rect bbox2) {
-  return 0.166;
-}
-
-std::vector<cv::Rect> Detection_module::nms(std::vector<cv::Rect>, vector<float> confs, float _conf_threshold, float _nms_threshold, vector<int> indices) {
-  std::vector<cv::Rect> bboxes_after_nms;
   return bboxes_after_nms;
 }
+

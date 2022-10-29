@@ -38,6 +38,7 @@
 #include <opencv2/opencv.hpp>
 
 #include "../include/Detection_module.hpp"
+#include "../include/ACME_robot.hpp"
 
 using namespace std;
 using namespace cv;
@@ -45,11 +46,17 @@ using namespace dnn;
 
 int main() {
   Detection_module detector;
+  ACME_robot Robot;
   Mat frame1 = imread(
       "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/"
       "test_img.jpg");
 
-  detector.bbox_detector(frame1);
+  Robot.perception_stack(frame1);
+//   vector<cv::Rect> bboxes;
+
+//   bboxes = detector.bbox_detector(frame1);
+//   Robot.draw_bboxes(frame1, bboxes, 0);
+
 
   // std::string filename = "/home/sahu27/Downloads/video.mpg";
   // std::cout<<"Hi";
@@ -74,3 +81,6 @@ int main() {
 
   return 0;
 }
+
+
+

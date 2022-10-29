@@ -56,28 +56,6 @@ TEST(test1, checking_bbox_detector) {
  * @brief Test to check the validity of Non Maximum Supression
  */
 
-TEST(test2, checking_nms) {
-  cv::Rect bbox(0, 0, 256, 256);
-  std::vector<cv::Rect> bboxes;
-  bboxes.push_back(bbox);
-  bboxes.push_back(bbox);
-
-  Detection_module detector;
-  EXPECT_NO_FATAL_FAILURE(detector.nms(bboxes));
-}
-
-/**
- * @brief Test to check the output of IOU
- */
-
-TEST(test3, chacking_Calc_IOU) {
-  Detection_module detect_object;
-  cv::Rect r1 = cv::Rect(0, 0, 10, 10);
-  cv::Rect r2 = cv::Rect(5, 5, 10, 10);
-  auto output = detect_object.calc_IOU(r1, r2);
-  ASSERT_NEAR(output, 0.166, 1);
-}
-
 /**
  * @brief Test to check the validity setter functions
  */
