@@ -62,42 +62,12 @@ TEST(test1, checking_bbox_detector) {
 
 TEST(test4, checking_set_functions) {
   Detection_module detector;
-<<<<<<< HEAD
   EXPECT_NO_FATAL_FAILURE(detector.set_img_width(5));
   EXPECT_NO_FATAL_FAILURE(detector.set_img_height(5));
   EXPECT_NO_FATAL_FAILURE(detector.set_conf_threshold(0.2));
   EXPECT_NO_FATAL_FAILURE(detector.set_nms_threshold(0.5));
 }
 
-=======
-  EXPECT_NO_FATAL_FAILURE(detector.nms(bboxes));
-}
-
-/**
- * @brief Test to check the output of IOU
- */
-
-TEST(test3, chacking_Calc_IOU) {
-  Detection_module detect_object;
-  cv::Rect r1 = cv::Rect(0, 0, 10, 10);
-  cv::Rect r2 = cv::Rect(5, 5, 10, 10);
-  auto output = detect_object.calc_IOU(r1, r2);
-  ASSERT_NEAR(output, 0.166, 1);
-}
-
-/**
- * @brief Test to check the validity setter functions
- */
-
-TEST(test4, checking_set_functions) {
-  Detection_module detector;
-  EXPECT_NO_FATAL_FAILURE(detector.set_img_width(5));
-  EXPECT_NO_FATAL_FAILURE(detector.set_img_height(5));
-  EXPECT_NO_FATAL_FAILURE(detector.set_conf_threshold(0.2));
-  EXPECT_NO_FATAL_FAILURE(detector.set_nms_threshold(0.5));
-}
-
->>>>>>> 15c6b16 (Vishaal (#6))
 TEST(intriniscsettertest, settingintrinsics) {
   Transformation_module Transform;
   float intrinsics[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};

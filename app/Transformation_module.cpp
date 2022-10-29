@@ -59,14 +59,12 @@ std::array<float, 4> Transformation_module::transform_2dto3D(
   float _focalLength = _intrinsics[1][1];
   double _calib_factor = 0.0;
   std::array<float, 4> coord = {0, 0, 0, 1};
-  std::vector<std::array<float, 4>> coords;
-  for (cv::Rect r : rect) {
-    bbox_id++;
-    double factor = _avg_human_height / r.height;
+ 
+  double factor = _avg_human_height / r.height;
 
   _calib_factor = _focalLength * _avg_human_height;
 
-    float calib_distance = _calib_factor / r.height;
+  float calib_distance = _calib_factor / r.height;
 
   float x_center = (r.width / 2.0) + r.x;
   float y_center = (r.height / 2.0) + r.y;
@@ -85,5 +83,4 @@ std::array<float, 4> Transformation_module::transform_2dto3D(
 
 
   return cam_coord;
-
 }

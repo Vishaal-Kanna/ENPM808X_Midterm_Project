@@ -20,7 +20,6 @@
  * SOFTWARE.
  */
 
-
 /**
  * @file Detection_module.hpp
  * @authors Sahruday, Vishaal Kanna Sivakumar

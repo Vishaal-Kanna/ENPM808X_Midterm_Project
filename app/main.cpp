@@ -32,7 +32,6 @@
  */
 
 #include <iostream>
-
 #include <opencv2/core/core.hpp>
 #include <opencv2/dnn.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -40,10 +39,6 @@
 
 #include "../include/Detection_module.hpp"
 #include "../include/ACME_robot.hpp"
-=======
-
-#include "../include/Detection_module.hpp"
->>>>>>> 15c6b16 (Vishaal (#6))
 
 using namespace std;
 using namespace cv;
@@ -61,16 +56,12 @@ int main() {
       "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/"
       "test_img.jpg");
 
-
   Robot.read_video("/home/vishaal/Downloads/Aya Nakamura - Copines - Minny Park Choreography.mp4");
 //   vector<cv::Rect> bboxes;
 
 //   bboxes = detector.bbox_detector(frame1);
 //   Robot.draw_bboxes(frame1, bboxes, 0);
 
-
-
-  detector.bbox_detector(frame1);
 
   // std::string filename = "/home/sahu27/Downloads/video.mpg";
   // std::cout<<"Hi";
@@ -93,13 +84,8 @@ int main() {
   //   }
   //   cv::waitKey(0);
 
-
   return 0;
-
 }
-
-
-
 
 
 

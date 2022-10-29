@@ -35,6 +35,8 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include <unordered_map>
+#include <string> 
+#include <vector>
 
 #include "Detection_module.hpp"
 #include "Tracking_module.hpp"
