@@ -62,6 +62,9 @@ mkdir -p build && cd build
 cmake ../opencv
 make -j4
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7c1ed7c (Update readme.md)
 sudo make install
 ```
 
