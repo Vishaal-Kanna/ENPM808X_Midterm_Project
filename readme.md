@@ -49,6 +49,9 @@ google-chrome index.html (or use your favourite browser)
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9acb210 (Install opencv_update)
 
 ## Install Opencv
 ```
@@ -58,6 +61,7 @@ git -C opencv checkout 4.x
 mkdir -p build && cd build
 cmake ../opencv
 make -j4
+<<<<<<< HEAD
 sudo make install
 ```
 
@@ -65,6 +69,10 @@ sudo make install
 >>>>>>> 15c6b16 (Vishaal (#6))
 =======
 >>>>>>> 7e0f72c (Update readme.md)
+=======
+```
+
+>>>>>>> 9acb210 (Install opencv_update)
 ## Modules
 
 ### Detection Module
