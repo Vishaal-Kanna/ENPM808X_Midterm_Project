@@ -44,6 +44,17 @@ cd <path to repository>/Docs/html
 google-chrome index.html (or use your favourite browser)
 ```
 
+
+## Install Opencv
+```
+git clone https://github.com/opencv/opencv.git
+git -C opencv checkout 4.x
+
+mkdir -p build && cd build
+cmake ../opencv
+make -j4
+```
+
 ## Modules
 
 ### Detection Module
