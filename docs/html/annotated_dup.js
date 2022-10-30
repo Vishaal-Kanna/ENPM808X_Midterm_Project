@@ -1,8 +1,8 @@
 var annotated_dup =
 [
     [ "bar", null, [
-      [ "Setup", "md_vendor_googletest_googletest__r_e_a_d_m_e.html#autotoc_md1233", null ],
-      [ "Build", "md_vendor_googletest_googletest__r_e_a_d_m_e.html#autotoc_md1234", null ],
+      [ "Setup", "md__home_vishaal__vishaal__u_m_d__sem_3__e_n_p_m808_x__e_n_p_m808_x__midterm__project_vendor_googletest_googletest__r_e_a_d_m_e.html#autotoc_md1234", null ],
+      [ "Build", "md__home_vishaal__vishaal__u_m_d__sem_3__e_n_p_m808_x__e_n_p_m808_x__midterm__project_vendor_googletest_googletest__r_e_a_d_m_e.html#autotoc_md1235", null ],
       [ "MixedUpTestCaseTest", "classbar_1_1_mixed_up_test_case_test.html", null ],
       [ "MixedUpTestCaseWithSameTestNameTest", "classbar_1_1_mixed_up_test_case_with_same_test_name_test.html", null ]
     ] ],

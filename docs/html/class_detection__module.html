@@ -120,15 +120,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af9c3e54333dfc061bcc3489fa72b7268"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_detection__module.html#af9c3e54333dfc061bcc3489fa72b7268">set_nms_threshold</a> (float val)</td></tr>
 <tr class="memdesc:af9c3e54333dfc061bcc3489fa72b7268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of Time step.  <a href="class_detection__module.html#af9c3e54333dfc061bcc3489fa72b7268">More...</a><br /></td></tr>
 <tr class="separator:af9c3e54333dfc061bcc3489fa72b7268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4415a1fc7418c84e23eda474b1e7dcaf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_detection__module.html#a4415a1fc7418c84e23eda474b1e7dcaf">get_img_width</a> ()</td></tr>
+<tr class="memdesc:a4415a1fc7418c84e23eda474b1e7dcaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of img_width constant.  <a href="class_detection__module.html#a4415a1fc7418c84e23eda474b1e7dcaf">More...</a><br /></td></tr>
+<tr class="separator:a4415a1fc7418c84e23eda474b1e7dcaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d6e3a6e0178cbe3a7fdd07b7d4abcdc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_detection__module.html#a1d6e3a6e0178cbe3a7fdd07b7d4abcdc">get_img_height</a> ()</td></tr>
+<tr class="memdesc:a1d6e3a6e0178cbe3a7fdd07b7d4abcdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of img_height constant.  <a href="class_detection__module.html#a1d6e3a6e0178cbe3a7fdd07b7d4abcdc">More...</a><br /></td></tr>
+<tr class="separator:a1d6e3a6e0178cbe3a7fdd07b7d4abcdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed20749a2f8ed6f36b05b1ab8d7b38af"><td class="memItemLeft" align="right" valign="top">std::vector&lt; cv::Rect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_detection__module.html#aed20749a2f8ed6f36b05b1ab8d7b38af">bbox_detector</a> (cv::Mat frame)</td></tr>
 <tr class="memdesc:aed20749a2f8ed6f36b05b1ab8d7b38af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to predict locations of humans in the image.  <a href="class_detection__module.html#aed20749a2f8ed6f36b05b1ab8d7b38af">More...</a><br /></td></tr>
 <tr class="separator:aed20749a2f8ed6f36b05b1ab8d7b38af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1442a9e3be85c63ba952a182d29ce1d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_detection__module.html#ab1442a9e3be85c63ba952a182d29ce1d">calc_IOU</a> (cv::Rect bbox1, cv::Rect bbox2)</td></tr>
-<tr class="memdesc:ab1442a9e3be85c63ba952a182d29ce1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to calculate Intersection over Union for two bounding boxes.  <a href="class_detection__module.html#ab1442a9e3be85c63ba952a182d29ce1d">More...</a><br /></td></tr>
-<tr class="separator:ab1442a9e3be85c63ba952a182d29ce1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0accc8eae5d24cf912d1733763dcac8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; cv::Rect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_detection__module.html#af0accc8eae5d24cf912d1733763dcac8">nms</a> (std::vector&lt; cv::Rect &gt; bboxes)</td></tr>
-<tr class="memdesc:af0accc8eae5d24cf912d1733763dcac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to perform non-maximum supression and remove overlapping boxes.  <a href="class_detection__module.html#af0accc8eae5d24cf912d1733763dcac8">More...</a><br /></td></tr>
-<tr class="separator:af0accc8eae5d24cf912d1733763dcac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7948fcc978ad46d9ec2404be401b36e7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; cv::Rect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_detection__module.html#a7948fcc978ad46d9ec2404be401b36e7">process_bboxes</a> (const std::vector&lt; cv::Mat &gt; &amp;outs)</td></tr>
+<tr class="memdesc:a7948fcc978ad46d9ec2404be401b36e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to remove low confidence and overlapping boxes from the model.  <a href="class_detection__module.html#a7948fcc978ad46d9ec2404be401b36e7">More...</a><br /></td></tr>
+<tr class="separator:a7948fcc978ad46d9ec2404be401b36e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to localize the locations of humans in a given image. </p>
@@ -139,7 +142,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_detection__module_8hpp_source.html#l00044">44</a> of file <a class="el" href="_detection__module_8hpp_source.html">Detection_module.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_detection__module_8hpp_source.html#l00046">46</a> of file <a class="el" href="_detection__module_8hpp_source.html">Detection_module.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8ab31e128866acbbfb40382294857e43"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ab31e128866acbbfb40382294857e43">&#9670;&nbsp;</a></span>Detection_module()</h2>
@@ -173,7 +176,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_detection__module_8hpp_source.html#l00052">52</a> of file <a class="el" href="_detection__module_8hpp_source.html">Detection_module.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_detection__module_8hpp_source.html#l00054">54</a> of file <a class="el" href="_detection__module_8hpp_source.html">Detection_module.hpp</a>.</p>
 
 </div>
 </div>
@@ -207,66 +210,82 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab1442a9e3be85c63ba952a182d29ce1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1442a9e3be85c63ba952a182d29ce1d">&#9670;&nbsp;</a></span>calc_IOU()</h2>
+<a id="a1d6e3a6e0178cbe3a7fdd07b7d4abcdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d6e3a6e0178cbe3a7fdd07b7d4abcdc">&#9670;&nbsp;</a></span>get_img_height()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float Detection_module::calc_IOU </td>
+          <td class="memname">int Detection_module::get_img_height </td>
           <td>(</td>
-          <td class="paramtype">cv::Rect&#160;</td>
-          <td class="paramname"><em>bbox1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">cv::Rect&#160;</td>
-          <td class="paramname"><em>bbox2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Method to calculate Intersection over Union for two bounding boxes. </p>
+<p>Set the value of img_height constant. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">std::vector&lt;cv::rect&gt;</td><td>bbox1 </td></tr>
-    <tr><td class="paramname">std::vector&lt;cv::rect&gt;</td><td>bbox2 </td></tr>
+    <tr><td class="paramname">val</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;cv::rect&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_detection__module_8cpp_source.html#l00065">65</a> of file <a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_detection__module_8cpp_source.html#l00046">46</a> of file <a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a>.</p>
 
 </div>
 </div>
-<a id="af0accc8eae5d24cf912d1733763dcac8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0accc8eae5d24cf912d1733763dcac8">&#9670;&nbsp;</a></span>nms()</h2>
+<a id="a4415a1fc7418c84e23eda474b1e7dcaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4415a1fc7418c84e23eda474b1e7dcaf">&#9670;&nbsp;</a></span>get_img_width()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; cv::Rect &gt; Detection_module::nms </td>
+          <td class="memname">int Detection_module::get_img_width </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; cv::Rect &gt;&#160;</td>
-          <td class="paramname"><em>bboxes</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Method to perform non-maximum supression and remove overlapping boxes. </p>
+<p>Set the value of img_width constant. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">std::vector&lt;cv::rect&gt;</td><td></td></tr>
+    <tr><td class="paramname">val</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_detection__module_8cpp_source.html#l00044">44</a> of file <a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7948fcc978ad46d9ec2404be401b36e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7948fcc978ad46d9ec2404be401b36e7">&#9670;&nbsp;</a></span>process_bboxes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; cv::Rect &gt; Detection_module::process_bboxes </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; cv::Mat &gt; &amp;&#160;</td>
+          <td class="paramname"><em>outs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method to remove low confidence and overlapping boxes from the model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Mat&amp;</td><td>frame, const vector&lt;Mat&gt;&amp; outs </td></tr>
   </table>
   </dd>
 </dl>
@@ -301,7 +320,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_detection__module_8cpp_source.html#l00044">44</a> of file <a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_detection__module_8cpp_source.html#l00040">40</a> of file <a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a>.</p>
 
 </div>
 </div>
@@ -330,7 +349,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_detection__module_8cpp_source.html#l00042">42</a> of file <a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_detection__module_8cpp_source.html#l00038">38</a> of file <a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a>.</p>
 
 </div>
 </div>
@@ -359,7 +378,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_detection__module_8cpp_source.html#l00040">40</a> of file <a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_detection__module_8cpp_source.html#l00036">36</a> of file <a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a>.</p>
 
 </div>
 </div>
@@ -388,13 +407,13 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_detection__module_8cpp_source.html#l00046">46</a> of file <a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_detection__module_8cpp_source.html#l00042">42</a> of file <a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="_detection__module_8hpp_source.html">Detection_module.hpp</a></li>
-<li>app/<a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a></li>
+<li>/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/include/<a class="el" href="_detection__module_8hpp_source.html">Detection_module.hpp</a></li>
+<li>/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/<a class="el" href="_detection__module_8cpp_source.html">Detection_module.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

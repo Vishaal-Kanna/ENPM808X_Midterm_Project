@@ -38,6 +38,7 @@
 #include "../include/Detection_module.hpp"
 #include "../include/Tracking_module.hpp"
 #include "../include/Transformation_module.hpp"
+#include "../include/ACME_robot.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/objdetect/objdetect.hpp"
@@ -53,35 +54,48 @@ TEST(test1, checking_bbox_detector) {
 }
 
 /**
- * @brief Test to check the validity of Non Maximum Supression
- */
-
-/**
  * @brief Test to check the validity setter functions
  */
 
-TEST(test4, checking_set_functions) {
+TEST(test4, checking_set_functions_for_detector) {
   Detection_module detector;
   EXPECT_NO_FATAL_FAILURE(detector.set_img_width(5));
   EXPECT_NO_FATAL_FAILURE(detector.set_img_height(5));
   EXPECT_NO_FATAL_FAILURE(detector.set_conf_threshold(0.2));
   EXPECT_NO_FATAL_FAILURE(detector.set_nms_threshold(0.5));
+  EXPECT_NO_FATAL_FAILURE(detector.get_img_height());
+  EXPECT_NO_FATAL_FAILURE(detector.get_img_width());
 }
 
-TEST(intriniscsettertest, settingintrinsics) {
+TEST(test5, checking_transformation_module_functions) {
   Transformation_module Transform;
   float intrinsics[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
-  ASSERT_NO_THROW(Transform.set_intrinsics(intrinsics));
-}
-
-TEST(extrinsicssettertest, settingextrinsics) {
-  Transformation_module Transform;
   float cam_to_rob[3][4] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
-  ASSERT_NO_THROW(Transform.set_cam_to_rob(cam_to_rob));
-}
-
-TEST(threedtorobotframe, transform_2dto3D) {
-  Transformation_module Transform;
   cv::Rect rect;
+  ASSERT_NO_THROW(Transform.set_cam_to_rob(cam_to_rob));
+  ASSERT_NO_THROW(Transform.set_intrinsics(intrinsics));
   ASSERT_NO_THROW(Transform.transform_2dto3D(rect));
 }
+
+TEST(test6, checking_tracking_module_functions) {
+  Tracking_module tracker;
+  float intrinsics[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+  float cam_to_rob[3][4] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+  std::vector<cv::Rect> rect;
+  ASSERT_NO_THROW(tracker.set_track_ids(rect));
+  ASSERT_NO_THROW(tracker.euclidean_tracker(rect));
+}
+
+TEST(test7, checking_ACME_robot_functions) {
+  ACME_robot Robot;
+  cv::Mat image(cv::Size(416, 416), CV_8UC3, cv::Scalar(0, 0, 255));
+  float intrinsics[3][3] = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+  float cam_to_rob[3][4] = {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}};
+  std::unordered_map<int, cv::Rect> bboxes_with_ids;
+  EXPECT_NO_FATAL_FAILURE(Robot.set_detector_parameters(416,416,0.5,0.5));
+  EXPECT_NO_FATAL_FAILURE(Robot.set_transformation_parameters(intrinsics,cam_to_rob));
+  EXPECT_NO_FATAL_FAILURE(Robot.perception_stack(image, 1));
+  EXPECT_NO_FATAL_FAILURE(Robot.draw_bboxes(image, bboxes_with_ids, 416, 416));
+  EXPECT_NO_FATAL_FAILURE(Robot.read_video("/home/vishaal/Downloads/test_video.mp4"));
+}
+

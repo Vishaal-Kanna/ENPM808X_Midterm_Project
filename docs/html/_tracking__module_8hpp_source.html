@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MidtermProject-ENPM808X: include/Tracking_module.hpp Source File</title>
+<title>MidtermProject-ENPM808X: /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/include/Tracking_module.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,29 +97,27 @@ $(document).ready(function(){initNavTree('_tracking__module_8hpp_source.html',''
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_tracking__module.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tracking__module.html">Tracking_module</a> {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_tracking__module.html#ae5c99bd76267490faa8e58f11fb73343">   52</a></span>&#160;  <a class="code" href="class_tracking__module.html#ae5c99bd76267490faa8e58f11fb73343">Tracking_module</a>() {}</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_tracking__module.html#a6ae5dfd7fed240e08fdafd074f49767d">set_track_ids</a>(std::unordered_map&lt;int, cv::Rect&gt; tracks);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  std::vector&lt;cv::Rect&gt; <a class="code" href="class_tracking__module.html#af90668ee3fe3acd82b877ac33e73ee67">hungarian_algorithm</a>(</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      std::vector&lt;cv::Rect&gt; bboxes_frame1, std::vector&lt;cv::Rect&gt; bboxes_frame2);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_tracking__module.html#ab1b07bc8906337ccbb5a1271ca75da54">track_human</a>(cv::Mat image1, cv::Mat image2);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  std::unordered_map&lt;int, cv::Rect&gt; _track_ids;  </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_tracking__module.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tracking__module.html">Tracking_module</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_tracking__module.html#ae5c99bd76267490faa8e58f11fb73343">   53</a></span>&#160;  <a class="code" href="class_tracking__module.html#ae5c99bd76267490faa8e58f11fb73343">Tracking_module</a>() {}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  std::unordered_map&lt;int, cv::Rect&gt; <a class="code" href="class_tracking__module.html#a95a84262f02f66c3d5211e2d4ebd9632">set_track_ids</a>(std::vector&lt;cv::Rect&gt; bboxes);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  std::unordered_map&lt;int, cv::Rect&gt; <a class="code" href="class_tracking__module.html#adeb1ae66e3a95b7b7e5304b4d92dd878">euclidean_tracker</a>(</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      std::vector&lt;cv::Rect&gt; bboxes);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  std::unordered_map&lt;int, cv::Rect&gt; _track_ids;  </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_tracking__module_html_af90668ee3fe3acd82b877ac33e73ee67"><div class="ttname"><a href="class_tracking__module.html#af90668ee3fe3acd82b877ac33e73ee67">Tracking_module::hungarian_algorithm</a></div><div class="ttdeci">std::vector&lt; cv::Rect &gt; hungarian_algorithm(std::vector&lt; cv::Rect &gt; bboxes_frame1, std::vector&lt; cv::Rect &gt; bboxes_frame2)</div><div class="ttdoc">Method to associate Ids based on IOU.</div><div class="ttdef"><b>Definition:</b> <a href="_tracking__module_8cpp_source.html#l00043">Tracking_module.cpp:43</a></div></div>
-<div class="ttc" id="aclass_tracking__module_html_a6ae5dfd7fed240e08fdafd074f49767d"><div class="ttname"><a href="class_tracking__module.html#a6ae5dfd7fed240e08fdafd074f49767d">Tracking_module::set_track_ids</a></div><div class="ttdeci">void set_track_ids(std::unordered_map&lt; int, cv::Rect &gt; tracks)</div><div class="ttdoc">Set the value of track_ids.</div><div class="ttdef"><b>Definition:</b> <a href="_tracking__module_8cpp_source.html#l00039">Tracking_module.cpp:39</a></div></div>
-<div class="ttc" id="aclass_tracking__module_html_ab1b07bc8906337ccbb5a1271ca75da54"><div class="ttname"><a href="class_tracking__module.html#ab1b07bc8906337ccbb5a1271ca75da54">Tracking_module::track_human</a></div><div class="ttdeci">void track_human(cv::Mat image1, cv::Mat image2)</div><div class="ttdoc">Method to associate Ids based on IOU.</div><div class="ttdef"><b>Definition:</b> <a href="_tracking__module_8cpp_source.html#l00052">Tracking_module.cpp:52</a></div></div>
-<div class="ttc" id="aclass_tracking__module_html_ae5c99bd76267490faa8e58f11fb73343"><div class="ttname"><a href="class_tracking__module.html#ae5c99bd76267490faa8e58f11fb73343">Tracking_module::Tracking_module</a></div><div class="ttdeci">Tracking_module()</div><div class="ttdoc">Default constructor for class Detection_module.</div><div class="ttdef"><b>Definition:</b> <a href="_tracking__module_8hpp_source.html#l00052">Tracking_module.hpp:52</a></div></div>
-<div class="ttc" id="aclass_tracking__module_html"><div class="ttname"><a href="class_tracking__module.html">Tracking_module</a></div><div class="ttdoc">Class to track the humans detected in a given image.</div><div class="ttdef"><b>Definition:</b> <a href="_tracking__module_8hpp_source.html#l00044">Tracking_module.hpp:44</a></div></div>
+<div class="ttc" id="aclass_tracking__module_html_a95a84262f02f66c3d5211e2d4ebd9632"><div class="ttname"><a href="class_tracking__module.html#a95a84262f02f66c3d5211e2d4ebd9632">Tracking_module::set_track_ids</a></div><div class="ttdeci">std::unordered_map&lt; int, cv::Rect &gt; set_track_ids(std::vector&lt; cv::Rect &gt; bboxes)</div><div class="ttdoc">Set the value of track_ids.</div><div class="ttdef"><b>Definition:</b> <a href="_tracking__module_8cpp_source.html#l00036">Tracking_module.cpp:36</a></div></div>
+<div class="ttc" id="aclass_tracking__module_html_adeb1ae66e3a95b7b7e5304b4d92dd878"><div class="ttname"><a href="class_tracking__module.html#adeb1ae66e3a95b7b7e5304b4d92dd878">Tracking_module::euclidean_tracker</a></div><div class="ttdeci">std::unordered_map&lt; int, cv::Rect &gt; euclidean_tracker(std::vector&lt; cv::Rect &gt; bboxes)</div><div class="ttdoc">Method to associate Ids based on IOU.</div><div class="ttdef"><b>Definition:</b> <a href="_tracking__module_8cpp_source.html#l00044">Tracking_module.cpp:44</a></div></div>
+<div class="ttc" id="aclass_tracking__module_html_ae5c99bd76267490faa8e58f11fb73343"><div class="ttname"><a href="class_tracking__module.html#ae5c99bd76267490faa8e58f11fb73343">Tracking_module::Tracking_module</a></div><div class="ttdeci">Tracking_module()</div><div class="ttdoc">Default constructor for class Detection_module.</div><div class="ttdef"><b>Definition:</b> <a href="_tracking__module_8hpp_source.html#l00053">Tracking_module.hpp:53</a></div></div>
+<div class="ttc" id="aclass_tracking__module_html"><div class="ttname"><a href="class_tracking__module.html">Tracking_module</a></div><div class="ttdoc">Class to track the humans detected in a given image.</div><div class="ttdef"><b>Definition:</b> <a href="_tracking__module_8hpp_source.html#l00045">Tracking_module.hpp:45</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -108,15 +108,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae5c99bd76267490faa8e58f11fb73343"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tracking__module.html#ae5c99bd76267490faa8e58f11fb73343">Tracking_module</a> ()</td></tr>
 <tr class="memdesc:ae5c99bd76267490faa8e58f11fb73343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for class <a class="el" href="class_detection__module.html" title="Class to localize the locations of humans in a given image.">Detection_module</a>.  <a href="class_tracking__module.html#ae5c99bd76267490faa8e58f11fb73343">More...</a><br /></td></tr>
 <tr class="separator:ae5c99bd76267490faa8e58f11fb73343"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ae5dfd7fed240e08fdafd074f49767d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tracking__module.html#a6ae5dfd7fed240e08fdafd074f49767d">set_track_ids</a> (std::unordered_map&lt; int, cv::Rect &gt; tracks)</td></tr>
-<tr class="memdesc:a6ae5dfd7fed240e08fdafd074f49767d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of track_ids.  <a href="class_tracking__module.html#a6ae5dfd7fed240e08fdafd074f49767d">More...</a><br /></td></tr>
-<tr class="separator:a6ae5dfd7fed240e08fdafd074f49767d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af90668ee3fe3acd82b877ac33e73ee67"><td class="memItemLeft" align="right" valign="top">std::vector&lt; cv::Rect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tracking__module.html#af90668ee3fe3acd82b877ac33e73ee67">hungarian_algorithm</a> (std::vector&lt; cv::Rect &gt; bboxes_frame1, std::vector&lt; cv::Rect &gt; bboxes_frame2)</td></tr>
-<tr class="memdesc:af90668ee3fe3acd82b877ac33e73ee67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to associate Ids based on IOU.  <a href="class_tracking__module.html#af90668ee3fe3acd82b877ac33e73ee67">More...</a><br /></td></tr>
-<tr class="separator:af90668ee3fe3acd82b877ac33e73ee67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1b07bc8906337ccbb5a1271ca75da54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tracking__module.html#ab1b07bc8906337ccbb5a1271ca75da54">track_human</a> (cv::Mat image1, cv::Mat image2)</td></tr>
-<tr class="memdesc:ab1b07bc8906337ccbb5a1271ca75da54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to associate Ids based on IOU.  <a href="class_tracking__module.html#ab1b07bc8906337ccbb5a1271ca75da54">More...</a><br /></td></tr>
-<tr class="separator:ab1b07bc8906337ccbb5a1271ca75da54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a84262f02f66c3d5211e2d4ebd9632"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; int, cv::Rect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tracking__module.html#a95a84262f02f66c3d5211e2d4ebd9632">set_track_ids</a> (std::vector&lt; cv::Rect &gt; bboxes)</td></tr>
+<tr class="memdesc:a95a84262f02f66c3d5211e2d4ebd9632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of track_ids.  <a href="class_tracking__module.html#a95a84262f02f66c3d5211e2d4ebd9632">More...</a><br /></td></tr>
+<tr class="separator:a95a84262f02f66c3d5211e2d4ebd9632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb1ae66e3a95b7b7e5304b4d92dd878"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; int, cv::Rect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tracking__module.html#adeb1ae66e3a95b7b7e5304b4d92dd878">euclidean_tracker</a> (std::vector&lt; cv::Rect &gt; bboxes)</td></tr>
+<tr class="memdesc:adeb1ae66e3a95b7b7e5304b4d92dd878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to associate Ids based on IOU.  <a href="class_tracking__module.html#adeb1ae66e3a95b7b7e5304b4d92dd878">More...</a><br /></td></tr>
+<tr class="separator:adeb1ae66e3a95b7b7e5304b4d92dd878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to track the humans detected in a given image. </p>
@@ -127,7 +124,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_tracking__module_8hpp_source.html#l00044">44</a> of file <a class="el" href="_tracking__module_8hpp_source.html">Tracking_module.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tracking__module_8hpp_source.html#l00045">45</a> of file <a class="el" href="_tracking__module_8hpp_source.html">Tracking_module.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae5c99bd76267490faa8e58f11fb73343"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5c99bd76267490faa8e58f11fb73343">&#9670;&nbsp;</a></span>Tracking_module()</h2>
@@ -161,33 +158,23 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tracking__module_8hpp_source.html#l00052">52</a> of file <a class="el" href="_tracking__module_8hpp_source.html">Tracking_module.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tracking__module_8hpp_source.html#l00053">53</a> of file <a class="el" href="_tracking__module_8hpp_source.html">Tracking_module.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af90668ee3fe3acd82b877ac33e73ee67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af90668ee3fe3acd82b877ac33e73ee67">&#9670;&nbsp;</a></span>hungarian_algorithm()</h2>
+<a id="adeb1ae66e3a95b7b7e5304b4d92dd878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeb1ae66e3a95b7b7e5304b4d92dd878">&#9670;&nbsp;</a></span>euclidean_tracker()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; cv::Rect &gt; Tracking_module::hungarian_algorithm </td>
+          <td class="memname">std::unordered_map&lt; int, cv::Rect &gt; Tracking_module::euclidean_tracker </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; cv::Rect &gt;&#160;</td>
-          <td class="paramname"><em>bboxes_frame1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>bboxes</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">std::vector&lt; cv::Rect &gt;&#160;</td>
-          <td class="paramname"><em>bboxes_frame2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -201,21 +188,21 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;cv::rect&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tracking__module_8cpp_source.html#l00043">43</a> of file <a class="el" href="_tracking__module_8cpp_source.html">Tracking_module.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tracking__module_8cpp_source.html#l00044">44</a> of file <a class="el" href="_tracking__module_8cpp_source.html">Tracking_module.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a6ae5dfd7fed240e08fdafd074f49767d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ae5dfd7fed240e08fdafd074f49767d">&#9670;&nbsp;</a></span>set_track_ids()</h2>
+<a id="a95a84262f02f66c3d5211e2d4ebd9632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95a84262f02f66c3d5211e2d4ebd9632">&#9670;&nbsp;</a></span>set_track_ids()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Tracking_module::set_track_ids </td>
+          <td class="memname">std::unordered_map&lt; int, cv::Rect &gt; Tracking_module::set_track_ids </td>
           <td>(</td>
-          <td class="paramtype">std::unordered_map&lt; int, cv::Rect &gt;&#160;</td>
-          <td class="paramname"><em>tracks</em></td><td>)</td>
+          <td class="paramtype">std::vector&lt; cv::Rect &gt;&#160;</td>
+          <td class="paramname"><em>bboxes</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -228,54 +215,15 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>track_id </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_tracking__module_8cpp_source.html#l00039">39</a> of file <a class="el" href="_tracking__module_8cpp_source.html">Tracking_module.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ab1b07bc8906337ccbb5a1271ca75da54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1b07bc8906337ccbb5a1271ca75da54">&#9670;&nbsp;</a></span>track_human()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Tracking_module::track_human </td>
-          <td>(</td>
-          <td class="paramtype">cv::Mat&#160;</td>
-          <td class="paramname"><em>image1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cv::Mat&#160;</td>
-          <td class="paramname"><em>image2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Method to associate Ids based on IOU. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cv::Mat</td><td>image </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;cv::rect&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_tracking__module_8cpp_source.html#l00052">52</a> of file <a class="el" href="_tracking__module_8cpp_source.html">Tracking_module.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_tracking__module_8cpp_source.html#l00036">36</a> of file <a class="el" href="_tracking__module_8cpp_source.html">Tracking_module.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="_tracking__module_8hpp_source.html">Tracking_module.hpp</a></li>
-<li>app/<a class="el" href="_tracking__module_8cpp_source.html">Tracking_module.cpp</a></li>
+<li>/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/include/<a class="el" href="_tracking__module_8hpp_source.html">Tracking_module.hpp</a></li>
+<li>/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/<a class="el" href="_tracking__module_8cpp_source.html">Tracking_module.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

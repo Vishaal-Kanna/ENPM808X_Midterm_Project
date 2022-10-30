@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MidtermProject-ENPM808X: include/Transformation_module.hpp Source File</title>
+<title>MidtermProject-ENPM808X: /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/include/Transformation_module.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,8 +97,8 @@ $(document).ready(function(){initNavTree('_transformation__module_8hpp_source.ht
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_transformation__module.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_transformation__module.html">Transformation_module</a> {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; <span class="keyword">public</span>:</div>
@@ -108,25 +108,24 @@ $(document).ready(function(){initNavTree('_transformation__module_8hpp_source.ht
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="class_transformation__module.html#ab555a38ba4d5cc52a72e1f923564e528">set_cam_to_rob</a>(<span class="keywordtype">float</span> cam_to_rob[3][4]);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  std::vector&lt;std::array&lt;float, 4&gt;&gt; <a class="code" href="class_transformation__module.html#a60792ad958df99b0fee2f8c6c2319860">transform_2dto3D</a>(</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      std::vector&lt;cv::Rect&gt; rect);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">float</span> _intrinsics[3][3] = {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      {0, 1, 2}, {3, 4, 5}, {6, 7, 8}};  </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">float</span> _cam_to_rob[3][4] = {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      {0, 1, 2, 3},</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      {4, 5, 6, 7},</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      {8, 9, 10,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;       11}};  </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">double</span> _avg_human_height;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  std::array&lt;float, 4&gt; <a class="code" href="class_transformation__module.html#a1c9b53a32a662c544a1cb797b9cd6fc7">transform_2dto3D</a>(cv::Rect r);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">float</span> _intrinsics[3][3] = {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      {0, 1, 2}, {3, 4, 5}, {6, 7, 8}};  </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">float</span> _cam_to_rob[3][4] = {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      {0, 1, 2, 3},</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      {4, 5, 6, 7},</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      {8, 9, 10,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;       11}};  </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">double</span> _avg_human_height = 1.5;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_transformation__module_html"><div class="ttname"><a href="class_transformation__module.html">Transformation_module</a></div><div class="ttdoc">Class to transform the 2D image detections to 3D locations with respect to the robot frame.</div><div class="ttdef"><b>Definition:</b> <a href="_transformation__module_8hpp_source.html#l00046">Transformation_module.hpp:46</a></div></div>
 <div class="ttc" id="aclass_transformation__module_html_a73e081b665f70c209fdcebf4b6d5560e"><div class="ttname"><a href="class_transformation__module.html#a73e081b665f70c209fdcebf4b6d5560e">Transformation_module::Transformation_module</a></div><div class="ttdeci">Transformation_module()</div><div class="ttdoc">Default constructor for class Transformation_module.</div><div class="ttdef"><b>Definition:</b> <a href="_transformation__module_8hpp_source.html#l00054">Transformation_module.hpp:54</a></div></div>
 <div class="ttc" id="aclass_transformation__module_html_ab555a38ba4d5cc52a72e1f923564e528"><div class="ttname"><a href="class_transformation__module.html#ab555a38ba4d5cc52a72e1f923564e528">Transformation_module::set_cam_to_rob</a></div><div class="ttdeci">void set_cam_to_rob(float cam_to_rob[3][4])</div><div class="ttdoc">Set the value of camera to robot coordinate transformation matrix.</div><div class="ttdef"><b>Definition:</b> <a href="_transformation__module_8cpp_source.html#l00046">Transformation_module.cpp:46</a></div></div>
-<div class="ttc" id="aclass_transformation__module_html_a60792ad958df99b0fee2f8c6c2319860"><div class="ttname"><a href="class_transformation__module.html#a60792ad958df99b0fee2f8c6c2319860">Transformation_module::transform_2dto3D</a></div><div class="ttdeci">std::vector&lt; std::array&lt; float, 4 &gt; &gt; transform_2dto3D(std::vector&lt; cv::Rect &gt; rect)</div><div class="ttdoc">Get the 3D coordinates of the bounding box from 2D detections using average height of human.</div><div class="ttdef"><b>Definition:</b> <a href="_transformation__module_8cpp_source.html#l00054">Transformation_module.cpp:54</a></div></div>
+<div class="ttc" id="aclass_transformation__module_html_a1c9b53a32a662c544a1cb797b9cd6fc7"><div class="ttname"><a href="class_transformation__module.html#a1c9b53a32a662c544a1cb797b9cd6fc7">Transformation_module::transform_2dto3D</a></div><div class="ttdeci">std::array&lt; float, 4 &gt; transform_2dto3D(cv::Rect r)</div><div class="ttdoc">Get the 3D coordinates of the bounding box from 2D detections using average height of human.</div><div class="ttdef"><b>Definition:</b> <a href="_transformation__module_8cpp_source.html#l00054">Transformation_module.cpp:54</a></div></div>
 <div class="ttc" id="aclass_transformation__module_html_a21ccfa1425b8e9f22701c23247a197b4"><div class="ttname"><a href="class_transformation__module.html#a21ccfa1425b8e9f22701c23247a197b4">Transformation_module::set_intrinsics</a></div><div class="ttdeci">void set_intrinsics(float intrinsics[3][3])</div><div class="ttdoc">Set the value of intrinsic parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_transformation__module_8cpp_source.html#l00038">Transformation_module.cpp:38</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
