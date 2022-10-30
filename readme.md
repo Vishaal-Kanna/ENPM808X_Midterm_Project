@@ -97,7 +97,7 @@ doxygen Doxyfile
 firefox index.html
 ```
 
-##Known issues and bugs
+## Known issues and bugs
 
 1. Travis and Coveralls Not working due to subscription problems.
 2. Tracker module has been based on assumptions, will hold only for certain conditions.
