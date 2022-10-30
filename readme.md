@@ -13,11 +13,15 @@ Perception is an integral part of any autonomous system. Knowing the surrounding
 
 [Phase0 Presentation](https://drive.google.com/file/d/1ub64094s9hPrDXhbEKSXYC8esveSZAHf/view?usp=sharing) 
 
+[Phase1 Presentation](https://drive.google.com/file/d/153FP7lnLD9CjYQmFsAVQo6xBl6MGawtI/view?usp=sharing)
+
+## Development process
+
+Agile iterative process with Test driven development Approach. We switch Driver and navigator roles depending on the task.
+
 [AIP sheet](https://docs.google.com/spreadsheets/d/1pYYn6fuLaZafYxjfUbE6aWcIrWNkj-Lk/edit?usp=sharing&ouid=117244734534887324936&rtpof=true&sd=true)
 
 [Sprint Meeting](https://docs.google.com/document/d/1XypCPp2geL_ffwExqyoCF2SI7ATvjYEgtfYST-q0xqE/edit?usp=sharing)
-
-[Phase1 Presentation](https://drive.google.com/file/d/153FP7lnLD9CjYQmFsAVQo6xBl6MGawtI/view?usp=sharing)
 
 
 UML Diagram:
