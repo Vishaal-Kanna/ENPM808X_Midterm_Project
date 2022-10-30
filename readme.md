@@ -11,27 +11,39 @@ Perception is an integral part of any autonomous system. Knowing the surrounding
 
 [Sahruday Patti](sahruday@umd.edu) UID: 118218366
 
+## Presentation
+
 [Phase0 Presentation](https://drive.google.com/file/d/1ub64094s9hPrDXhbEKSXYC8esveSZAHf/view?usp=sharing) 
+
+[Phase1 Presentation](https://drive.google.com/file/d/153FP7lnLD9CjYQmFsAVQo6xBl6MGawtI/view?usp=sharing)
+
+## Development process
+
+Agile iterative process with Test driven development Approach. We switch Driver and navigator roles depending on the task.
 
 [AIP sheet](https://docs.google.com/spreadsheets/d/1pYYn6fuLaZafYxjfUbE6aWcIrWNkj-Lk/edit?usp=sharing&ouid=117244734534887324936&rtpof=true&sd=true)
 
 [Sprint Meeting](https://docs.google.com/document/d/1XypCPp2geL_ffwExqyoCF2SI7ATvjYEgtfYST-q0xqE/edit?usp=sharing)
 
-[Phase1 Presentation](https://drive.google.com/file/d/153FP7lnLD9CjYQmFsAVQo6xBl6MGawtI/view?usp=sharing)
-
 
 UML Diagram:
 
-![Alt text](UML/revised/uml_class_diagram.PNG)
+![Alt text](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/UML/revised/uml_class_diagram.PNG?raw=true "Title")
 
-![Activity Diagram](UML/revised/uml_activity_diagram.pdf)
+![Activity Diagram](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/UML/revised/uml_activity_diagram.pdf)
 
-![QuadChart](Proposal_docs/quad_chart.pdf)
+![QuadChart](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/Proposal_docs/quad_chart.pdf)
 
 ## Results
 
 ![Result_Frame](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/outputs/output1.png)
 
+
+## Running
+
+Download the video and Yolov3 tiny weights from ![here](https://drive.google.com/drive/folders/1_tvLAOI7ZmhKPQpJbTqEpOvd83U_eqoD)
+
+Change the file path respectively in the detection module.cpp
 
 ## Dependencies
 Install Dependencies listed in requirements.sh
@@ -47,6 +59,15 @@ mkdir build
 cd build
 cmake ..
 make
+```
+To Run the module 
+```
+./app ACME
+```
+
+To Run Tests
+```
+./test/cpp-test
 ```
 
 ## Building for code coverage
@@ -73,6 +94,13 @@ doxygen Doxyfile
 
 firefox index.html
 ```
+
+## Known issues and bugs
+
+1. Travis and Coveralls Not working due to subscription problems.
+2. Tracker module has been based on assumptions, will hold only for certain conditions.
+3. Camera parameters has been chosen as per the need and not the correct matrix.
+4. Doxygen doucmentation been truncated to less number of files.
 
 
 
