@@ -37,9 +37,6 @@
 #include <opencv2/dnn.hpp>
 #include <opencv2/opencv.hpp>
 
-using namespace std;
-using namespace cv;
-using namespace dnn;
 /**
  * @brief Class to localize the locations of humans in a given image
  * @param class_data
@@ -57,7 +54,7 @@ class Detection_module {
   Detection_module() {
     _img_width = 416;
     _img_height = 416;
-    _conf_threshold = 0.4;
+    _conf_threshold = 0.5;
     _nms_threshold = 0.4;
   }
 
@@ -93,7 +90,7 @@ class Detection_module {
    */
   void set_nms_threshold(float val);
 
-/**
+  /**
    * @brief Set the value of img_width constant
    *
    * @param val
@@ -110,22 +107,6 @@ class Detection_module {
   int get_img_height();
 
   /**
-   * @brief Set the value of confidence threshold of detections constant
-   *
-   * @param val
-   * @return void
-   */
-  float get_conf_threshold();
-
-  /**
-   * @brief Set the value of Time step
-   *
-   * @param val
-   * @return void
-   */
-  float get_nms_threshold();
-
-  /**
    * @brief Method to predict locations of humans in the image
    *
    * @param cv::Mat image
@@ -133,14 +114,13 @@ class Detection_module {
    */
   std::vector<cv::Rect> bbox_detector(cv::Mat frame);
 
-
   /**
    * @brief Method to remove low confidence and overlapping boxes from the model
    *
    * @param Mat& frame, const vector<Mat>& outs
    * @return std::vector<cv::rect>
    */
-  vector<Rect> process_bboxes(Mat& frame, const vector<Mat>& outs);
+  std::vector<cv::Rect> process_bboxes(const std::vector<cv::Mat>& outs);
 
  private:
   int _img_width;         ///< Image width

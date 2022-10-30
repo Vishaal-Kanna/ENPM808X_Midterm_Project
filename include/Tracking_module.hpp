@@ -33,8 +33,9 @@
 
 #pragma once
 #include <iostream>
-#include <opencv2/opencv.hpp>
 #include <unordered_map>
+#include <vector>
+#include <opencv2/opencv.hpp>
 /**
  * @brief Class to track the humans detected in a given image
  * @param class_data
@@ -65,7 +66,8 @@ class Tracking_module {
    * @param cv::Mat image
    * @return std::vector<cv::rect>
    */
-  std::unordered_map<int, cv::Rect> euclidean_tracker(std::vector<cv::Rect> bboxes);
+  std::unordered_map<int, cv::Rect> euclidean_tracker(
+      std::vector<cv::Rect> bboxes);
 
  private:
   std::unordered_map<int, cv::Rect> _track_ids;  ///< Tracking Ids

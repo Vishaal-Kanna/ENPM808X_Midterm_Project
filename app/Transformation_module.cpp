@@ -51,36 +51,20 @@ void Transformation_module::set_cam_to_rob(float cam_to_rob[3][4]) {
   }
 }
 
-std::array<float, 4> Transformation_module::transform_2dto3D(
-    cv::Rect r) {
-
-  
-
+std::array<float, 4> Transformation_module::transform_2dto3D(cv::Rect r) {
   float _focalLength = _intrinsics[1][1];
   double _calib_factor = 0.0;
-  std::array<float, 4> coord = {0, 0, 0, 1};
- 
-  double factor = _avg_human_height / r.height;
-
-  _calib_factor = _focalLength * _avg_human_height;
 
   float calib_distance = _calib_factor / r.height;
 
   float x_center = (r.width / 2.0) + r.x;
   float y_center = (r.height / 2.0) + r.y;
 
-  float camera_x_center = x_center * calib_distance/_focalLength;
-  float camera_y_center = y_center * calib_distance/_focalLength;
+  float camera_x_center = x_center * calib_distance / _focalLength;
+  float camera_y_center = y_center * calib_distance / _focalLength;
 
-    std::array<float, 4> cam_coord = {camera_x_center, camera_y_center,
-                                      calib_distance + _cam_to_rob[3][2], 1};
-    // for (int i = 0; i < 3; i++) {
-    //   for (int j = 2; j < 3; j++) {
-    //     coord[i] = (_cam_to_rob[i][j + 1] * cam_coord[i]);
-    //   }
-    // }
-
-
+  std::array<float, 4> cam_coord = {camera_x_center, camera_y_center,
+                                    calib_distance + _cam_to_rob[2][3], 1};
 
   return cam_coord;
 }
