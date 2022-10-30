@@ -101,6 +101,7 @@ firefox index.html
 
 1. Travis and Coveralls Not working due to subscription problems.
 2. Tracker module has been based on assumptions, will hold only for certain conditions.
-3. Docygen doucmentation been truncated to less number of files.
+3. Camera parameters has been chosen as per the need and not the correct matrix.
+4. Doxygen doucmentation been truncated to less number of files.
 
 
