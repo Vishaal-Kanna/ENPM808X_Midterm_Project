@@ -24,9 +24,9 @@ UML Diagram:
 
 ![Alt text](UML/revised/uml_class_diagram.PNG)
 
-![Activity Diagram](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/UML/revised/uml_activity_diagram.pdf)
+![Activity Diagram](UML/revised/uml_activity_diagram.pdf)
 
-![QuadChart](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/Proposal_docs/quad_chart.pdf)
+![QuadChart](Proposal_docs/quad_chart.pdf)
 
 ## Results
 
