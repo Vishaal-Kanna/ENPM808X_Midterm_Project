@@ -2,7 +2,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/Vishaal-Kanna/ENPM808X_Midterm_Project/badge.svg?branch=master)](https://coveralls.io/github/Vishaal-Kanna/ENPM808X_Midterm_Project?branch=master)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # Human Detection and Tracking
 
