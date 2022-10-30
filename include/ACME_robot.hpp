@@ -32,13 +32,17 @@
  */
 
 #pragma once
-#include <iostream>
-#include <opencv2/opencv.hpp>
-#include <unordered_map>
 
-#include "Detection_module.hpp"
-#include "Tracking_module.hpp"
-#include "Transformation_module.hpp"
+#include <iostream>
+#include <string>
+#include <unordered_map>
+#include <vector>
+#include <opencv2/opencv.hpp>
+
+#include "../include/Detection_module.hpp"
+#include "../include/Tracking_module.hpp"
+#include "../include/Transformation_module.hpp"
+
 /**
  * @brief Class for the robot's human detection and tracking functions
  * @param class_data
@@ -53,7 +57,7 @@ class ACME_robot {
    * @param None
    * @return None
    */
-  ACME_robot() {}
+  ACME_robot() { _no_of_bboxes = 0; }
 
   /**
    * @brief Set the parameters of the detection module
@@ -63,14 +67,6 @@ class ACME_robot {
    */
   void set_detector_parameters(int img_width, int img_height,
                                float conf_threshold, float nms_threshold);
-
-  /**
-   * @brief Set the parameters of the Tracking module
-   *
-   * @param val
-   * @return void
-   */
-  void set_tracker_parameters(std::unordered_map<int, cv::Rect> tracks);
 
   /**
    * @brief Set the parameters of the Transformation module
@@ -84,20 +80,37 @@ class ACME_robot {
   /**
    * @brief Set the parameters of the Transformation module
    *
-   * @param val
+   * @param frame, frame_no
    * @return void
    */
-  void perception_stack(std::string img_folder_path);
+  int perception_stack(cv::Mat frame, int frame_no);
+
+  /**
+   * @brief Draw box function
+   *
+   * @param frame, bboxes, track_ids
+   * @return void
+   */
+  void draw_bboxes(cv::Mat frame,
+                   std::unordered_map<int, cv::Rect> bboxes_with_ids, int width,
+                   int height);
 
   /**
    * @brief read
-   * @param
-   *
+   * @param filename
+   * @return void
    */
-
   void read_video(std::string filename);
 
+    /**
+   * @brief read
+   * @param camera_id
+   * @return void
+   */
+  void live_video(int camera_id);
+
  private:
+  size_t _no_of_bboxes;
   Detection_module detector;
   Tracking_module tracker;
   Transformation_module transforms;

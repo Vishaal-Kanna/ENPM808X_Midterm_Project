@@ -111,15 +111,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abfb2e864d2150f5019a4a91ba7a57460"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_c_m_e__robot.html#abfb2e864d2150f5019a4a91ba7a57460">set_detector_parameters</a> (int img_width, int img_height, float conf_threshold, float nms_threshold)</td></tr>
 <tr class="memdesc:abfb2e864d2150f5019a4a91ba7a57460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parameters of the detection module.  <a href="class_a_c_m_e__robot.html#abfb2e864d2150f5019a4a91ba7a57460">More...</a><br /></td></tr>
 <tr class="separator:abfb2e864d2150f5019a4a91ba7a57460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e9b19819e59e012e84687ab3a128ada"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_c_m_e__robot.html#a6e9b19819e59e012e84687ab3a128ada">set_tracker_parameters</a> (std::unordered_map&lt; int, cv::Rect &gt; tracks)</td></tr>
-<tr class="memdesc:a6e9b19819e59e012e84687ab3a128ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parameters of the Tracking module.  <a href="class_a_c_m_e__robot.html#a6e9b19819e59e012e84687ab3a128ada">More...</a><br /></td></tr>
-<tr class="separator:a6e9b19819e59e012e84687ab3a128ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d79fe207f00112382ff29de802ccd96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_c_m_e__robot.html#a4d79fe207f00112382ff29de802ccd96">set_transformation_parameters</a> (float intrinsic[3][3], float cam_to_rob[3][4])</td></tr>
 <tr class="memdesc:a4d79fe207f00112382ff29de802ccd96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parameters of the Transformation module.  <a href="class_a_c_m_e__robot.html#a4d79fe207f00112382ff29de802ccd96">More...</a><br /></td></tr>
 <tr class="separator:a4d79fe207f00112382ff29de802ccd96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c7583f9ec6748df43bf8176c44c99f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_c_m_e__robot.html#a8c7583f9ec6748df43bf8176c44c99f6">perception_stack</a> (std::string img_folder_path)</td></tr>
-<tr class="memdesc:a8c7583f9ec6748df43bf8176c44c99f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parameters of the Transformation module.  <a href="class_a_c_m_e__robot.html#a8c7583f9ec6748df43bf8176c44c99f6">More...</a><br /></td></tr>
-<tr class="separator:a8c7583f9ec6748df43bf8176c44c99f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3790c87d17b6b2a1939d2bb59f71c1a0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_c_m_e__robot.html#a3790c87d17b6b2a1939d2bb59f71c1a0">perception_stack</a> (cv::Mat frame, int frame_no)</td></tr>
+<tr class="memdesc:a3790c87d17b6b2a1939d2bb59f71c1a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parameters of the Transformation module.  <a href="class_a_c_m_e__robot.html#a3790c87d17b6b2a1939d2bb59f71c1a0">More...</a><br /></td></tr>
+<tr class="separator:a3790c87d17b6b2a1939d2bb59f71c1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7042eda70ebc540488c5f0b9d5067824"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_c_m_e__robot.html#a7042eda70ebc540488c5f0b9d5067824">draw_bboxes</a> (cv::Mat frame, std::unordered_map&lt; int, cv::Rect &gt; bboxes_with_ids, int width, int height)</td></tr>
+<tr class="memdesc:a7042eda70ebc540488c5f0b9d5067824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw box function.  <a href="class_a_c_m_e__robot.html#a7042eda70ebc540488c5f0b9d5067824">More...</a><br /></td></tr>
+<tr class="separator:a7042eda70ebc540488c5f0b9d5067824"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca1e18db001bbdff5492ece466ecb389"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_c_m_e__robot.html#aca1e18db001bbdff5492ece466ecb389">read_video</a> (std::string filename)</td></tr>
 <tr class="memdesc:aca1e18db001bbdff5492ece466ecb389"><td class="mdescLeft">&#160;</td><td class="mdescRight">read  <a href="class_a_c_m_e__robot.html#aca1e18db001bbdff5492ece466ecb389">More...</a><br /></td></tr>
 <tr class="separator:aca1e18db001bbdff5492ece466ecb389"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,7 +133,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8hpp_source.html#l00048">48</a> of file <a class="el" href="_a_c_m_e__robot_8hpp_source.html">ACME_robot.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8hpp_source.html#l00052">52</a> of file <a class="el" href="_a_c_m_e__robot_8hpp_source.html">ACME_robot.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab50c27813c39e8da1b81d38d6fe464e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab50c27813c39e8da1b81d38d6fe464e1">&#9670;&nbsp;</a></span>ACME_robot()</h2>
@@ -167,23 +167,84 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>None </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8hpp_source.html#l00056">56</a> of file <a class="el" href="_a_c_m_e__robot_8hpp_source.html">ACME_robot.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8hpp_source.html#l00060">60</a> of file <a class="el" href="_a_c_m_e__robot_8hpp_source.html">ACME_robot.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8c7583f9ec6748df43bf8176c44c99f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c7583f9ec6748df43bf8176c44c99f6">&#9670;&nbsp;</a></span>perception_stack()</h2>
+<a id="a7042eda70ebc540488c5f0b9d5067824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7042eda70ebc540488c5f0b9d5067824">&#9670;&nbsp;</a></span>draw_bboxes()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ACME_robot::perception_stack </td>
+          <td class="memname">void ACME_robot::draw_bboxes </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>img_folder_path</em></td><td>)</td>
+          <td class="paramtype">cv::Mat&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::unordered_map&lt; int, cv::Rect &gt;&#160;</td>
+          <td class="paramname"><em>bboxes_with_ids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draw box function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame,bboxes,track_ids</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8cpp_source.html#l00082">82</a> of file <a class="el" href="_a_c_m_e__robot_8cpp_source.html">ACME_robot.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3790c87d17b6b2a1939d2bb59f71c1a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3790c87d17b6b2a1939d2bb59f71c1a0">&#9670;&nbsp;</a></span>perception_stack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ACME_robot::perception_stack </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>frame_no</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -191,13 +252,13 @@ Public Member Functions</h2></td></tr>
 <p>Set the parameters of the Transformation module. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">val</td><td></td></tr>
+    <tr><td class="paramname">frame,frame_no</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8cpp_source.html#l00064">64</a> of file <a class="el" href="_a_c_m_e__robot_8cpp_source.html">ACME_robot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8cpp_source.html#l00053">53</a> of file <a class="el" href="_a_c_m_e__robot_8cpp_source.html">ACME_robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -225,7 +286,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8cpp_source.html#l00068">68</a> of file <a class="el" href="_a_c_m_e__robot_8cpp_source.html">ACME_robot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8cpp_source.html#l00111">111</a> of file <a class="el" href="_a_c_m_e__robot_8cpp_source.html">ACME_robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -276,36 +337,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8cpp_source.html#l00044">44</a> of file <a class="el" href="_a_c_m_e__robot_8cpp_source.html">ACME_robot.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a6e9b19819e59e012e84687ab3a128ada"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e9b19819e59e012e84687ab3a128ada">&#9670;&nbsp;</a></span>set_tracker_parameters()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ACME_robot::set_tracker_parameters </td>
-          <td>(</td>
-          <td class="paramtype">std::unordered_map&lt; int, cv::Rect &gt;&#160;</td>
-          <td class="paramname"><em>tracks</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the parameters of the Tracking module. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">val</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8cpp_source.html#l00053">53</a> of file <a class="el" href="_a_c_m_e__robot_8cpp_source.html">ACME_robot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8cpp_source.html#l00038">38</a> of file <a class="el" href="_a_c_m_e__robot_8cpp_source.html">ACME_robot.cpp</a>.</p>
 
 </div>
 </div>
@@ -344,13 +376,13 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8cpp_source.html#l00058">58</a> of file <a class="el" href="_a_c_m_e__robot_8cpp_source.html">ACME_robot.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_c_m_e__robot_8cpp_source.html#l00047">47</a> of file <a class="el" href="_a_c_m_e__robot_8cpp_source.html">ACME_robot.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="_a_c_m_e__robot_8hpp_source.html">ACME_robot.hpp</a></li>
-<li>app/<a class="el" href="_a_c_m_e__robot_8cpp_source.html">ACME_robot.cpp</a></li>
+<li>/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/include/<a class="el" href="_a_c_m_e__robot_8hpp_source.html">ACME_robot.hpp</a></li>
+<li>/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/<a class="el" href="_a_c_m_e__robot_8cpp_source.html">ACME_robot.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

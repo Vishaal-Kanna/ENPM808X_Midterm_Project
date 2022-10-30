@@ -1,6 +1,7 @@
-<map id="include/Detection_module.hpp" name="include/Detection_module.hpp">
-<area shape="rect" id="node1" title="This file contains a stub class to represent the ACME robot module." alt="" coords="66,5,286,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,80,85,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="109,80,243,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="267,80,421,107"/>
+<map id="/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/include/Detection_module.hpp" name="/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/include/Detection_module.hpp">
+<area shape="rect" id="node1" title="This file contains a stub class to represent the ACME robot module." alt="" coords="77,5,328,76"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,124,85,151"/>
+<area shape="rect" id="node3" title=" " alt="" coords="110,124,173,151"/>
+<area shape="rect" id="node4" title=" " alt="" coords="197,124,331,151"/>
+<area shape="rect" id="node5" title=" " alt="" coords="355,124,509,151"/>
 </map>

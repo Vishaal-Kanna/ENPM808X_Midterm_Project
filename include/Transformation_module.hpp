@@ -33,8 +33,8 @@
 
 #pragma once
 #include <iostream>
-#include <opencv2/opencv.hpp>
 #include <vector>
+#include <opencv2/opencv.hpp>
 
 /**
  * @brief Class to transform the 2D image detections to 3D locations with
@@ -76,8 +76,7 @@ class Transformation_module {
    * @param val
    * @return void
    */
-  std::vector<std::array<float, 4>> transform_2dto3D(
-      std::vector<cv::Rect> rect);
+  std::array<float, 4> transform_2dto3D(cv::Rect r);
 
  private:
   float _intrinsics[3][3] = {
@@ -87,5 +86,5 @@ class Transformation_module {
       {4, 5, 6, 7},
       {8, 9, 10,
        11}};  ///< Tranformation from camera's coordinates to robot coordinates_
-  double _avg_human_height;
+  double _avg_human_height = 1.5;
 };

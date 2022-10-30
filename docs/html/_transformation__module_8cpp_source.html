@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MidtermProject-ENPM808X: app/Transformation_module.cpp Source File</title>
+<title>MidtermProject-ENPM808X: /home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/app/Transformation_module.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -115,43 +115,28 @@ $(document).ready(function(){initNavTree('_transformation__module_8cpp_source.ht
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_transformation__module.html#a60792ad958df99b0fee2f8c6c2319860">   54</a></span>&#160;std::vector&lt;std::array&lt;float, 4&gt;&gt; <a class="code" href="class_transformation__module.html#a60792ad958df99b0fee2f8c6c2319860">Transformation_module::transform_2dto3D</a>(</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    std::vector&lt;cv::Rect&gt; rect) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">int</span> bbox_id = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">float</span> _focalLength = _intrinsics[1][1];</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">double</span> _calib_factor = 0.0;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  std::array&lt;float, 4&gt; coord = {0, 0, 0, 1};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  std::vector&lt;std::array&lt;float, 4&gt;&gt; coords;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordflow">for</span> (cv::Rect r : rect) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    bbox_id++;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">double</span> factor = _avg_human_height / r.height;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    _calib_factor = _focalLength * _avg_human_height;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_transformation__module.html#a1c9b53a32a662c544a1cb797b9cd6fc7">   54</a></span>&#160;std::array&lt;float, 4&gt; <a class="code" href="class_transformation__module.html#a1c9b53a32a662c544a1cb797b9cd6fc7">Transformation_module::transform_2dto3D</a>(cv::Rect r) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">float</span> _focalLength = _intrinsics[1][1];</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">double</span> _calib_factor = _focalLength * _avg_human_height;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">float</span> calib_distance = _calib_factor / r.height;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">float</span> x_center = (r.width / 2.0) + r.x;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">float</span> y_center = (r.height / 2.0) + r.y;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">float</span> camera_x_center = x_center * calib_distance / _focalLength;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">float</span> camera_y_center = y_center * calib_distance / _focalLength;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">float</span> calib_distance = _calib_factor / r.height;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">float</span> x_center = r.width / 2.0 + r.x;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">float</span> y_center = r.height / 2.0 + r.y;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">float</span> camera_x_center = x_center * factor;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">float</span> camera_y_center = y_center * factor;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::array&lt;float, 4&gt; cam_coord = {camera_x_center, camera_y_center,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                      calib_distance, 1};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; i++) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 2; j &lt; 3; j++) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        coord[i] = _cam_to_rob[i][j + 1] * cam_coord[i];</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    coords.push_back(coord);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">return</span> coords;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  std::array&lt;float, 4&gt; cam_coord = {camera_x_center, camera_y_center,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                    calib_distance + _cam_to_rob[2][3], 1};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">return</span> cam_coord;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_transformation__module_html_ab555a38ba4d5cc52a72e1f923564e528"><div class="ttname"><a href="class_transformation__module.html#ab555a38ba4d5cc52a72e1f923564e528">Transformation_module::set_cam_to_rob</a></div><div class="ttdeci">void set_cam_to_rob(float cam_to_rob[3][4])</div><div class="ttdoc">Set the value of camera to robot coordinate transformation matrix.</div><div class="ttdef"><b>Definition:</b> <a href="_transformation__module_8cpp_source.html#l00046">Transformation_module.cpp:46</a></div></div>
-<div class="ttc" id="aclass_transformation__module_html_a60792ad958df99b0fee2f8c6c2319860"><div class="ttname"><a href="class_transformation__module.html#a60792ad958df99b0fee2f8c6c2319860">Transformation_module::transform_2dto3D</a></div><div class="ttdeci">std::vector&lt; std::array&lt; float, 4 &gt; &gt; transform_2dto3D(std::vector&lt; cv::Rect &gt; rect)</div><div class="ttdoc">Get the 3D coordinates of the bounding box from 2D detections using average height of human.</div><div class="ttdef"><b>Definition:</b> <a href="_transformation__module_8cpp_source.html#l00054">Transformation_module.cpp:54</a></div></div>
+<div class="ttc" id="aclass_transformation__module_html_a1c9b53a32a662c544a1cb797b9cd6fc7"><div class="ttname"><a href="class_transformation__module.html#a1c9b53a32a662c544a1cb797b9cd6fc7">Transformation_module::transform_2dto3D</a></div><div class="ttdeci">std::array&lt; float, 4 &gt; transform_2dto3D(cv::Rect r)</div><div class="ttdoc">Get the 3D coordinates of the bounding box from 2D detections using average height of human.</div><div class="ttdef"><b>Definition:</b> <a href="_transformation__module_8cpp_source.html#l00054">Transformation_module.cpp:54</a></div></div>
 <div class="ttc" id="aclass_transformation__module_html_a21ccfa1425b8e9f22701c23247a197b4"><div class="ttname"><a href="class_transformation__module.html#a21ccfa1425b8e9f22701c23247a197b4">Transformation_module::set_intrinsics</a></div><div class="ttdeci">void set_intrinsics(float intrinsics[3][3])</div><div class="ttdoc">Set the value of intrinsic parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_transformation__module_8cpp_source.html#l00038">Transformation_module.cpp:38</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

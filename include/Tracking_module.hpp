@@ -33,8 +33,9 @@
 
 #pragma once
 #include <iostream>
-#include <opencv2/opencv.hpp>
 #include <unordered_map>
+#include <vector>
+#include <opencv2/opencv.hpp>
 /**
  * @brief Class to track the humans detected in a given image
  * @param class_data
@@ -55,9 +56,9 @@ class Tracking_module {
    * @brief Set the value of track_ids
    *
    * @param val
-   * @return void
+   * @return track_id
    */
-  void set_track_ids(std::unordered_map<int, cv::Rect> tracks);
+  std::unordered_map<int, cv::Rect> set_track_ids(std::vector<cv::Rect> bboxes);
 
   /**
    * @brief Method to associate Ids based on IOU
@@ -65,16 +66,8 @@ class Tracking_module {
    * @param cv::Mat image
    * @return std::vector<cv::rect>
    */
-  std::vector<cv::Rect> hungarian_algorithm(
-      std::vector<cv::Rect> bboxes_frame1, std::vector<cv::Rect> bboxes_frame2);
-
-  /**
-   * @brief Method to associate Ids based on IOU
-   *
-   * @param cv::Mat image
-   * @return std::vector<cv::rect>
-   */
-  void track_human(cv::Mat image1, cv::Mat image2);
+  std::unordered_map<int, cv::Rect> euclidean_tracker(
+      std::vector<cv::Rect> bboxes);
 
  private:
   std::unordered_map<int, cv::Rect> _track_ids;  ///< Tracking Ids

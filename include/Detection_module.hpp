@@ -33,8 +33,10 @@
 
 #pragma once
 #include <iostream>
+#include <vector>
 #include <opencv2/dnn.hpp>
 #include <opencv2/opencv.hpp>
+
 /**
  * @brief Class to localize the locations of humans in a given image
  * @param class_data
@@ -50,9 +52,9 @@ class Detection_module {
    * @return None
    */
   Detection_module() {
-    _img_width = 256;
-    _img_height = 256;
-    _conf_threshold = 0.6;
+    _img_width = 416;
+    _img_height = 416;
+    _conf_threshold = 0.5;
     _nms_threshold = 0.4;
   }
 
@@ -89,6 +91,22 @@ class Detection_module {
   void set_nms_threshold(float val);
 
   /**
+   * @brief Set the value of img_width constant
+   *
+   * @param val
+   * @return void
+   */
+  int get_img_width();
+
+  /**
+   * @brief Set the value of img_height constant
+   *
+   * @param val
+   * @return void
+   */
+  int get_img_height();
+
+  /**
    * @brief Method to predict locations of humans in the image
    *
    * @param cv::Mat image
@@ -97,22 +115,12 @@ class Detection_module {
   std::vector<cv::Rect> bbox_detector(cv::Mat frame);
 
   /**
-   * @brief Method to calculate Intersection over Union for two bounding boxes
+   * @brief Method to remove low confidence and overlapping boxes from the model
    *
-   * @param std::vector<cv::rect> bbox1
-   * @param std::vector<cv::rect> bbox2
+   * @param Mat& frame, const vector<Mat>& outs
    * @return std::vector<cv::rect>
    */
-  float calc_IOU(cv::Rect bbox1, cv::Rect bbox2);
-
-  /**
-   * @brief Method to perform non-maximum supression and remove overlapping
-   * boxes
-   *
-   * @param std::vector<cv::rect>
-   * @return std::vector<cv::rect>
-   */
-  std::vector<cv::Rect> nms(std::vector<cv::Rect> bboxes);
+  std::vector<cv::Rect> process_bboxes(const std::vector<cv::Mat>& outs);
 
  private:
   int _img_width;         ///< Image width

@@ -31,15 +31,9 @@
  *
  */
 
-#include "../include/ACME_robot.hpp"
-
-#include <iostream>
-#include <vector>
 
 #include "../include/ACME_robot.hpp"
 
-using namespace cv;
-using std::string;
 
 void ACME_robot::set_detector_parameters(int img_width, int img_height,
                                          float conf_threshold,
@@ -50,33 +44,96 @@ void ACME_robot::set_detector_parameters(int img_width, int img_height,
   detector.set_nms_threshold(nms_threshold);
 }
 
-void ACME_robot::set_tracker_parameters(
-    std::unordered_map<int, cv::Rect> tracks) {
-  tracker.set_track_ids(tracks);
-}
-
 void ACME_robot::set_transformation_parameters(float intrinsic[3][3],
                                                float cam_to_rob[3][4]) {
   transforms.set_intrinsics(intrinsic);
   transforms.set_cam_to_rob(cam_to_rob);
 }
 
-void ACME_robot::perception_stack(std::string img_folder_path) {
-  cv::Mat img = cv::imread(img_folder_path);
+int ACME_robot::perception_stack(cv::Mat frame, int frame_no) {
+  int width = frame.cols;
+  int height = frame.rows;
+  int down_width = detector.get_img_width();
+  int down_height = detector.get_img_height();
+
+  std::vector<cv::Rect> bboxes_after_nms;
+  std::unordered_map<int, cv::Rect> bboxes_with_ids;
+
+  cv::resize(frame, frame, cv::Size(down_width, down_height), cv::INTER_LINEAR);
+  bboxes_after_nms = detector.bbox_detector(frame);
+  if (frame_no == 1 && bboxes_after_nms.size() > 0) {
+    bboxes_with_ids = tracker.set_track_ids(bboxes_after_nms);
+    frame_no++;
+    _no_of_bboxes = bboxes_after_nms.size();
+  } else if (bboxes_after_nms.size() != _no_of_bboxes) {
+    bboxes_with_ids = tracker.set_track_ids(bboxes_after_nms);
+    frame_no = 1;
+    _no_of_bboxes = bboxes_after_nms.size();
+  } else {
+    bboxes_with_ids = tracker.euclidean_tracker(bboxes_after_nms);
+    _no_of_bboxes = bboxes_after_nms.size();
+  }
+
+  draw_bboxes(frame, bboxes_with_ids, width, height);
+
+  return frame_no;
+}
+
+void ACME_robot::draw_bboxes(cv::Mat frame,
+                             std::unordered_map<int, cv::Rect> bboxes_with_ids,
+                             int width, int height) {
+  int up_width = width;
+  int up_height = height;
+
+  cv::resize(frame, frame, cv::Size(up_width, up_height), cv::INTER_LINEAR);
+
+  for (auto bbox_with_id : bboxes_with_ids) {
+    cv::Rect temp = cv::Rect(bbox_with_id.second.x * width / 416.0,
+                             bbox_with_id.second.y * height / 416.0,
+                             bbox_with_id.second.width * width / 416.0,
+                             bbox_with_id.second.height * height / 416.0);
+    std::array<float, 4> coord = transforms.transform_2dto3D(temp);
+    cv::rectangle(frame, cv::Point(temp.x, temp.y),
+                  cv::Point(temp.x + temp.width, temp.y + temp.height),
+                  cv::Scalar(255, 178, 50), 2);
+    cv::putText(frame,
+                std::to_string(bbox_with_id.first) + "-[" +
+                    std::to_string(static_cast<int>(coord[0])) + "," +
+                    std::to_string(static_cast<int>(coord[1])) + "," +
+                    std::to_string(static_cast<int>(coord[2])) + "]",
+                cv::Point(temp.x - 10, temp.y - 10), cv::FONT_HERSHEY_DUPLEX,
+                0.75, CV_RGB(118, 185, 0), 0.75);
+  }
+  cv::imshow("Frame", frame);
+  cv::waitKey(0);
 }
 
 void ACME_robot::read_video(std::string filename) {
   cv::VideoCapture capture(filename);
   cv::Mat frame;
 
+  int frame_no = 1;
+
   if (!capture.isOpened()) throw "Error when reading steam_avi";
 
-  cv::namedWindow("w", 1);
   for (;;) {
     capture >> frame;
     if (frame.empty()) break;
-    imshow("w", frame);
-    cv::waitKey(20);  // waits to display frame
+    frame_no = perception_stack(frame, frame_no);
   }
-  cv::waitKey(0);
+}
+
+void ACME_robot::live_video(int camera_id) {
+  cv::VideoCapture capture(camera_id);
+  cv::Mat frame;
+
+  int frame_no = 1;
+
+  if (!capture.isOpened()) throw "Error when reading steam_avi";
+
+  for (;;) {
+    capture >> frame;
+    if (frame.empty()) break;
+    frame_no = perception_stack(frame, frame_no);
+  }
 }

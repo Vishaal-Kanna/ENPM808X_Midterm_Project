@@ -31,46 +31,21 @@
  *
  */
 
-#include <iostream>
-#include <opencv2/core/core.hpp>
-#include <opencv2/dnn.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/opencv.hpp>
-
-#include "../include/Detection_module.hpp"
-
-using namespace std;
-using namespace cv;
-using namespace dnn;
+#include "../include/ACME_robot.hpp"
 
 int main() {
   Detection_module detector;
-  Mat frame1 = imread(
-      "/home/vishaal/Vishaal/UMD_Sem_3/ENPM808X/ENPM808X_Midterm_Project/"
-      "test_img.jpg");
+  ACME_robot Robot;
 
-  detector.bbox_detector(frame1);
+  Robot.set_detector_parameters(416, 416, 0.5, 0.4);
 
-  // std::string filename = "/home/sahu27/Downloads/video.mpg";
-  // std::cout<<"Hi";
-  // cv::VideoCapture capture(filename);
-  // cv::Mat frame;
+  float intrinsic[3][3] = {{0.2, 0, 0}, {0, 0.2, 0}, {0, 0, 1}};
+  float cam_to_rob[3][4] = {{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 5}};
 
-  // if( !capture.isOpened() )
-  //     throw "Error when reading steam_avi";
+  Robot.set_transformation_parameters(intrinsic, cam_to_rob);
 
-  // cv::namedWindow( "w", 1);
-  // for( ; ; ) {
-
-  //   capture >> frame;
-  //   if(frame.empty())
-
-  //     break;
-  //   imshow("w", frame);
-  //   cv::waitKey(20); // waits to display frame
-
-  //   }
-  //   cv::waitKey(0);
+  Robot.read_video("/home/vishaal/Downloads/test_video.mp4");
+  // Robot.live_video(0);
 
   return 0;
 }
