@@ -39,6 +39,10 @@ UML Diagram:
 ![Result_Frame](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/outputs/output1.png)
 
 
+## Running
+
+Download the video and Yolov3 tiny weights from ![here](https://drive.google.com/drive/folders/1_tvLAOI7ZmhKPQpJbTqEpOvd83U_eqoD)
+
 ## Dependencies
 Install Dependencies listed in requirements.sh
 ```
