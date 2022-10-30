@@ -43,6 +43,8 @@ UML Diagram:
 
 Download the video and Yolov3 tiny weights from ![here](https://drive.google.com/drive/folders/1_tvLAOI7ZmhKPQpJbTqEpOvd83U_eqoD)
 
+Change the file path respectively in the detection module.cpp
+
 ## Dependencies
 Install Dependencies listed in requirements.sh
 ```
