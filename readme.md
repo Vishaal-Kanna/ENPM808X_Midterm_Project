@@ -60,6 +60,17 @@ cd build
 cmake ..
 make
 ```
+To Run the module 
+```
+./app ACME
+```
+
+To Run Tests
+```
+./test/test.cpp
+```
+
+
 
 ## Building for code coverage
 ```
