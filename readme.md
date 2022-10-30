@@ -70,6 +70,12 @@ To Run Tests
 ./test/cpp-test
 ```
 
+## To Run a Video from WebCam
+
+```
+comment line 47 and uncomment line 48 in main.cpp
+```
+
 ## Building for code coverage
 ```
 sudo apt-get install lcov
@@ -101,6 +107,7 @@ firefox index.html
 2. Tracker module has been based on assumptions, will hold only for certain conditions.
 3. Camera parameters has been chosen as per the need and not the correct matrix.
 4. Doxygen doucmentation been truncated to less number of files.
+
 
 
 
