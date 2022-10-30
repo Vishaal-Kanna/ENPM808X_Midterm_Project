@@ -47,11 +47,9 @@ google-chrome index.html (or use your favourite browser)
 UML Diagram:
 ![Alt text](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/UML/revised/uml_class_diagram.PNG?raw=true "Title")
 
-Activity Diagram:
-![Alt text](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/UML/revised/uml_activity_diagram.pdf)
+![Activity Diagram:](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/UML/revised/uml_activity_diagram.pdf)
 
-QuadChart:
-![Alt text](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/Proposal_docs/quad_chart.pdf
+![QuadChart:](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/Proposal_docs/quad_chart.pdf
 
 
 ## Dependencies
