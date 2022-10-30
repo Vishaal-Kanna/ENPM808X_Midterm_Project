@@ -1,5 +1,16 @@
-Done processing include/pid.hpp
-Done processing app/pid.cpp
-Done processing app/main.cpp
-Done processing test/test.cpp
-
+Done processing ACME_robot.hpp
+Done processing Detection_module.hpp
+Done processing Tracking_module.hpp
+Done processing Transformation_module.hpp
+ACME_robot.cpp:123:  Could not find a newline character at the end of the file.  [whitespace/ending_newline] [5]
+Done processing ACME_robot.cpp
+Detection_module.cpp:76:  Using C-style cast.  Use reinterpret_cast<float*>(...) instead  [readability/casting] [4]
+Done processing Detection_module.cpp
+Done processing Tracking_module.cpp
+Done processing Transformation_module.cpp
+Done processing main.cpp
+Total errors found: 2
+main.cpp:39:  Could not find a newline character at the end of the file.  [whitespace/ending_newline] [5]
+Done processing main.cpp
+Done processing test.cpp
+Total errors found: 1

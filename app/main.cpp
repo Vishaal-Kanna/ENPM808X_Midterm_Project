@@ -1,3 +1,25 @@
+/** MIT License
+ * Copyright (c) 2022 Vishaal Kanna Sivakumar, Sahruday Patti
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 /**
  * @file main.cpp
  * @authors Sahruday Patti, Vishaal Kanna Sivakumar
@@ -9,37 +31,20 @@
  *
  */
 
-#include <iostream>
-#include <opencv2/opencv.hpp>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-// using namespace cv;
-
+#include "../include/ACME_robot.hpp"
 
 int main() {
-  
-  // std::string filename = "/home/sahu27/Downloads/video.mpg";
-  // std::cout<<"Hi";
-  // cv::VideoCapture capture(filename);
-  // cv::Mat frame;
+  Detection_module detector;
+  ACME_robot Robot;
 
-  // if( !capture.isOpened() )
-  //     throw "Error when reading steam_avi";
+  Robot.set_detector_parameters(416, 416, 0.5, 0.4);
 
-  // cv::namedWindow( "w", 1);
-  // for( ; ; ) {
+  float intrinsic[3][3] = {{0.2, 0, 0}, {0, 0.2, 0}, {0, 0, 1}};
+  float cam_to_rob[3][4] = {{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 5}};
 
-  //   capture >> frame;
-  //   if(frame.empty())
+  Robot.set_transformation_parameters(intrinsic, cam_to_rob);
 
-  //     break;
-  //   imshow("w", frame);
-  //   cv::waitKey(20); // waits to display frame
+  Robot.read_video("/home/vishaal/Downloads/test_video.mp4");
 
-  //   }
-  //   cv::waitKey(0);
-  
-  
   return 0;
-
 }
