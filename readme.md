@@ -19,6 +19,22 @@ Perception is an integral part of any autonomous system. Knowing the surrounding
 
 [Phase1 Presentation](https://drive.google.com/file/d/153FP7lnLD9CjYQmFsAVQo6xBl6MGawtI/view?usp=sharing)
 
+
+UML Diagram:
+
+![Alt text](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/UML/revised/uml_class_diagram.PNG?raw=true "Title")
+
+![Activity Diagram](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/UML/revised/uml_activity_diagram.pdf)
+
+![QuadChart](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/Proposal_docs/quad_chart.pdf)
+
+
+## Dependencies
+Install Dependencies listed in requirements.sh
+```
+sh requirements.sh
+```
+
 ## Standard install via command-line
 ```
 git clone --recursive https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project
@@ -38,28 +54,19 @@ make code_coverage
 ```
 This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser.
 
-## Opening the Documentation
-```
-cd <path to repository>/Docs/html
-google-chrome index.html (or use your favourite browser)
-```
-
-UML Diagram:
-![Alt text](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/UML/revised/uml_class_diagram.PNG?raw=true "Title")
-
-![Activity Diagram](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/UML/revised/uml_activity_diagram.pdf)
-
-![QuadChart](https://github.com/Vishaal-Kanna/ENPM808X_Midterm_Project/blob/Dev/Proposal_docs/quad_chart.pdf)
-
-
-## Dependencies
-Install Dependencies listed in requirements.sh
-```
-sh requirements.sh
-```
 ## Running Cpplint and CppCheck
 ```
 cppcheck --enable=all --std=c++11 -I include/ --suppress=missingIncludeSystem $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/") > results/cppcheck.txt &&
 
 cpplint $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/") $( find . -name *.hpp | grep -vE -e "^./build/" -e "^./vendor/") > results/cpplint.txt
 ```
+
+## Generate Doxygen Documentation
+```
+cd <path to repository>/Docs
+doxygen Doxyfile
+firefox index.html
+```
+
+
+
