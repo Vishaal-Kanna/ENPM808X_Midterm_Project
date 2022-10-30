@@ -67,7 +67,7 @@ To Run the module
 
 To Run Tests
 ```
-./test/test.cpp
+./test/cpp-test
 ```
 
 
@@ -97,5 +97,10 @@ doxygen Doxyfile
 firefox index.html
 ```
 
+##Known issues and bugs
+
+1. Travis and Coveralls Not working due to subscription problems.
+2. Tracker module has been based on assumptions, will hold only for certain conditions.
+3. Docygen doucmentation been truncated to less number of files.
 
 
