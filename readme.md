@@ -100,8 +100,6 @@ firefox index.html
 ## Known issues and bugs
 
 1. Travis and Coveralls Not working due to subscription problems.
-2. Tracker module has been based on assumptions, will hold only for certain conditions.
-3. Camera parameters has been chosen as per the need and not the correct matrix.
-4. Doxygen doucmentation been truncated to less number of files.
-
-
+2. Tracker module would not work in crowded scenarios.
+3. Due to the lack of calibration factors, the camera parameters have been chosen approximately.
+4. Doxygen doucmentation is truncated to 1000 files in github.
