@@ -68,7 +68,9 @@ cpplint $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/") $( find
 ## Generate Doxygen Documentation
 ```
 cd <path to repository>/Docs
+
 doxygen Doxyfile
+
 firefox index.html
 ```
 
