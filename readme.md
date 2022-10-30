@@ -19,6 +19,8 @@ Perception is an integral part of any autonomous system. Knowing the surrounding
 
 [Phase1 Presentation](https://drive.google.com/file/d/153FP7lnLD9CjYQmFsAVQo6xBl6MGawtI/view?usp=sharing)
 
+[Phase2 Presentation](https://drive.google.com/file/d/153FP7lnLD9CjYQmFsAVQo6xBl6MGawtI/view?usp=sharing)
+
 ## Development process
 
 Agile iterative process with Test driven development Approach. We switch Driver and navigator roles depending on the task.
