@@ -97,5 +97,6 @@ TEST(test7, checking_ACME_robot_functions) {
   EXPECT_NO_FATAL_FAILURE(Robot.perception_stack(image, 1));
   EXPECT_NO_FATAL_FAILURE(Robot.draw_bboxes(image, bboxes_with_ids, 416, 416));
   EXPECT_NO_FATAL_FAILURE(Robot.read_video("/home/vishaal/Downloads/test_video.mp4"));
+  EXPECT_NO_FATAL_FAILURE(Robot.live_video(0));
 }
 

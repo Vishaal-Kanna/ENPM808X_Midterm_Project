@@ -97,11 +97,17 @@ class ACME_robot {
 
   /**
    * @brief read
-   * @param
-   *
+   * @param filename
+   * @return void
    */
-
   void read_video(std::string filename);
+
+    /**
+   * @brief read
+   * @param camera_id
+   * @return void
+   */
+  void live_video(int camera_id);
 
  private:
   size_t _no_of_bboxes;

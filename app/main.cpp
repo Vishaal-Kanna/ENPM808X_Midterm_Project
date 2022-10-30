@@ -45,6 +45,7 @@ int main() {
   Robot.set_transformation_parameters(intrinsic, cam_to_rob);
 
   Robot.read_video("/home/vishaal/Downloads/test_video.mp4");
+  // Robot.live_video(0);
 
   return 0;
 }

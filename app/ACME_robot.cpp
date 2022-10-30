@@ -95,21 +95,36 @@ void ACME_robot::draw_bboxes(cv::Mat frame,
     std::array<float, 4> coord = transforms.transform_2dto3D(temp);
     cv::rectangle(frame, cv::Point(temp.x, temp.y),
                   cv::Point(temp.x + temp.width, temp.y + temp.height),
-                  cv::Scalar(255, 178, 50), 1);
+                  cv::Scalar(255, 178, 50), 2);
     cv::putText(frame,
                 std::to_string(bbox_with_id.first) + "-[" +
                     std::to_string(static_cast<int>(coord[0])) + "," +
                     std::to_string(static_cast<int>(coord[1])) + "," +
                     std::to_string(static_cast<int>(coord[2])) + "]",
                 cv::Point(temp.x - 10, temp.y - 10), cv::FONT_HERSHEY_DUPLEX,
-                0.5, CV_RGB(118, 185, 0), 0.5);
+                0.75, CV_RGB(118, 185, 0), 0.75);
   }
   cv::imshow("Frame", frame);
-  cv::waitKey(1);
+  cv::waitKey(0);
 }
 
 void ACME_robot::read_video(std::string filename) {
   cv::VideoCapture capture(filename);
+  cv::Mat frame;
+
+  int frame_no = 1;
+
+  if (!capture.isOpened()) throw "Error when reading steam_avi";
+
+  for (;;) {
+    capture >> frame;
+    if (frame.empty()) break;
+    frame_no = perception_stack(frame, frame_no);
+  }
+}
+
+void ACME_robot::live_video(int camera_id) {
+  cv::VideoCapture capture(camera_id);
   cv::Mat frame;
 
   int frame_no = 1;
